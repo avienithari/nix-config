@@ -1,0 +1,9 @@
+alias vim="nvim"
+alias py="python3"
+alias attach="tmux attach -d -t'"
+
+export PATH=${PATH}:~/.config/scripts/
+
+bindkey -s ^f "sessionizer"
+
+neofetch
