@@ -2,3 +2,4 @@ default_roles:
   - docker
   - alacritty
   - tmux
+  - i3
