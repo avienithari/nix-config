@@ -1,0 +1,16 @@
+---
+- name: "Alacritty | Install Alacritty"
+  ansible.builtin.apt:
+    name:
+      - alacritty
+    state: present
+  become: true
+
+- name: "Alacritty | Configure Alacritty"
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/roles/alacritty/files/alacritty"
+    dest: "{{ ansible_user_dir }}/.config/"
+    mode: 0755
+    directory_mode: 0755
+    force: true
+    remote_src: true
