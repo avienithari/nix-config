@@ -43,6 +43,13 @@
     directory_mode: 0755
     force: true
 
+- name: 'i3 | Remove Default i3lock'
+  ansible.builtin.apt:
+    name:
+      -i3lock
+    state: absent
+  become: true
+
 - name: 'i3 | i3 lock color'
   ansible.builtin.git:
     repo: https://github.com/Raymo111/i3lock-color
