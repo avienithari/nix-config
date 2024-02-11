@@ -1,0 +1,22 @@
+---
+- name: "zsh | Install zsh"
+  ansible.builtin.apt:
+    name: zsh
+    state: present
+  become: true
+  
+- name: "zsh | Change Default Shell"
+  shell: chsh -s $(which zsh)
+  become: true
+
+- name: "zsh | Install Oh My Zsh"
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  ignore_errors: true
+
+- name: "zsh | Configure zsh"
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/roles/zsh/files/zsh"
+    dest: "{{ ansible_user_dir }}"
+    mode: 0755
+    directory_mode: 0755
+    force: true

@@ -4,3 +4,4 @@ default_roles:
   - tmux
   - i3
   - scripts
+  - zsh
