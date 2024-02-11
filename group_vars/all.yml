@@ -9,3 +9,4 @@ default_roles:
   - apt
   - brave
   - rust
+  - fonts
