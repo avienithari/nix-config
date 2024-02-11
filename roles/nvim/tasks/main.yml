@@ -7,6 +7,7 @@
       - cmake
       - unzip
       - curl
+      - ripgrep
     state: present
   become: true
 
@@ -14,6 +15,7 @@
   ansible.builtin.git:
     repo: https://github.com/neovim/neovim
     dest: "{{ ansible_user_dir }}/neovim"
+    force: true
 
 - name: "nvim | Build nvim"
   shell: "cd {{ ansible_user_dir }}/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo"
@@ -25,8 +27,8 @@
 
 - name: "nvim | Configure nvim"
   ansible.builtin.copy:
-  src: "{{ playbook_dir }}/roles/nvim/files/nvim"
-  dest: "{{ ansible_user_dir }}/.config/"
-  mode: 0755
-  directory_mode: 0755
-  force: true
+    src: "{{ playbook_dir }}/roles/nvim/files/nvim"
+    dest: "{{ ansible_user_dir }}/.config/"
+    mode: 0755
+    directory_mode: 0755
+    force: true

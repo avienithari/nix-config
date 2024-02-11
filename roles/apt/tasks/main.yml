@@ -4,7 +4,6 @@
     name:
       - btop
       - neofetch
-      - ripgrep
       - fzf 
       - speedtest
       - nmap
