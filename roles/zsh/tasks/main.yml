@@ -15,7 +15,7 @@
 
 - name: "zsh | Configure zsh"
   ansible.builtin.copy:
-    src: "{{ playbook_dir }}/roles/zsh/files/zsh"
+    src: "{{ playbook_dir }}/roles/zsh/files/zsh/"
     dest: "{{ ansible_user_dir }}"
     mode: 0755
     directory_mode: 0755

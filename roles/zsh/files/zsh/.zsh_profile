@@ -1,8 +1,9 @@
 alias vim="nvim"
 alias py="python3"
-alias attach="tmux attach -d -t'"
+alias attach="tmux attach -d -t"
 
 export PATH=${PATH}:~/.config/scripts/
+export PATH=${PATH}:~/.dotfiles/bin
 
 bindkey -s ^f "sessionizer"
 
