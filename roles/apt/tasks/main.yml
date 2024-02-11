@@ -8,5 +8,7 @@
       - fzf 
       - speedtest
       - nmap
+      - golang-go
+      - npm
     state: present
   become: true
