@@ -1,0 +1,12 @@
+---
+- name: "Apt | Install apt Packages"
+  ansible.builtin.apt:
+    name:
+      - btop
+      - neofetch
+      - ripgrep
+      - fzf 
+      - speedtest
+      - nmap
+    state: present
+  become: true
