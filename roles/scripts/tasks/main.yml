@@ -1,0 +1,8 @@
+---
+- name: "Scripts | Copy scripts"
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/roles/scripts/files/scripts"
+    dest: "{{ ansible_user_dir }}/.config/"
+    mode: 0644
+    directory_mode: 0755
+    force: true
