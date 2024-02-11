@@ -7,3 +7,4 @@ default_roles:
   - zsh
   - nvim
   - apt
+  - brave
