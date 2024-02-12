@@ -9,9 +9,22 @@
   shell: chsh -s $(which zsh)
   become: true
 
+- name: "zsh | Detect Oh My Zsh"
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.oh-my-zsh"
+  register: ohmyzsh
+
+- name: "zsh | Register Oh My Zsh state"
+  ansible.builtin.set_fact:
+    ohmyzsh_is_installed: "{{ ohmyzsh.stat.exists }}"
+
+- name: "zsh | Debug ohmyzsh_is_installed"
+  ansible.builtin.debug:
+    var: ohmyzsh_is_installed
+
 - name: "zsh | Install Oh My Zsh"
+  when: not ohmyzsh_is_installed
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  ignore_errors: true
 
 - name: "zsh | Configure zsh"
   ansible.builtin.copy:

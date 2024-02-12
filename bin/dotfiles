@@ -80,10 +80,9 @@ DOTFILES_DIR="$HOME/.dotfiles"
 SSH_DIR="$HOME/.ssh"
 IS_FIRST_RUN="$HOME/.dotfiles_run"
 
-if [[ $0 == "dotfiles" ]]; then
-    _task "Changing dotfiles permissions"
-        _cmd "chmod +x $0"
-fi
+_task "Setting dotfiles permissions"
+    _cmd "chmod +x $DOTFILES_DIR/bin/dotfiles"
+
 if ! dpkg -s ansible >/dev/null 2>&1; then
     _task "Installing Ansible"
         _cmd "sudo apt-get update"
