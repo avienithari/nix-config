@@ -1,4 +1,8 @@
 ---
+- name: "Alacritty | Add Repository"
+  shell: "sudo add-apt-repository ppa:aslatter/ppa -y"
+  become: true
+
 - name: "Alacritty | Install Alacritty"
   ansible.builtin.apt:
     name:
