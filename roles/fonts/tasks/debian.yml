@@ -1,0 +1,12 @@
+---
+- name: "Fonts | Clone fonts"
+  ansible.builtin.git:
+    repo: https://github.com/ryanoasis/nerd-fonts
+    depth: 1
+    dest: "{{ ansible_user_dir }}/fonts"
+
+- name: "Fonts | Install Meslo"
+  shell: "cd {{ ansible_user_dir }}/fonts && ./install.sh Meslo"
+
+- name: "Fonts | Install Mononoki"
+  shell: "cd {{ ansible_user_dir }}/fonts && ./install.sh Mononoki"

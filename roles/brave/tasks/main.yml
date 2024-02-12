@@ -1,18 +1,4 @@
 ---
-- name: "Brave | Install Dependencies"
-  ansible.builtin.apt:
-    name:
-      - curl
-    state: present
-  become: true
-  
-- name: "Brave | Add Release Channel"
-  shell: "sudo bash {{ playbook_dir }}/roles/brave/files/brave/brave.sh"
-  become: true
-
-- name: "Brave | Install Brave"
-  ansible.builtin.apt:
-    name: 
-      - brave-browser
-    state: present
-  become: true
+- name: Run Debian Tasks
+  ansible.builtin.import_tasks: debian.yml
+  when: ansible_os_family == 'Debian'

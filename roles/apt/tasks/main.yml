@@ -1,13 +1,4 @@
 ---
-- name: "Apt | Install apt Packages"
-  ansible.builtin.apt:
-    name:
-      - btop
-      - neofetch
-      - fzf 
-      - speedtest
-      - nmap
-      - golang-go
-      - npm
-    state: present
-  become: true
+- name: Run Debian Tasks
+  ansible.builtin.import_tasks: debian.yml
+  when: ansible_os_family == 'Debian'
