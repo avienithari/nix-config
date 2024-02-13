@@ -1,14 +1,19 @@
 ---
-- name: "Alacritty | Add Repository"
-  shell: "sudo add-apt-repository ppa:aslatter/ppa -y"
-  become: true
+- name: "Alacritty | Detect Cargo"
+  ansible.builtin.stat:
+    path: "{{ ansible_user_dir }}/.cargo/bin/cargo"
+  register: cargo
+
+- name: "Alacritty | Register Cargo State"
+  ansible.builtin.set_fact:
+    cargo_installed: "{{ cargo.stat.exists }}"
+
+- name: "Alacritty | Install Cargo"
+  when: not cargo_installed
+  shell: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
 
 - name: "Alacritty | Install Alacritty"
-  ansible.builtin.apt:
-    name:
-      - alacritty
-    state: present
-  become: true
+  shell: "cargo install alacritty"
 
 - name: "Alacritty | Configure Alacritty"
   ansible.builtin.copy:
