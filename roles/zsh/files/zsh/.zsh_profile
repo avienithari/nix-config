@@ -4,6 +4,7 @@ alias attach="tmux attach -d -t"
 
 export PATH=${PATH}:~/.config/scripts/
 export PATH=${PATH}:~/.dotfiles/bin
+export PATH=${PATH}:~/go/bin/
 
 bindkey -s ^f "sessionizer"
 
