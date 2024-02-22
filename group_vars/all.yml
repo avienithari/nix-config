@@ -1,6 +1,6 @@
 default_roles:
   - docker
-  - alacritty
+  # - alacritty
   - tmux
   - i3
   - scripts
