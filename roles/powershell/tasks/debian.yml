@@ -1,5 +1,5 @@
 ---
-- name: "Brave | Install Dependencies"
+- name: "Powershell | Install Dependencies"
   ansible.builtin.apt:
     name:
       - android-tools-adb
