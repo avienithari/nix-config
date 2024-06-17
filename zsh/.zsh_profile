@@ -2,6 +2,9 @@ alias vim="nvim"
 alias py="python3"
 alias attach="tmux attach -d -t"
 
+export PATH="/opt/homebrew/bin:$PATH"
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 export PATH=${PATH}:~/.config/scripts/
 export PATH=${PATH}:~/go/bin/
 export PATH="$HOME/.rbenv/bin:$PATH"
