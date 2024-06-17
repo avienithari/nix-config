@@ -1,8 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
-echo "deb [arch=amd64,armhf,arm64 signed-by=/usr/share/keyrings/powershell.gpg] \
-https://packages.microsoft.com/ubuntu/20.04/prod focal main" \
-| sudo tee /etc/apt/sources.list.d/powershell.list
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/powershell.gpg >/dev/null
-sudo apt update
+sudo apt-get update
+sudo apt-get install -y wget apt-transport-https software-properties-common
+source /etc/os-release
+wget -q https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install -y powershell
