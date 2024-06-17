@@ -1,6 +1,9 @@
 [terminal]
 osc52 = 'CopyPaste'
 
+[env]
+term = "xterm-256color"
+
 [mouse]
 hide_when_typing = true
 
