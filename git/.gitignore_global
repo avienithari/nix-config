@@ -1,0 +1,17 @@
+*~
+.DS_Store
+.idea
+.rvmrc
+*.swp
+*.swo
+*.swn
+.sass-cache
+portkey.json
+.env
+npm-debug.log
+.gradle
+build
+.byebug_history
+.notes*
+.ruby-lsp
+_pycache_
