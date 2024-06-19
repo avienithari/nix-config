@@ -6,6 +6,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export PATH=${PATH}:~/.config/scripts/
 export PATH=${PATH}:~/go/bin/
