@@ -4,6 +4,8 @@ font-family = Berkeley Mono
 theme = rose-pine
 
 cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
 
 title = avien
 macos-titlebar-proxy-icon = hidden
