@@ -1,0 +1,25 @@
+font-size = 14
+font-family = Berkeley Mono
+
+theme = rose-pine
+
+cursor-style = block
+
+title = avien
+macos-titlebar-proxy-icon = hidden
+
+macos-window-shadow = false
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+confirm-close-surface = false
+quit-after-last-window-closed = true
+
+quick-terminal-animation-duration = 0
+
+keybind = cmd+s=toggle_quick_terminal
+keybind = cmd+r=reload_config
+
+# default check, dunno might change later
+auto-update = download
