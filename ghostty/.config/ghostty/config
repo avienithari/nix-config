@@ -11,6 +11,8 @@ title = avien
 macos-titlebar-proxy-icon = hidden
 
 macos-window-shadow = false
+window-height = 67
+window-width = 217
 
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
@@ -30,5 +32,4 @@ keybind = cmd+left=text:\x01
 keybind = cmd+backspace=text:\x15
 keybind = opt+delete=esc:d
 
-# default check, dunno might change later
 auto-update = download
