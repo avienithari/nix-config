@@ -25,11 +25,4 @@ quick-terminal-animation-duration = 0
 keybind = cmd+s=toggle_quick_terminal
 keybind = cmd+r=reload_config
 
-keybind = opt+right=esc:f
-keybind = opt+left=esc:b
-keybind = cmd+right=text:\x05
-keybind = cmd+left=text:\x01
-keybind = cmd+backspace=text:\x15
-keybind = opt+delete=esc:d
-
 auto-update = download
