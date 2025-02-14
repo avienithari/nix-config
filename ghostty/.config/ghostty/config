@@ -7,7 +7,7 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
-title = avien
+title = " "
 macos-titlebar-proxy-icon = hidden
 
 macos-window-shadow = false
