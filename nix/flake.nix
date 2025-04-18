@@ -43,6 +43,7 @@
           pkgs.luajitPackages.jsregexp
           pkgs.neovim
           pkgs.ninja
+          pkgs.nodejs_23
           pkgs.php
           pkgs.ripgrep
           pkgs.speedtest-cli
