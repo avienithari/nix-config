@@ -5,11 +5,13 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
     configuration = { pkgs, ... }: {
+      nixpkgs.config.allowUnfree = true;
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
@@ -50,6 +52,14 @@
             pkgs.yt-dlp
         ];
 
+      homebrew = {
+          enable = true;
+          casks = [
+            "ghostty"
+            "vlc"
+          ];
+        };
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -72,7 +82,18 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#rathalos
     darwinConfigurations."rathalos" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [
+          configuration
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              enableRosetta = true;
+              user = "avien";
+              autoMigrate = true;
+            };
+          }
+        ];
     };
 
     darwinPackages = self.darwinConfigurations."rathalos".pkgs;
