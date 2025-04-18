@@ -73,7 +73,6 @@
           "zsh-syntax-highlighting"
         ];
         casks = [
-          "caffeine"
           "ghostty"
           "monitorcontrol"
           "vlc"
@@ -87,7 +86,6 @@
       };
 
       system.defaults = {
-        dock.autohide = true;
         NSGlobalDomain.KeyRepeat = 2;
       };
 
