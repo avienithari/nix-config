@@ -16,59 +16,59 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
-            pkgs.android-tools
-            pkgs.argparse
-            pkgs.bash
-            pkgs.bat
-            pkgs.brave
-            pkgs.brotli
-            pkgs.btop
-            pkgs.clisp
-            pkgs.cmake
-            pkgs.fastfetch
-            pkgs.fd
-            pkgs.ffmpeg-full
-            pkgs.ffmpeg-headless
-            pkgs.ffmpegthumbnailer
-            pkgs.fzf
-            pkgs.gd
-            pkgs.inkscape
-            pkgs.jq
-            pkgs.keycastr
-            pkgs.lazygit
-            pkgs.luajit
-            pkgs.neovim
-            pkgs.ninja
-            pkgs.php
-            pkgs.ripgrep
-            pkgs.speedtest-cli
-            pkgs.stow
-            pkgs.tldr
-            pkgs.tmux
-            pkgs.tokei
-            pkgs.tree
-            pkgs.virtualenv
-            pkgs.wget
-            pkgs.yt-dlp
+          pkgs.android-tools
+          pkgs.argparse
+          pkgs.bash
+          pkgs.bat
+          pkgs.brave
+          pkgs.brotli
+          pkgs.btop
+          pkgs.clisp
+          pkgs.cmake
+          pkgs.fastfetch
+          pkgs.fd
+          pkgs.ffmpeg-full
+          pkgs.ffmpeg-headless
+          pkgs.ffmpegthumbnailer
+          pkgs.fzf
+          pkgs.gd
+          pkgs.inkscape
+          pkgs.jq
+          pkgs.keycastr
+          pkgs.lazygit
+          pkgs.luajit
+          pkgs.neovim
+          pkgs.ninja
+          pkgs.php
+          pkgs.ripgrep
+          pkgs.speedtest-cli
+          pkgs.stow
+          pkgs.tldr
+          pkgs.tmux
+          pkgs.tokei
+          pkgs.tree
+          pkgs.virtualenv
+          pkgs.wget
+          pkgs.yt-dlp
         ];
 
       homebrew = {
-          enable = true;
-          brews = [
-            "mas"
-          ];
-          casks = [
-            "ghostty"
-            "vlc"
-          ];
-          masApps = {
-            "Elmedia Video Player" = 1044549675;
-          };
-          # Packages specified outside of here will be removed.
-          # onActivation.cleanup = "zap";
-          onActivation.autoUpdate = true;
-          onActivation.upgrade = true;
+        enable = true;
+        brews = [
+          "mas"
+        ];
+        casks = [
+          "ghostty"
+          "vlc"
+        ];
+        masApps = {
+          "Elmedia Video Player" = 1044549675;
         };
+        # Packages specified outside of here will be removed.
+        # onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
+      };
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -93,8 +93,8 @@
     # $ darwin-rebuild build --flake .#rathalos
     darwinConfigurations."rathalos" = nix-darwin.lib.darwinSystem {
       modules = [
-          configuration
-          nix-homebrew.darwinModules.nix-homebrew
+        configuration
+        nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
               enable = true;
@@ -104,7 +104,7 @@
             };
           }
         ];
-    };
+      };
 
     darwinPackages = self.darwinConfigurations."rathalos".pkgs;
   };
