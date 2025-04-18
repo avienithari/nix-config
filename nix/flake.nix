@@ -32,11 +32,15 @@
           pkgs.ffmpegthumbnailer
           pkgs.fzf
           pkgs.gd
+          pkgs.gnupg
+          pkgs.gnutls
+          pkgs.httrack
           pkgs.inkscape
           pkgs.jq
           pkgs.keycastr
           pkgs.lazygit
           pkgs.luajit
+          pkgs.luajitPackages.jsregexp
           pkgs.neovim
           pkgs.ninja
           pkgs.php
@@ -55,17 +59,24 @@
       homebrew = {
         enable = true;
         brews = [
+          "lld"
+          "llvm"
+          "lua"
+          "luarocks"
           "mas"
+          "pyvim"
+          "zsh-autosuggestions"
+          "zsh-syntax-highlighting"
         ];
         casks = [
           "ghostty"
+          "monitorcontrol"
           "vlc"
         ];
         masApps = {
           "Elmedia Video Player" = 1044549675;
         };
-        # Packages specified outside of here will be removed.
-        # onActivation.cleanup = "zap";
+        onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
       };
