@@ -13,7 +13,41 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
-        [ pkgs.vim
+        [
+            pkgs.android-tools
+            pkgs.argparse
+            pkgs.bash
+            pkgs.bat
+            pkgs.brave
+            pkgs.brotli
+            pkgs.btop
+            pkgs.clisp
+            pkgs.cmake
+            pkgs.fastfetch
+            pkgs.fd
+            pkgs.ffmpeg-full
+            pkgs.ffmpeg-headless
+            pkgs.ffmpegthumbnailer
+            pkgs.fzf
+            pkgs.gd
+            pkgs.inkscape
+            pkgs.jq
+            pkgs.keycastr
+            pkgs.lazygit
+            pkgs.luajit
+            pkgs.neovim
+            pkgs.ninja
+            pkgs.php
+            pkgs.ripgrep
+            pkgs.speedtest-cli
+            pkgs.stow
+            pkgs.tldr
+            pkgs.tmux
+            pkgs.tokei
+            pkgs.tree
+            pkgs.virtualenv
+            pkgs.wget
+            pkgs.yt-dlp
         ];
 
       # Necessary for using flakes on this system.
