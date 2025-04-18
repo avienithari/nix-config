@@ -82,6 +82,12 @@
         onActivation.upgrade = true;
       };
 
+      system.defaults = {
+        dock.autohide = true;
+        NSGlobalDomain.AppleInterfaceStyle = "Light";
+        NSGlobalDomain.KeyRepeat = 2;
+      };
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
