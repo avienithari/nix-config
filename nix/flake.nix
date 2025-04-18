@@ -66,6 +66,8 @@
           };
           # Packages specified outside of here will be removed.
           # onActivation.cleanup = "zap";
+          onActivation.autoUpdate = true;
+          onActivation.upgrade = true;
         };
 
       # Necessary for using flakes on this system.
