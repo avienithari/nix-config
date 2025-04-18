@@ -54,10 +54,18 @@
 
       homebrew = {
           enable = true;
+          brews = [
+            "mas"
+          ];
           casks = [
             "ghostty"
             "vlc"
           ];
+          masApps = {
+            "Elmedia Video Player" = 1044549675;
+          };
+          # Packages specified outside of here will be removed.
+          # onActivation.cleanup = "zap";
         };
 
       # Necessary for using flakes on this system.
