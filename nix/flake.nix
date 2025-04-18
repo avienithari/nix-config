@@ -25,6 +25,7 @@
           pkgs.btop
           pkgs.clisp
           pkgs.cmake
+          pkgs.discord
           pkgs.fastfetch
           pkgs.fd
           pkgs.ffmpeg-full
@@ -32,6 +33,7 @@
           pkgs.ffmpegthumbnailer
           pkgs.fzf
           pkgs.gd
+          pkgs.gimp
           pkgs.gnupg
           pkgs.gnutls
           pkgs.httrack
@@ -47,6 +49,7 @@
           pkgs.php
           pkgs.ripgrep
           pkgs.speedtest-cli
+          pkgs.spotify
           pkgs.stow
           pkgs.tldr
           pkgs.tmux
@@ -70,6 +73,7 @@
           "zsh-syntax-highlighting"
         ];
         casks = [
+          "caffeine"
           "ghostty"
           "monitorcontrol"
           "vlc"
@@ -84,7 +88,6 @@
 
       system.defaults = {
         dock.autohide = true;
-        NSGlobalDomain.AppleInterfaceStyle = "Light";
         NSGlobalDomain.KeyRepeat = 2;
       };
 
