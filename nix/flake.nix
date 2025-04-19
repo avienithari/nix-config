@@ -25,7 +25,6 @@
           pkgs.btop
           pkgs.clisp
           pkgs.cmake
-          pkgs.discord
           pkgs.fastfetch
           pkgs.fd
           pkgs.ffmpeg-full
@@ -73,6 +72,7 @@
           "zsh-syntax-highlighting"
         ];
         casks = [
+          "discord"
           "ghostty"
           "monitorcontrol"
           "vlc"
