@@ -59,6 +59,7 @@
             pkgs.virtualenv
             pkgs.wget
             pkgs.yt-dlp
+            pkgs.zig
           ];
 
         homebrew = {
