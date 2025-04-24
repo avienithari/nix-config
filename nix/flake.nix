@@ -35,6 +35,7 @@
             pkgs.gimp
             pkgs.gnupg
             pkgs.gnutls
+            pkgs.go
             pkgs.httrack
             pkgs.inkscape
             pkgs.jq
@@ -76,6 +77,7 @@
             "discord"
             "ghostty"
             "monitorcontrol"
+            "steam"
             "vlc"
           ];
           masApps = {
