@@ -75,6 +75,7 @@ return {
     require("conform").setup({
       formatters_by_ft = {
         lua = { "stylua" },
+        nix = { "nixpkgs_fmt" },
       },
     })
     vim.api.nvim_create_autocmd("BufWritePre", {
