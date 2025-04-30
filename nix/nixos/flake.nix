@@ -43,6 +43,7 @@
                 neovim
                 nixpkgs-fmt
                 stow
+                syncthing
                 tailscale
                 tldr
                 tmux
@@ -127,6 +128,15 @@
               services.tailscale = {
                 enable = true;
                 useRoutingFeatures = "client";
+              };
+            }
+            {
+              services.syncthing = {
+                enable = true;
+                openDefaultPorts = true;
+                dataDir = "/home/avien";
+                group = "users";
+                user = "avien";
               };
             }
           ];
