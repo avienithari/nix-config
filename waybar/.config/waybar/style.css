@@ -1,0 +1,46 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+}
+
+window {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    border: none;
+    background: transparent;
+    color: #89b4fa;
+}
+
+#workspaces button.active {
+    color: #f38ba8;
+}
+
+#clock {
+    color: #fab387;
+    font-weight: bold;
+}
+
+#cpu,
+#memory,
+#network,
+#bluetooth,
+#battery,
+#custom-pass {
+    padding: 0 10px;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
+
+#tray {
+    margin-right: 5px;
+}

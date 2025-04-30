@@ -1,0 +1,39 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 10,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "bluetooth", "cpu", "memory", "battery", "tray"],
+
+  "clock": {
+    "format": "{:%a %b %d, %H:%M}"
+  },
+
+  "network": {
+      "format-wifi": "  {essid}",
+      "format-ethernet": " {ifname}",
+      "format-disconnected": " Disconnected"
+  },
+
+  "bluetooth": {
+      "format": " {status}",
+      "format-disabled": " Off",
+      "format-connected": " {num_connections} connected"
+  },
+
+  "cpu": {
+    "format": "CPU: {usage}%"
+  },
+
+  "memory": {
+    "format": "RAM: {}%"
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 30
+  },
+}
