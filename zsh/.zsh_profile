@@ -1,19 +1,10 @@
 alias vim="nvim"
 alias py="python3"
 alias attach="tmux attach -d -t"
-
-export PATH="/opt/homebrew/bin:$PATH"
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+alias ff="fastfetch"
 
 export PATH=${PATH}:~/.config/scripts/
 export PATH=${PATH}:~/go/bin/
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 editor="nvim"
 
