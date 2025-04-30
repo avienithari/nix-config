@@ -43,6 +43,7 @@
                 neovim
                 nixpkgs-fmt
                 stow
+                tailscale
                 tldr
                 tmux
                 tree
@@ -120,6 +121,12 @@
                     };
                   };
                 };
+              };
+            }
+            {
+              services.tailscale = {
+                enable = true;
+                useRoutingFeatures = "client";
               };
             }
           ];
