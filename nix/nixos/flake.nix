@@ -56,6 +56,7 @@
                 unzip
                 zig
 
+                keyd
                 hyprland
                 waybar
                 wofi
@@ -105,6 +106,21 @@
             }
             {
               programs.zsh.enable = true;
+            }
+            {
+              services.keyd = {
+                enable = true;
+                keyboards = {
+                  default = {
+                    ids = [ "*" ];
+                    settings = {
+                      main = {
+                        capslock = "esc";
+                      };
+                    };
+                  };
+                };
+              };
             }
           ];
         };
