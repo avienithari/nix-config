@@ -25,123 +25,17 @@
 
           modules = [
             ./nixos/configuration.nix
+            ./modules/avien.nix
+            ./modules/gnupg.nix
+            ./modules/hyprland.nix
+            ./modules/keyd.nix
+            ./modules/packages.nix
+            ./modules/ssh.nix
+            ./modules/syncthing.nix
+            ./modules/tailscale.nix
 
-            {
-              environment.systemPackages = with pkgs; [
-                gnupg
-                pinentry-curses
-
-                acpi
-
-                _1password-gui-beta
-                brave
-                btop
-                fastfetch
-                gh
-                ghostty
-                git
-                neovim
-                nixpkgs-fmt
-                stow
-                syncthing
-                tailscale
-                tldr
-                tmux
-                tree
-
-                fzf
-                gcc
-                go
-                nodejs_23
-                python314
-                rustup
-                unzip
-                zig
-
-                keyd
-                hyprland
-                waybar
-                wofi
-
-                (waybar.overrideAttrs (oldAttrs: {
-                  mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-                }))
-              ];
-            }
             { networking.hostName = nixpkgs.lib.mkForce "magnamalo"; }
-            {
-              environment.variables = { XDG_SESSION_TYPE = "wayland"; };
-              programs.hyprland.enable = true;
-
-              xdg.portal.enable = true;
-              xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
-              security.rtkit.enable = true;
-              services.pipewire = {
-                enable = true;
-                alsa.enable = true;
-                alsa.support32Bit = true;
-                pulse.enable = true;
-                jack.enable = true;
-              };
-              fonts.packages = with pkgs; [
-                nerd-fonts.jetbrains-mono
-              ];
-            }
             { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
-            {
-              programs.gnupg.agent = {
-                enable = true;
-                pinentryPackage = pkgs.pinentry-curses;
-              };
-            }
-            {
-              services.openssh = {
-                enable = true;
-              };
-            }
-            {
-              networking.firewall.allowedTCPPorts = [ 22 ];
-            }
-            {
-              users.users.avien = {
-                shell = pkgs.zsh;
-                extraGroups = [ "audio" ];
-              };
-            }
-            {
-              programs.zsh.enable = true;
-            }
-            {
-              services.keyd = {
-                enable = true;
-                keyboards = {
-                  default = {
-                    ids = [ "*" ];
-                    settings = {
-                      main = {
-                        capslock = "esc";
-                      };
-                    };
-                  };
-                };
-              };
-            }
-            {
-              services.tailscale = {
-                enable = true;
-                useRoutingFeatures = "client";
-              };
-            }
-            {
-              services.syncthing = {
-                enable = true;
-                openDefaultPorts = true;
-                dataDir = "/home/avien";
-                group = "users";
-                user = "avien";
-              };
-            }
           ];
         };
       };
