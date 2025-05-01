@@ -24,6 +24,7 @@
     go
     nodejs_23
     python314
+    ripgrep
     rustup
     unzip
     zig
