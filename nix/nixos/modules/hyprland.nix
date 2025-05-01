@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -29,4 +29,8 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
+
+  users.users.${username} = {
+    extraGroups = [ "audio" ];
+  };
 }
