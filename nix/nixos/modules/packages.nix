@@ -2,9 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    gnupg
-    pinentry-curses
-
     acpi
 
     _1password-gui-beta
@@ -17,8 +14,6 @@
     neovim
     nixpkgs-fmt
     stow
-    syncthing
-    tailscale
     tldr
     tmux
     tree
@@ -31,14 +26,5 @@
     rustup
     unzip
     zig
-
-    keyd
-    hyprland
-    waybar
-    wofi
-
-    (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
   ];
 }

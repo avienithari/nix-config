@@ -1,6 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    hyprland
+    waybar
+    wofi
+
+    (waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
+  ];
+
   environment.variables = { XDG_SESSION_TYPE = "wayland"; };
   programs.hyprland.enable = true;
 
