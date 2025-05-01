@@ -2,8 +2,14 @@
 
 {
   environment.systemPackages = with pkgs; [
-    acpi
     _1password-gui-beta
+    acpi
     brave
+    ffmpeg-full
+    gimp
+    httrack
+    spotify
+    vlc
+    yt-dlp
   ];
 }

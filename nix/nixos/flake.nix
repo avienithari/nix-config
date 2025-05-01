@@ -30,7 +30,7 @@
             ./modules/gnupg.nix
             ./modules/hyprland.nix
             ./modules/keyd.nix
-            ./modules/packages.nix
+            ./modules/desktop-packages.nix
             ./modules/ssh.nix
             ./modules/syncthing.nix
             ./modules/tailscale.nix
