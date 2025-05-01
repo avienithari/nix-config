@@ -11,6 +11,7 @@
     ffmpeg-thumbnailer
     gimp
     httrack
+    inkscape
     spotify
     vlc
     yt-dlp
