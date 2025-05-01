@@ -8,7 +8,7 @@
     brotli
     ffmpeg-full
     ffmpeg-headless
-    ffmpeg-thumbnailer
+    ffmpegthumbnailer
     gimp
     httrack
     inkscape
