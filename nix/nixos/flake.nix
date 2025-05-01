@@ -26,6 +26,7 @@
           modules = [
             ./nixos/configuration.nix
             ./modules/avien.nix
+            ./modules/common-packages.nix
             ./modules/gnupg.nix
             ./modules/hyprland.nix
             ./modules/keyd.nix
