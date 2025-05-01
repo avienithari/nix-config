@@ -21,10 +21,14 @@
     {
       nixosConfigurations = {
         magnamalo = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit system; };
+          specialArgs = {
+            inherit system;
+            username = "avien";
+          };
 
           modules = [
             ./nixos/configuration.nix
+            ./modules/adb.nix
             ./modules/avien.nix
             ./modules/common-packages.nix
             ./modules/desktop-packages.nix
