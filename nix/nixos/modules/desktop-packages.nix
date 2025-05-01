@@ -6,6 +6,7 @@
     acpi
     brave
     brotli
+    kdePackages.dolphin
     ffmpeg-full
     ffmpeg-headless
     ffmpegthumbnailer
