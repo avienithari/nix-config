@@ -37,6 +37,7 @@
             ./modules/hyprland.nix
             ./modules/keyd.nix
             ./modules/ssh.nix
+            ./modules/steam.nix
             ./modules/syncthing.nix
             ./modules/tailscale.nix
 
