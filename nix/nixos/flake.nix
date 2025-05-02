@@ -28,6 +28,7 @@
 
           modules = [
             ./nixos/configuration.nix
+            ./machines/magnamalo.nix
             ./modules/adb.nix
             ./modules/avien.nix
             ./modules/common-packages.nix
@@ -41,7 +42,6 @@
             ./modules/syncthing.nix
             ./modules/tailscale.nix
 
-            { networking.hostName = nixpkgs.lib.mkForce "magnamalo"; }
             { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
           ];
         };
