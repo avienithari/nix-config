@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     hyprland
+    hyprlock
     waybar
     wofi
 
