@@ -6,13 +6,14 @@
     acpi
     brave
     brotli
-    kdePackages.dolphin
+    feh
     ffmpeg-full
     ffmpeg-headless
     ffmpegthumbnailer
     gimp
     httrack
     inkscape
+    kdePackages.dolphin
     spotify
     vlc
     yt-dlp
