@@ -37,12 +37,11 @@
             ./modules/gnupg.nix
             ./modules/hyprland.nix
             ./modules/keyd.nix
+            ./modules/maintenance.nix
             ./modules/ssh.nix
             ./modules/steam.nix
             ./modules/syncthing.nix
             ./modules/tailscale.nix
-
-            { nix.settings.experimental-features = [ "nix-command" "flakes" ]; }
           ];
         };
       };
