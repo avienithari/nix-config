@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ./nvim.nix ];
+
   environment.systemPackages = with pkgs; [
     bat
     btop
@@ -9,7 +11,6 @@
     gh
     ghostty
     git
-    neovim
     nixpkgs-fmt
     speedtest-cli
     stow
@@ -18,15 +19,5 @@
     tokei
     tree
     wget
-
-    fzf
-    gcc
-    go
-    nodejs_23
-    python314
-    ripgrep
-    rustup
-    unzip
-    zig
   ];
 }
