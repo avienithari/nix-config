@@ -5,6 +5,7 @@
     hypridle
     hyprland
     hyprlock
+    hyprpaper
     waybar
     wofi
 
