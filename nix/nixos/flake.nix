@@ -27,8 +27,7 @@
           };
 
           modules = [
-            ./nixos/configuration.nix
-            ./hosts/magnamalo.nix
+            ./hosts/magnamalo
             ./modules/adb.nix
             ./modules/avien.nix
             ./modules/common-packages.nix
