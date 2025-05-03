@@ -1,12 +1,20 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+with lib;
 {
-  environment.systemPackages = with pkgs; [
-    tailscale
-  ];
+  options.avien.tailscale.routingMode = mkOption {
+    type = types.str;
+    default = "client";
+  };
 
-  services.tailscale = {
-    enable = true;
-    useRoutingFeatures = "client";
+  config = {
+    environment.systemPackages = with pkgs; [
+      tailscale
+    ];
+
+    services.tailscale = {
+      enable = true;
+      useRoutingFeatures = config.avien.tailscale.routingMode;
+    };
   };
 }
