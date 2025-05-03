@@ -8,6 +8,7 @@
   outputs = { self, nixpkgs }:
     let
       system = "x86_64-linux";
+      username = "avien";
 
       pkgs = import nixpkgs {
         inherit system;
@@ -23,7 +24,7 @@
         magnamalo = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit system;
-            username = "avien";
+            inherit username;
           };
 
           modules = [ ./hosts/magnamalo ];
@@ -32,7 +33,7 @@
         rathian = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit system;
-            username = "avien";
+            inherit username;
           };
 
           modules = [ ./hosts/rathian ];
