@@ -63,6 +63,25 @@
             }
           ];
         };
+
+        magala = nix-darwin.lib.darwinSystem {
+          specialArgs = {
+            inherit username self;
+          };
+
+          modules = [
+            ./hosts/magala
+
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                user = username;
+                autoMigrate = true;
+              };
+            }
+          ];
+        };
       };
     };
 }
