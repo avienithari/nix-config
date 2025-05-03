@@ -82,19 +82,10 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-    };
-  };
-
   virtualisation.docker.enable = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
-    22
     53
     67
     80

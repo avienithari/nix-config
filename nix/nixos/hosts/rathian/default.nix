@@ -10,6 +10,7 @@
     ../../modules/gnupg.nix
     ../../modules/maintenance.nix
     ../../modules/nvim.nix
+    ../../modules/ssh.nix
     ../../modules/syncthing.nix
     ../../modules/tailscale.nix
   ];
