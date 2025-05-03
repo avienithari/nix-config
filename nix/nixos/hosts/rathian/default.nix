@@ -7,6 +7,7 @@
     ../../modules/avien.nix
     ../../modules/common-packages.nix
     ../../modules/dev-packages.nix
+    ../../modules/docker.nix
     ../../modules/gnupg.nix
     ../../modules/maintenance.nix
     ../../modules/nvim.nix
