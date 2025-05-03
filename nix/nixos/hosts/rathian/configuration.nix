@@ -53,8 +53,7 @@
   users.users.avien = {
     isNormalUser = true;
     description = "avien";
-    extraGroups = [ "networkmanager" "wheel" "docker" "adbusers" ];
-    shell = pkgs.zsh;
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [ ];
   };
 
@@ -66,49 +65,8 @@
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
-    bat
-    btop
     docker-compose
-    fastfetch
-    fd
-    gh
-    ghostty
-    git
-    gnupg
-    jq
-    luajit
-    luajitPackages.jsregexp
-    luarocks
-    neovim
-    ninja
-    nixpkgs-fmt
-    pinentry-curses # dep for gnupg
-    ripgrep
-    speedtest-cli
-    stow
-    syncthing
     tailscale
-    tldr
-    tmux
-    tokei
-    tree
-    wget
-
-    # pogo-scripts dep
-    android-tools
-    bc
-
-    # shit for nvim
-    vimPlugins.telescope-fzf-native-nvim # fzf? this does not work either
-    cmake # this does not work for fzf?
-    fzf
-    gcc
-    go
-    nodejs_23
-    python314
-    rustup
-    unzip #clangd, stylua
-    zig
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -132,31 +90,10 @@
     };
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   virtualisation.docker.enable = true;
-
-  programs.adb.enable = true;
-
-  networking.hostName = "rathian";
-  programs.zsh = {
-    enable = true;
-  };
-
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-    dataDir = "/home/avien";
-    group = "users";
-    user = "avien";
-  };
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "both";
-
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-curses;
-  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
