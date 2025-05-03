@@ -19,4 +19,6 @@
   ];
 
   networking.hostName = lib.mkForce "magnamalo";
+
+  avien.ssh.passwordAuthentication = true;
 }

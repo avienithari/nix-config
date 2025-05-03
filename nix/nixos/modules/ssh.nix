@@ -1,9 +1,27 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+with lib;
+
+let
+  cfg = config.avien.ssh;
+in
 {
-  services.openssh = {
-    enable = true;
+  options.avien.ssh = {
+    passwordAuthentication = mkOption {
+      type = types.bool;
+      default = false;
+    };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  config = {
+    services.openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = cfg.passwordAuthentication;
+        PermitRootLogin = "no";
+      };
+    };
+
+    networking.firewall.allowedTCPPorts = [ 22 ];
+  };
 }
