@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "avien.nix";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -27,6 +27,15 @@
           };
 
           modules = [ ./hosts/magnamalo ];
+        };
+
+        rathian = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            username = "avien";
+          };
+
+          modules = [ ./hosts/rathian ];
         };
       };
     };
