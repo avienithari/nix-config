@@ -60,7 +60,7 @@
                 user = username;
                 autoMigrate = true;
               };
-            };
+            }
           ];
         };
       };
