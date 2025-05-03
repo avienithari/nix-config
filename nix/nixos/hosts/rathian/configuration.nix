@@ -92,9 +92,6 @@
 
   virtualisation.docker.enable = true;
 
-  services.tailscale.enable = true;
-  services.tailscale.useRoutingFeatures = "both";
-
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
     22

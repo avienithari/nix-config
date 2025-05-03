@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./configuration.nix
     ../../modules/adb.nix
     ../../modules/avien.nix
     ../../modules/common-packages.nix
@@ -10,8 +11,10 @@
     ../../modules/maintenance.nix
     ../../modules/nvim.nix
     ../../modules/syncthing.nix
-    ./configuration.nix
+    ../../modules/tailscale.nix
   ];
 
   networking.hostName = lib.mkForce "rathian";
+
+  avien.tailscale.routingMode = "both";
 }
