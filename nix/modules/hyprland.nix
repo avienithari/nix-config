@@ -9,6 +9,7 @@
     hyprpaper
     slurp
     waybar
+    wl-clipboard
     wofi
 
     (waybar.overrideAttrs (oldAttrs: {
