@@ -1,46 +1,64 @@
+@define-color foreground #eeeeee;
+@define-color foreground-inactive #aaaaaa;
+@define-color background #000000;
+
 * {
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 14px;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
 }
 
-window {
-    background-color: #1e1e2e;
-    color: #cdd6f4;
+#waybar {
+    color: @foreground;
+    background-color: @background;
+}
+
+#workspaces button.empty {
+    color: @foreground-inactive;
+}
+
+#memory,
+#cpu {
+    padding-right: 11px;
+}
+
+#workspaces {
+    margin: 0 5px;
 }
 
 #workspaces button {
     padding: 0 10px;
+    margin: 0 2px;
     border: none;
+    border-radius: 5px;
     background: transparent;
-    color: #89b4fa;
+    color: #bbbbbb;
 }
 
 #workspaces button.active {
-    color: #f38ba8;
+    background-color: rgba(33, 204, 255, 0.933);
+    color: #2e3440;
 }
 
-#clock {
-    color: #fab387;
-    font-weight: bold;
+.modules-center {
+    margin-left: -6px;
 }
 
-#cpu,
-#memory,
-#network,
-#bluetooth,
-#battery,
-#custom-pass {
-    padding: 0 10px;
-}
-
-#battery.charging {
-    color: #a6e3a1;
+#battery.warning {
+    color: orange;
 }
 
 #battery.critical {
-    color: #f38ba8;
+    color: red;
 }
 
+#wireplumber,
+#battery,
+#backlight,
+#language,
+#network,
+#bluetooth,
 #tray {
-    margin-right: 5px;
+    padding-right: 1em
 }

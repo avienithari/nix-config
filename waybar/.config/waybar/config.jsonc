@@ -1,0 +1,106 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 5,
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+        "clock#date",
+        "custom/nixos-logo",
+        "clock#time"
+    ],
+
+    "modules-right": [
+        "memory",
+        "cpu",
+        "wireplumber",
+        "battery",
+        "backlight",
+        "network",
+        "bluetooth",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "<span size='larger'>{icon}</span>",
+        "on-click": "activate",
+        "sort-by-number": true,
+    },
+
+    "clock#date": {
+        "format": "{:%d %B}",
+        "interval": 60
+    },
+
+    "custom/nixos-logo": {
+        "format": " ",
+    },
+
+    "clock#time": {
+        "format": "{:%I:%M}",
+        "interval": 1
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "\uf4bc  {percentage}%"
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "\uf2db  {usage}%",
+        "tooltip": true
+    },
+
+    "wireplumber": {
+        "format": "\udb81\udd7e  {volume}%",
+        "max-volume": 100,
+        "scroll-step": 5
+    },
+
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10,
+        },
+        "interval": 1,
+        "format": "{icon}  {capacity}%",
+        "format-charging": "<span color='#00FF00'>\uf0e7  {capacity}%</span>",
+        "format-icons": {
+            "discharging": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+        },
+    },
+
+    "backlight": {
+        "format": "\udb80\udcdf  {percent}%"
+    },
+
+    "network": {
+        "format": "",
+        "format-ethernet": "\udb83\udc9d",
+        "format-wifi": "{icon}",
+        "format-disconnected": "\udb83\udc9c",
+        "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+
+    "bluetooth": {
+        "format": "\udb80\udcaf",
+        "format-disabled": "\udb80\udcb2",
+        "format-connected": "\udb80\udcb1",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 16
+    }
+}
