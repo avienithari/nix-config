@@ -2,10 +2,12 @@
 
 {
   environment.systemPackages = with pkgs; [
+    grim
     hypridle
     hyprland
     hyprlock
     hyprpaper
+    slurp
     waybar
     wofi
 
@@ -27,6 +29,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    wireplumber.enable = true;
   };
 
   fonts.packages = with pkgs; [
