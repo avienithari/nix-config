@@ -5,7 +5,7 @@
   "spacing": 10,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["network", "bluetooth", "cpu", "memory", "battery", "tray"],
+  "modules-right": ["network", "bluetooth", "pulseaudio", "cpu", "memory", "battery", "tray"],
 
   "clock": {
     "format": "{:%a %b %d, %H:%M}"
@@ -21,6 +21,16 @@
       "format": " {status}",
       "format-disabled": " Off",
       "format-connected": " {num_connections} connected"
+  },
+
+  "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": " muted",
+      "scroll-step": 5,
+      "on-click": "pavucontrol",
+      "format-icons": {
+        "default": ["", "", ""]
+      }
   },
 
   "cpu": {
