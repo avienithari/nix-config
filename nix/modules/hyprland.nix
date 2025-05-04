@@ -8,6 +8,7 @@
     hyprland
     hyprlock
     hyprpaper
+    playerctl
     slurp
     waybar
     wl-clipboard
