@@ -1,0 +1,11 @@
+prompt = Run:
+width = 600
+height = 350
+show = drun
+columns = 1
+allow-markup = true
+insensitive = true
+allow-images = true
+hide-scroll = true
+term = foot
+location = center
