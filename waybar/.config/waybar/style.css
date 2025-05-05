@@ -41,8 +41,12 @@
     color: #2e3440;
 }
 
+#clock.date {
+    margin-right: 5px;
+}
+
 .modules-center {
-    margin-left: -6px;
+    margin-left: -8px;
 }
 
 #battery.warning {
