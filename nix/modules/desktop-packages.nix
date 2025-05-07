@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    _1password-gui-beta
+    _1password-gui
     acpi
     brave
     brotli
