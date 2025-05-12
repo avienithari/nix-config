@@ -10,9 +10,7 @@
     ffmpeg-full
     ffmpeg-headless
     ffmpegthumbnailer
-    gimp
     httrack
-    inkscape
     kdePackages.dolphin
     spotify
     vlc
