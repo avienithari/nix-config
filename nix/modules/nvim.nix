@@ -7,7 +7,7 @@
     go
     neovim
     nixd
-    nodejs_23
+    nodejs_24
     python314
     ripgrep
     rustup
