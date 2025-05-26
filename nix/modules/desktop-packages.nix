@@ -12,6 +12,7 @@
     ffmpegthumbnailer
     httrack
     kdePackages.dolphin
+    rpi-imager
     spotify
     vlc
     yt-dlp
