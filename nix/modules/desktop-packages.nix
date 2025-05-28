@@ -6,6 +6,7 @@
     acpi
     brave
     brotli
+    discord
     feh
     ffmpeg-full
     ffmpeg-headless
