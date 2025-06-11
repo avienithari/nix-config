@@ -28,7 +28,6 @@
     inkscape
     jq
     keycastr
-    lazygit
     luajit
     luajitPackages.jsregexp
     neovim

@@ -6,7 +6,6 @@
     cmake
     clisp
     jq
-    lazygit
     lua
     luajit
     luajitPackages.jsregexp
