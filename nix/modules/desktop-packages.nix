@@ -11,6 +11,7 @@
     ffmpeg-full
     ffmpeg-headless
     ffmpegthumbnailer
+    google-chrome
     httrack
     kdePackages.dolphin
     rpi-imager
