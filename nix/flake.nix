@@ -24,6 +24,15 @@
     in
     {
       nixosConfigurations = {
+        barioth = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit username;
+          };
+
+          modules = [ ./hosts/barioth ];
+        };
+
         magnamalo = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit system;
