@@ -1,26 +1,12 @@
-@define-color foreground #eeeeee;
-@define-color foreground-inactive #aaaaaa;
-@define-color background #000000;
-
 * {
-    font-family: JetBrainsMono Nerd Font;
+    border: none;
+    border-radius: 0;
+    color: white;
     font-size: 16px;
-    padding: 0;
-    margin: 0;
 }
 
 #waybar {
-    color: @foreground;
-    background-color: @background;
-}
-
-#workspaces button.empty {
-    color: @foreground-inactive;
-}
-
-#memory,
-#cpu {
-    padding-right: 11px;
+    background-color: black;
 }
 
 #workspaces {
@@ -28,41 +14,34 @@
 }
 
 #workspaces button {
-    padding: 0 10px;
-    margin: 0 2px;
-    border: none;
-    border-radius: 5px;
-    background: transparent;
     color: #bbbbbb;
+    background: transparent;
 }
 
 #workspaces button.active {
-    background-color: rgba(33, 204, 255, 0.933);
     color: #2e3440;
+    background-color: #3e8fb0;
 }
 
-#clock.date {
-    margin-right: 5px;
-}
-
-.modules-center {
-    margin-left: -8px;
-}
-
+#disk.warning,
 #battery.warning {
     color: orange;
 }
 
+#disk.critical,
 #battery.critical {
     color: red;
 }
 
+#tray,
+#disk,
+#memory,
+#cpu,
 #wireplumber,
 #battery,
 #backlight,
-#language,
 #network,
-#bluetooth,
-#tray {
-    padding-right: 1em
+#network,
+#bluetooth {
+    padding: 0 5px;
 }
