@@ -13,7 +13,6 @@
     ffmpegthumbnailer
     google-chrome
     httrack
-    kdePackages.dolphin
     rpi-imager
     spotify
     vlc

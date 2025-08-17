@@ -37,6 +37,12 @@
     wireplumber.enable = true;
   };
 
+  programs.thunar.enable = true;
+  services = {
+    gvfs.enable = true;
+    tumbler.enable = true;
+  };
+
   users.users.${username} = {
     extraGroups = [ "audio" ];
   };
