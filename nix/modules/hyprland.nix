@@ -10,6 +10,7 @@
     hyprlock
     hyprpaper
     playerctl
+    rofi
     slurp
     waybar
     wl-clipboard

@@ -1,0 +1,65 @@
+@theme "~/.config/rofi/theme.rasi"
+
+configuration {
+  font:                     "JetBrainsMono Nerd Font 8";
+  hover-select:             true;
+  me-select-entry:          "MousePrimary";
+  me-accept-entry:          "!MousePrimary";
+}
+
+window {
+  location:                 northeast;
+  anchor:                   north;
+  x-offset:                 -150px;
+  y-offset:                 60px;
+  width:                    250px;
+  border:                   3px;
+  border-radius:            10px;
+  border-color:             @bg;
+  background-color:         @bg;
+  children:                 [ mainbox ];
+}
+
+mainbox {
+  spacing:                  0;
+  background-color:         @bg;
+  text-color:               @fgd;
+  children:                 [ textbox-custom, listview ];
+}
+
+textbox-custom {
+  font:                     "JetBrainsMono Nerd Font Bold 2";
+  horizontal-align:         0.5;
+  padding:                  0;
+  expand:                   false;
+  background-color:         @selected-background;
+  text-color:               @selected-active-background;
+  expand:                   false;
+}
+
+listview {
+  border:                   2px 0 0 0;
+  border-radius:            8px;
+  border-color:             @pur;
+  lines:                    6;
+  padding:                  6px;
+  background-color:         @bg;
+}
+
+element {
+  padding:                  6px;
+  cursor:                   pointer;
+  background-color:         inherit;
+  text-color:               @yel;
+}
+element selected.normal {
+  border-radius:            6px;
+  background-color:         @selected-background;
+  text-color:               @yel;
+}
+element-text {
+  padding:                  0 6px;
+  cursor:                   inherit;
+  background-color:         inherit;
+  text-color:               inherit;
+}

@@ -127,6 +127,7 @@
       },
 
     "custom/powermenu": {
-        "format": " "
+        "format": " ",
+        "on-click": "~/.config/waybar/powermenu.sh"
     }
 }
