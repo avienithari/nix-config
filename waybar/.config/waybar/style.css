@@ -33,6 +33,10 @@
     color: red;
 }
 
+#battery.charging {
+    color: #22dd22;
+}
+
 #tray,
 #disk,
 #memory,
