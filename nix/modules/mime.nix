@@ -2,7 +2,7 @@
 
 {
   xdg.mime.defaultApplications = {
-    "application/pdf" = "brave-browser.desktop";
+    "application/pdf" = "google-chrome.desktop";
     "video/mp4" = "vlc.desktop";
   };
 }
