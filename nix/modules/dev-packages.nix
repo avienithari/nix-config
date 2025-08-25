@@ -3,8 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     argparse
-    cmake
     clisp
+    cmake
     jq
     lua
     luajit
@@ -12,5 +12,6 @@
     luarocks
     ninja
     php
+    starship
   ];
 }
