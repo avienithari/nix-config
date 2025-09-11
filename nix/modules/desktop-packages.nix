@@ -6,6 +6,7 @@
     acpi
     brave
     brotli
+    calcure
     discord
     feh
     ffmpeg-full
