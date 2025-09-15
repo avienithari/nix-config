@@ -4,15 +4,16 @@
   fonts = {
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
+      ubuntu_font_family
     ];
 
     fontconfig = {
       enable = true;
 
       defaultFonts = {
-        serif = [ "JetBrainsMono Nerd Font" ];
-        sansSerif = [ "JetBrainsMono Nerd Font" ];
-        monospace = [ "JetBrainsMono Nerd Font" ];
+        serif = [ "Ubuntu Regular" ];
+        sansSerif = [ "Ubuntu Regular" ];
+        monospace = [ "Ubuntu Mono Regular" ];
       };
     };
   };
