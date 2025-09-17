@@ -107,7 +107,7 @@
     },
 
     "network": {
-        "format-wifi": "󰖩 {signalStrength}%",
+        "format-wifi": "󰖩",
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
