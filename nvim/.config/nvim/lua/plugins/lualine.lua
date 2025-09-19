@@ -6,6 +6,12 @@ return {
     local lazy_status_config = require("lazy.status")
 
     lualine_config.setup({
+      options = {
+        component_separators = {
+          left = "",
+          right = "",
+        },
+      },
       sections = {
         lualine_x = {
           {
