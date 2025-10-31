@@ -15,6 +15,7 @@
     google-chrome
     httrack
     rpi-imager
+    signal-desktop-bin
     spotify
     vlc
     yt-dlp
