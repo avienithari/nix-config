@@ -4,7 +4,7 @@
   fonts = {
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
-      ubuntu_font_family
+      ubuntu-classic
     ];
 
     fontconfig = {
