@@ -23,7 +23,6 @@
         "backlight",
         "network",
         "bluetooth",
-        "custom/powermenu"
     ],
 
     "hyprland/workspaces": {
@@ -129,8 +128,4 @@
         "tooltip-format-connected":"{device_enumerate}"
       },
 
-    "custom/powermenu": {
-        "format": " ",
-        "on-click": "~/.config/waybar/powermenu.sh"
-    }
 }
