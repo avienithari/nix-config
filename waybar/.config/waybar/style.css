@@ -1,3 +1,6 @@
+@define-color blue #3e8fb0;
+@define-color green #22dd22;
+
 * {
     font-size: 16px;
     font-family: "JetBrainsMono Nerd Font", monospace;
@@ -16,15 +19,11 @@ window#waybar {
 
 #workspaces button.active {
     color: #000000;
-    background-color: #3e8fb0;
-}
-
-#workspaces button.empty {
-    color: white;
+    background-color: @blue;
 }
 
 #workspaces button:not(.empty):not(.focused) {
-    border-bottom: 3px solid #3e8fb0;
+    border-bottom: 3px solid @blue;
 }
 
 #workspaces button.urgent {
@@ -43,17 +42,16 @@ window#waybar {
 }
 
 #battery.charging {
-    color: #22dd22;
+    color: @green;
 }
 
 #tray,
-#disk,
-#memory,
 #cpu,
+#memory,
+#disk,
 #wireplumber,
 #battery,
 #backlight,
-#network,
 #network,
 #bluetooth {
     padding: 0 5px;

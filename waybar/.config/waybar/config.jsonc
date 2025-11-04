@@ -3,7 +3,7 @@
     "position": "top",
     "height": 36,
     "mode": "dock",
-    "spacing": 5,
+    "spacing": 4,
 
     "modules-left": [
         "hyprland/workspaces"
@@ -15,21 +15,28 @@
 
     "modules-right": [
         "tray",
-        "disk",
-        "memory",
+        "custom/separator",
         "cpu",
+        "custom/separator",
+        "memory",
+        "custom/separator",
+        "disk",
+        "custom/separator",
         "wireplumber",
+        "custom/separator",
         "battery",
+        "custom/separator",
         "backlight",
+        "custom/separator",
         "network",
-        "bluetooth",
+        "bluetooth"
     ],
 
     "hyprland/workspaces": {
         "on-click": "activate",
         "sort-by-number": true,
         "persistent-workspaces": {
-            "*": 5
+            "*": 9
         },
     },
 
@@ -56,27 +63,25 @@
         "spacing": 8
     },
 
-    "disk": {
-        "interval": 600,
-        "format": " {percentage_used}%",
-        "path": "/",
-        "tooltip": true,
-        "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
-        "states": {
-            "warning": 80,
-            "critical": 90,
-        },
+    "cpu": {
+        "interval": 5,
+        "format": "CPU: {usage}%",
+        "tooltip": true
     },
 
     "memory": {
         "interval": 5,
-        "format": " {percentage}%",
+        "format": "Mem: {used}GiB",
     },
 
-    "cpu": {
-        "interval": 5,
-        "format": " {usage}%",
-        "tooltip": true
+    "disk": {
+        "interval": 600,
+        "format": "Disk: {free}",
+        "path": "/",
+        "states": {
+            "warning": 80,
+            "critical": 90,
+        },
     },
 
     "wireplumber": {
@@ -110,8 +115,6 @@
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip": true,
-        "tooltip-format": "{ifname}: {ipaddr}"
     },
 
     "bluetooth": {
@@ -126,6 +129,10 @@
         },
         "on-click": "blueman-manager",
         "tooltip-format-connected":"{device_enumerate}"
-      },
+    },
 
+    "custom/separator": {
+        "format": "|",
+        "interval": 0
+    }
 }
