@@ -1,27 +1,35 @@
 * {
-    border: none;
-    border-radius: 0;
-    color: white;
     font-size: 16px;
     font-family: "JetBrainsMono Nerd Font", monospace;
 }
 
-#waybar {
+window#waybar {
     background-color: black;
-}
-
-#workspaces {
-    margin: 0 5px;
+    color: white;
 }
 
 #workspaces button {
-    color: #bbbbbb;
+    padding: 0 8px;
+    color: white;
     background: transparent;
 }
 
 #workspaces button.active {
-    color: #2e3440;
+    color: #000000;
     background-color: #3e8fb0;
+}
+
+#workspaces button.empty {
+    color: white;
+}
+
+#workspaces button:not(.empty):not(.focused) {
+    border-bottom: 3px solid #3e8fb0;
+}
+
+#workspaces button.urgent {
+    color: orange;
+    font-weight: bold;
 }
 
 #disk.warning,
