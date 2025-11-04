@@ -16,6 +16,7 @@
     httrack
     rpi-imager
     signal-desktop-bin
+    slack
     spotify
     vlc
     yt-dlp
