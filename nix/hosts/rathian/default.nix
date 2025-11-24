@@ -34,5 +34,5 @@
     ];
   };
 
-  avien.tailscale.routingMode = "server";
+  avien.tailscale.routingMode = "both";
 }
