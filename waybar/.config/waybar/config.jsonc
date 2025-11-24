@@ -24,11 +24,11 @@
         "custom/separator",
         "wireplumber",
         "custom/separator",
-        "battery",
-        "custom/separator",
-        "backlight",
-        "custom/separator",
-        "network",
+        // "battery",
+        // "custom/separator",
+        // "backlight",
+        // "custom/separator",
+        // "network",
         "bluetooth"
     ],
 
