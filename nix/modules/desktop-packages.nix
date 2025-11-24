@@ -14,7 +14,6 @@
     ffmpegthumbnailer
     google-chrome
     httrack
-    rpi-imager
     signal-desktop-bin
     slack
     spotify
