@@ -60,7 +60,8 @@
     },
 
     "tray": {
-        "spacing": 8
+        "spacing": 8,
+        "reverse-direction": true
     },
 
     "cpu": {
