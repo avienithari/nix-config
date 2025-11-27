@@ -17,6 +17,7 @@
     signal-desktop-bin
     slack
     spotify
+    tailscale-systray
     vlc
     yt-dlp
   ];
