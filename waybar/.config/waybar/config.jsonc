@@ -28,7 +28,7 @@
         // "custom/separator",
         // "backlight",
         // "custom/separator",
-        // "network",
+        "network",
         "bluetooth"
     ],
 
