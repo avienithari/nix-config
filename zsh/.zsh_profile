@@ -6,6 +6,6 @@ alias ff="fastfetch"
 export PATH=${PATH}:~/.config/scripts/
 export PATH=${PATH}:~/go/bin/
 
-editor="nvim"
+export EDITOR="nvim"
 
 bindkey -s ^f "sessionizer\n"
