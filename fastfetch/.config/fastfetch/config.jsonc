@@ -1,23 +1,98 @@
 {
-  "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "swap",
-    "disk",
-    "locale",
-    "break",
-    "colors"
-  ]
+   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+		"source": "~/.config/fastfetch/logo.png",
+		"width": 34,
+		"height": 16,
+        "padding": {
+			"left": 2
+        }
+    },
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        {
+            "key": "{#39}╭───────────╮",
+            "type": "custom"
+        },
+        {
+            "key": "{#39}│ {#31} user    {#39}│",
+            "type": "title",
+            "format": "{1}"
+        },
+        {
+            "key": "{#39}│ {#32}󰇅 host    {#39}│",
+            "type": "title",
+            "format": "{2}"
+        },
+        {
+            "key": "{#39}│ {#33}󰟾 distro  {#39}│",
+            "type": "os",
+			"format": "{3}"
+        },
+        {
+            "key": "{#39}│ {#34} kernel  {#39}│",
+            "type": "kernel",
+			"format": "{1} {2}"
+        },
+        {
+            "key": "{#39}│ {#35}󰅐 uptime  {#39}│",
+            "type": "uptime",
+			"format": "{1} Days {2} Hrs {3} Mins"
+        },
+        {
+            "key": "{#39}│ {#36}󰏖 pkgs    {#39}│",
+            "type": "packages"
+        },
+        {
+            "key": "{#39}│ {#31}󰇄 display {#39}│",
+            "type": "display"
+        },
+        {
+            "key": "{#39}│ {#32} term    {#39}│",
+            "type": "terminal",
+			"format": "{5}"
+        },
+        {
+            "key": "{#39}│ {#33} cpu     {#39}│",
+            "type": "cpu"
+        },
+        {
+            "key": "{#39}│ {#34}󰢮 gpu     {#39}│",
+            "type": "gpu"
+        },
+        {
+            "key": "{#39}│ {#35} shell   {#39}│",
+            "type": "shell",
+			"format": "{6}"
+        },
+        {
+            "key": "{#39}│ {#36} memory  {#39}│",
+            "type": "memory",
+        },
+        {
+            "key": "{#39}│ {#31}󰉉 disk    {#39}│",
+            "type": "disk",
+            "folders": "/",
+        },
+        {
+            "key": "{#39}│ {#32}󰩟 network {#39}│",
+            "type": "localip",
+            "format": "{1}"
+        },
+        {
+            "key": "{#39}├───────────┤",
+            "type": "custom"
+        },
+        {
+            "key": "{#39}│ {#39} colors  {#39}│",
+            "type": "colors",
+            "symbol": "circle"
+        },
+        {
+            "key": "{#39}╰───────────╯",
+            "type": "custom"
+        }
+    ]
 }

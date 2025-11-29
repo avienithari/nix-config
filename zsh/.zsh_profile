@@ -1,7 +1,14 @@
 alias vim="nvim"
 alias py="python3"
 alias attach="tmux attach -d -t"
-alias ff="fastfetch"
+
+ff() {
+    if [[ -n "$TMUX" ]]; then
+        fastfetch -c ~/.config/fastfetch/tmux-conf.jsonc "$@"
+    else
+        fastfetch "$@"
+    fi
+}
 
 export PATH=${PATH}:~/.config/scripts/
 export PATH=${PATH}:~/go/bin/
