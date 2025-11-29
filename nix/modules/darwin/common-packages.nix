@@ -22,6 +22,7 @@
     fzf
     gd
     gimp
+    gh
     gnupg
     gnutls
     go
