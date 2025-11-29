@@ -37,6 +37,7 @@
     nodejs_24
     php
     ripgrep
+    slack
     speedtest-cli
     spotify
     stow
