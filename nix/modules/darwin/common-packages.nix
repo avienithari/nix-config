@@ -46,6 +46,7 @@
     tree
     virtualenv
     wget
+    yazi
     yt-dlp
     zig
   ];
