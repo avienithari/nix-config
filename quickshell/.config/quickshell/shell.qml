@@ -71,5 +71,23 @@ PanelWindow {
             Layout.fillWidth: true
         }
 
+        Text {
+            id: clock
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            color: root.white
+            font {
+                family: root.fontFamily
+                pixelSize: root.fontSize
+            }
+
+            text: Qt.formatDateTime(new Date(), "hh:mm")
+            Timer {
+                interval: 1000
+                running: true
+                repeat: true
+                onTriggered: clock.text = Qt.formatDateTime(new Date(), "hh:mm")
+            }
+        }
     }
 }
