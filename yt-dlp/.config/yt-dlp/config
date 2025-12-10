@@ -1,5 +1,5 @@
 -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]
---output "~/Movies/tmp/%(title)s.%(ext)s"
+--output "~/Downloads/%(title)s.%(ext)s"
 --merge-output-format mp4
 --embed-metadata
 --embed-thumbnail
