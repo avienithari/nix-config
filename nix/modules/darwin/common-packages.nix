@@ -21,7 +21,6 @@
     ffmpegthumbnailer
     fzf
     gd
-    gimp
     gh
     gnupg
     gnutls
