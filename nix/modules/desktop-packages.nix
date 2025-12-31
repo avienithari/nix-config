@@ -7,6 +7,7 @@
     brave
     brotli
     calcure
+    deluge
     discord
     feh
     ffmpeg-full
