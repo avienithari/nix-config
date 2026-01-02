@@ -12,6 +12,5 @@
     luarocks
     ninja
     php
-    starship
   ];
 }
