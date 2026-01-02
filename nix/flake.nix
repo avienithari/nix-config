@@ -50,6 +50,15 @@
 
           modules = [ ./hosts/rathian ];
         };
+
+        zinogre = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit username;
+          };
+
+          modules = [ ./hosts/zinogre ];
+        };
       };
 
       darwinConfigurations = {
