@@ -6,7 +6,6 @@
     acpi
     brave
     brotli
-    calcure
     deluge
     discord
     feh
