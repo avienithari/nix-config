@@ -11,7 +11,6 @@
     brave
     brotli
     btop
-    calcure
     clisp
     cmake
     fastfetch
