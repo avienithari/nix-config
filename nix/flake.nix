@@ -33,6 +33,15 @@
           modules = [ ./hosts/barioth ];
         };
 
+        bazelgeuse = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit username;
+          };
+
+          modules = [ ./hosts/bazelgeuse ];
+        };
+
         magnamalo = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit system;
