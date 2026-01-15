@@ -5,7 +5,6 @@
     bibata-cursors
     brightnessctl
     grim
-    hypridle
     hyprland
     hyprlock
     hyprpaper
