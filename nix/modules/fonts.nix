@@ -14,20 +14,9 @@
       enable = true;
 
       defaultFonts = {
-        serif = [
-          "Ubuntu Regular"
-          "Noto Serif CJK JP"
-          "Noto Serif CJK SC"
-        ];
-        sansSerif = [
-          "Ubuntu Regular"
-          "Noto Sans CJK JP"
-          "Noto Sans CJK SC"
-        ];
-        monospace = [
-          "Ubuntu Mono Regular"
-          "Noto Sans Mono CJK JP"
-        ];
+        serif = [ "Ubuntu Regular" ];
+        sansSerif = [ "Ubuntu Regular" ];
+        monospace = [ "Ubuntu Mono Regular" ];
       };
     };
   };
