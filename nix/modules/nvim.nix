@@ -1,5 +1,25 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
+let
+  tooling = with pkgs; [
+    bash-language-server
+    clang-analyzer
+    docker-language-server
+    gofumpt
+    goimports-reviser
+    golangci-lint-langserver
+    gopls
+    htmlhint
+    htmx-lsp2
+    lua-language-server
+    pylint
+    pyright
+    rust-analyzer
+    stylua
+    vim-language-server
+    zls
+  ];
+in
 {
   environment.systemPackages = with pkgs; [
     fzf
@@ -15,5 +35,5 @@
     tree-sitter
     unzip
     zig
-  ];
+  ] ++ tooling;
 }
