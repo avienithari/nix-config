@@ -5,6 +5,7 @@
     ./configuration.nix
     ../../modules/adb.nix
     ../../modules/avien.nix
+    ../../modules/bloat.nix
     ../../modules/bluetooth.nix
     ../../modules/common-packages.nix
     ../../modules/desktop-packages.nix
