@@ -16,6 +16,7 @@
     ../../modules/maintenance.nix
     ../../modules/mime.nix
     ../../modules/mullvad.nix
+    ../../modules/services.nix
     ../../modules/ssh.nix
     ../../modules/steam.nix
     ../../modules/syncthing.nix
