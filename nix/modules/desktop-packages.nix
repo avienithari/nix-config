@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -13,7 +13,6 @@
     ffmpeg-headless
     ffmpegthumbnailer
     google-chrome
-    httrack
     signal-desktop-bin
     slack
     spotify
