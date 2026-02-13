@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -10,6 +10,7 @@
     ../../modules/dev-packages.nix
     ../../modules/docker.nix
     ../../modules/gnupg.nix
+    ../../modules/locale.nix
     ../../modules/maintenance.nix
     ../../modules/nvim.nix
     ../../modules/ssh.nix

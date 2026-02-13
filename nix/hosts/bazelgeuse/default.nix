@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -14,6 +14,7 @@
     ../../modules/gnupg.nix
     ../../modules/hyprland.nix
     ../../modules/keyd.nix
+    ../../modules/locale.nix
     ../../modules/maintenance.nix
     ../../modules/mime.nix
     ../../modules/mullvad.nix
