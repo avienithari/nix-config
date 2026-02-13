@@ -6,9 +6,13 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nix-darwin, nix-homebrew }:
+  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, home-manager }:
     let
       system = "x86_64-linux";
       username = "avien";
@@ -39,7 +43,21 @@
             inherit username;
           };
 
-          modules = [ ./hosts/bazelgeuse ];
+          modules = [
+            ./hosts/bazelgeuse
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.${username} = {
+                imports = [
+                  ./modules/home
+                ];
+              };
+            }
+          ];
         };
 
         magnamalo = nixpkgs.lib.nixosSystem {
@@ -48,7 +66,21 @@
             inherit username;
           };
 
-          modules = [ ./hosts/magnamalo ];
+          modules = [
+            ./hosts/magnamalo
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.${username} = {
+                imports = [
+                  ./modules/home
+                ];
+              };
+            }
+          ];
         };
 
         rathian = nixpkgs.lib.nixosSystem {
