@@ -13,7 +13,7 @@
     ffmpeg-headless
     ffmpegthumbnailer
     google-chrome
-    signal-desktop-bin
+    signal-desktop
     slack
     spotify
     tailscale-systray
