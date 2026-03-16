@@ -12,7 +12,7 @@ return {
 
     telescope_config.setup({
       defaults = {
-        file_ingnore_patterns = {
+        file_ignore_patterns = {
           "node%_modules/*",
           ".yarn/*",
           ".idea/*",
