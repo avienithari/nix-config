@@ -20,6 +20,4 @@
   networking = {
     hostName = lib.mkForce "lagombi";
   };
-
-  avien.ssh.passwordAuthentication = true;
 }
