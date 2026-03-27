@@ -60,6 +60,15 @@
           ];
         };
 
+        lagombi = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit username;
+          };
+
+          modules = [ ./hosts/lagombi ];
+        };
+
         magnamalo = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit system;
