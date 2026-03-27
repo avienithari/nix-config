@@ -15,6 +15,7 @@
     ../../modules/nvidia.nix
     ../../modules/ssh.nix
     ../../modules/syncthing.nix
+    ../../modules/tailscale.nix
   ];
 
   networking = {
