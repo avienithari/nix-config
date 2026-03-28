@@ -5,15 +5,16 @@
     ./configuration.nix
     ../../modules/adb.nix
     ../../modules/avien.nix
+    ../../modules/bloat.nix
     ../../modules/bluetooth.nix
     ../../modules/common-packages.nix
     ../../modules/desktop-packages.nix
     ../../modules/dev-packages.nix
     ../../modules/fonts.nix
     ../../modules/gnome.nix
-    ../../modules/nvidia.nix
     ../../modules/gnupg.nix
     ../../modules/maintenance.nix
+    ../../modules/nvidia.nix
     ../../modules/ssh.nix
     ../../modules/steam.nix
     ../../modules/syncthing.nix
