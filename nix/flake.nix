@@ -28,6 +28,29 @@
     in
     {
       nixosConfigurations = {
+        arzuros = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system;
+            inherit username;
+          };
+
+          modules = [
+            ./hosts/arzuros
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.${username} = {
+                imports = [
+                  ./modules/home
+                ];
+              };
+            }
+          ];
+        };
+
         barioth = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit system;
@@ -58,15 +81,6 @@
               };
             }
           ];
-        };
-
-        lagombi = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit system;
-            inherit username;
-          };
-
-          modules = [ ./hosts/lagombi ];
         };
 
         magnamalo = nixpkgs.lib.nixosSystem {
