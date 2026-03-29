@@ -19,3 +19,4 @@ _pycache_
 compile_commands.json
 *.db
 *testies*
+.stfolder
