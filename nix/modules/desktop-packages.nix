@@ -13,6 +13,7 @@
     ffmpeg-headless
     ffmpegthumbnailer
     google-chrome
+    kronometer
     signal-desktop
     slack
     spotify
