@@ -14,6 +14,7 @@
     ffmpegthumbnailer
     google-chrome
     kronometer
+    puddletag
     signal-desktop
     slack
     spotify
