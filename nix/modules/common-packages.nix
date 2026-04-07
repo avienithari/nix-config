@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ./nvim.nix ];
@@ -11,6 +11,7 @@
     gh
     ghostty
     git
+    ncdu
     nixpkgs-fmt
     speedtest-cli
     stow
