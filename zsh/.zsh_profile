@@ -10,6 +10,32 @@ ff() {
     fi
 }
 
+ytd() {
+    local mode="$1"
+    shift
+
+    case "$mode" in
+        audio)
+            command yt-dlp \
+                --format "bestaudio" \
+                -x \
+                --audio-format flac \
+                "$@"
+            ;;
+        video)
+            command yt-dlp \
+                --format "bestvideo[ext=mp4][vcodec^=avc]+bestaudio[ext=m4a]/best[ext=mp4]/best" \
+                --merge-output-format mp4 \
+                --remux-video mp4 \
+                "$@"
+            ;;
+        *)
+            echo "Usage:\nytd audio <url>\nytd video <url>"
+            return 1
+            ;;
+        esac
+}
+
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
