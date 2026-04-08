@@ -20,4 +20,5 @@ compile_commands.json
 *.db
 *testies*
 .stfolder
+*sync-conflict*
 secrets
