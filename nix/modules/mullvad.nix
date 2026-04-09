@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   services = {
     resolved.enable = true;
     mullvad-vpn = {
       enable = true;
-      package = pkgs.mullvad-vpn;
+      package = pkgs.mullvad;
     };
   };
 }
