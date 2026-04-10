@@ -20,6 +20,7 @@ return {
         "bash",
         "c",
         "dockerfile",
+        "gitcommit",
         "go",
         "javascript",
         "lua",
