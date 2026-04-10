@@ -19,6 +19,7 @@ return {
       local ensure_installed = {
         "bash",
         "c",
+        "csv",
         "dockerfile",
         "gitcommit",
         "go",
