@@ -41,10 +41,15 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                vars = {
+                  class = "laptop";
+                };
+              };
 
               home-manager.users.${username} = {
                 imports = [
-                  ./modules/home/laptop.nix
+                  ./modules/home
                 ];
               };
             }
@@ -73,10 +78,15 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                vars = {
+                  class = "desktop";
+                };
+              };
 
               home-manager.users.${username} = {
                 imports = [
-                  ./modules/home/workstation.nix
+                  ./modules/home
                 ];
               };
             }
@@ -96,10 +106,15 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                vars = {
+                  class = "laptop";
+                };
+              };
 
               home-manager.users.${username} = {
                 imports = [
-                  ./modules/home/laptop.nix
+                  ./modules/home
                 ];
               };
             }
