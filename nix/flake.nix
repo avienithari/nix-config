@@ -44,7 +44,7 @@
 
               home-manager.users.${username} = {
                 imports = [
-                  ./modules/home/workstation.nix
+                  ./modules/home/laptop.nix
                 ];
               };
             }
@@ -99,7 +99,7 @@
 
               home-manager.users.${username} = {
                 imports = [
-                  ./modules/home/workstation.nix
+                  ./modules/home/laptop.nix
                 ];
               };
             }
