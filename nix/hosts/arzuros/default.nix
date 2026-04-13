@@ -9,6 +9,7 @@
     ../../modules/fonts.nix
     ../../modules/gnupg.nix
     ../../modules/hyprland.nix
+    ../../modules/keyd.nix
     ../../modules/maintenance.nix
     ../../modules/nvidia.nix
     ../../modules/ssh.nix
