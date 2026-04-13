@@ -20,6 +20,5 @@
     tokei
     tree
     wget
-    yazi
   ];
 }
