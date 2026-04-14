@@ -12,6 +12,8 @@
       shell-integration-features = "no-cursor";
       mouse-hide-while-typing = true;
       mouse-scroll-multiplier = 2;
+      confirm-close-surface = false;
+      quit-after-last-window-closed = true;
     };
   };
 }
