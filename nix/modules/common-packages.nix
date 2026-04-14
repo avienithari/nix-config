@@ -5,6 +5,7 @@
 
   environment.systemPackages = with pkgs; [
     bat
+    bc
     btop
     fastfetch
     fd
