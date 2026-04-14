@@ -98,7 +98,7 @@
         "bluetooth" = {
           format = "󰂲";
           format-on = "{icon}";
-          format-off = "{icon}";
+          format-off = "";
           format-connected = "{icon}";
           format-icons = {
             on = "󰂯";
