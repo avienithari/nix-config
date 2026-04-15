@@ -7,6 +7,7 @@
 
   imports = [
     ./fastfetch
+    ./scripts
     ./yazi
   ];
 }
