@@ -14,6 +14,7 @@
       mouse-scroll-multiplier = 2;
       confirm-close-surface = false;
       quit-after-last-window-closed = true;
+      app-notifications = false;
     };
   };
 }

@@ -26,3 +26,5 @@ keybind = cmd+s=toggle_quick_terminal
 keybind = cmd+r=reload_config
 
 auto-update = download
+
+app-notifications = false
