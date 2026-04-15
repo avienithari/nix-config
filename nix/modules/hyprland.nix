@@ -12,7 +12,6 @@
     rofi
     slurp
     wl-clipboard
-    wofi
   ];
 
   environment.variables = { XDG_SESSION_TYPE = "wayland"; };
