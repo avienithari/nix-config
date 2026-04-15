@@ -5,5 +5,6 @@
     ./ghostty
     ./gtk
     ./waybar
+    ./wofi
   ];
 }

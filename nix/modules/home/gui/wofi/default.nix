@@ -1,0 +1,33 @@
+{ ... }:
+
+{
+  programs.wofi = {
+    enable = true;
+    settings = {
+      width = 800;
+      height = 400;
+      location = "center";
+      show = "drun";
+      prompt = "";
+      filter_rate = 100;
+      allow_markup = true;
+      no_actions = true;
+      halign = "fill";
+      orientation = "vertical";
+      content_halign = "fill";
+      matching = "fuzzy";
+      insensitive = true;
+      allow_images = true;
+      image_size = 36;
+      hide_scroll = false;
+      term = "ghostty";
+      key_up = "Ctrl-k";
+      key_down = "Ctrl-j";
+      key_left = "Ctrl-h";
+      key_right = "Ctrl-l";
+      key_submit = "Return";
+      key_forward = "Tab";
+      key_backward = "Shift-ISO_Left_Tab";
+    };
+  };
+}
