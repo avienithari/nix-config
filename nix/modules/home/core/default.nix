@@ -8,6 +8,7 @@
   imports = [
     ./bash
     ./fastfetch
+    ./fzf
     ./scripts
     ./tmux
     ./yazi
