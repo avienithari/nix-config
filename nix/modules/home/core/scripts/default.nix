@@ -6,6 +6,7 @@ in
 {
   home.packages = (map loadScript [
     ./sessionizer.nix
+    ./ytd.nix
   ])
   ++ lib.optionals (vars.class != "server") (map loadScript [
     ./clear-spotify-cache.nix
