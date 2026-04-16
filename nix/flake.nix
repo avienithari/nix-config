@@ -127,7 +127,26 @@
             inherit username;
           };
 
-          modules = [ ./hosts/rathian ];
+          modules = [
+            ./hosts/rathian
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                vars = {
+                  class = "server";
+                };
+              };
+
+              home-manager.users.${username} = {
+                imports = [
+                  ./modules/home
+                ];
+              };
+            }
+          ];
         };
 
         zinogre = nixpkgs.lib.nixosSystem {
