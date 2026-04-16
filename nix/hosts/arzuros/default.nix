@@ -3,6 +3,7 @@
 {
   imports = [
     ./configuration.nix
+    ../../modules/avien.nix
     ../../modules/bluetooth.nix
     ../../modules/common-packages.nix
     ../../modules/desktop-packages.nix
