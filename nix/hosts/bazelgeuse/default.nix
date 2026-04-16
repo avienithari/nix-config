@@ -23,7 +23,6 @@
     ../../modules/steam.nix
     ../../modules/syncthing.nix
     ../../modules/tailscale.nix
-    ../../modules/services/clear-spotify-cache.nix
   ];
 
   networking = {
