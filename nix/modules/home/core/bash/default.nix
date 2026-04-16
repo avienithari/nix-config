@@ -47,7 +47,7 @@
 
         if git rev-parse --is-inside-work-tree &>/dev/null; then
           local branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD)
-          if ! git diff --quiet 2>/dev/null || ! git diff --cached --quiet 2>/dev/null; then
+          if [[ -n "$(git status --porcelain 2>/dev/null)" ]]; then
             git_prompt=" ''${c_subtle}git:(''${c_iris}''${branch}''${c_subtle})''${c_love} ✗''${c_reset}"
           else
             git_prompt=" ''${c_subtle}git:(''${c_iris}''${branch}''${c_subtle})''${c_reset}"
