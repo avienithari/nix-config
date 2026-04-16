@@ -9,6 +9,7 @@
     ./bash
     ./fastfetch
     ./scripts
+    ./tmux
     ./yazi
   ];
 }
