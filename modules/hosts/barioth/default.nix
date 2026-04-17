@@ -5,14 +5,10 @@
     ./configuration.nix
     ../../users/avien
     ../../services
-    ../../nixos/adb.nix
-    ../../nixos/common-packages.nix
+    ../../nixos
     ../../nixos/desktop-packages.nix
-    ../../nixos/dev-packages.nix
     ../../nixos/fonts.nix
-    ../../nixos/gnupg.nix
     ../../nixos/hyprland.nix
-    ../../nixos/maintenance.nix
     ../../nixos/mime.nix
     ../../nixos/steam.nix
   ];

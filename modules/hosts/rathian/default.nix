@@ -5,15 +5,8 @@
     ./configuration.nix
     ../../users/avien
     ../../services
-    ../../nixos/adb.nix
-    ../../nixos/bluetooth.nix
-    ../../nixos/common-packages.nix
-    ../../nixos/dev-packages.nix
+    ../../nixos
     ../../nixos/docker.nix
-    ../../nixos/gnupg.nix
-    ../../nixos/locale.nix
-    ../../nixos/maintenance.nix
-    ../../nixos/nvim.nix
   ];
 
   networking.hostName = lib.mkForce "rathian";
