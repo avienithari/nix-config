@@ -7,13 +7,14 @@
     ../../services
     ../../nixos
     ../../nixos/bloat.nix
-    ../../nixos/desktop-packages.nix
-    ../../nixos/fonts.nix
-    ../../nixos/hyprland.nix
-    ../../nixos/mime.nix
-    ../../nixos/radeon.nix
     ../../nixos/steam.nix
   ];
+
+  host = {
+    isGuiHost = true;
+    gpu = "radeon";
+    desktop = "hyprland";
+  };
 
   networking = {
     hostName = lib.mkForce "bazelgeuse";

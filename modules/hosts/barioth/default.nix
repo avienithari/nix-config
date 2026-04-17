@@ -6,12 +6,13 @@
     ../../users/avien
     ../../services
     ../../nixos
-    ../../nixos/desktop-packages.nix
-    ../../nixos/fonts.nix
-    ../../nixos/hyprland.nix
-    ../../nixos/mime.nix
     ../../nixos/steam.nix
   ];
+
+  host = {
+    isGuiHost = true;
+    desktop = "hyprland";
+  };
 
   networking = {
     hostName = lib.mkForce "barioth";
