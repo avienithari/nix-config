@@ -6,14 +6,17 @@
     ../../users/avien
     ../../services
     ../../nixos
-    ../../nixos/bloat.nix
-    ../../nixos/steam.nix
   ];
 
   host = {
     isGuiHost = true;
     gpu = "nvidia";
     desktop = "gnome";
+
+    feature = {
+      bloat = true;
+      steam = true;
+    };
   };
 
   networking = {

@@ -6,8 +6,9 @@
     ../../users/avien
     ../../services
     ../../nixos
-    ../../nixos/docker.nix
   ];
+
+  host.feature.docker = true;
 
   networking.hostName = lib.mkForce "rathian";
   networking.firewall = {

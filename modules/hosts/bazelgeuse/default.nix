@@ -6,14 +6,17 @@
     ../../users/avien
     ../../services
     ../../nixos
-    ../../nixos/bloat.nix
-    ../../nixos/steam.nix
   ];
 
   host = {
     isGuiHost = true;
     gpu = "radeon";
     desktop = "hyprland";
+
+    feature = {
+      bloat = true;
+      steam = true;
+    };
   };
 
   networking = {
