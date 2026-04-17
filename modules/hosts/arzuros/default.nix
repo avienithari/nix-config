@@ -3,7 +3,7 @@
 {
   imports = [
     ./configuration.nix
-    ../../nixos/avien.nix
+    ../../users/avien
     ../../nixos/bluetooth.nix
     ../../nixos/common-packages.nix
     ../../nixos/desktop-packages.nix
