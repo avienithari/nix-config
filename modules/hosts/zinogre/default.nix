@@ -7,12 +7,14 @@
     ../../services
     ../../nixos
     ../../nixos/bloat.nix
-    ../../nixos/desktop-packages.nix
-    ../../nixos/fonts.nix
-    ../../nixos/gnome.nix
-    ../../nixos/nvidia.nix
     ../../nixos/steam.nix
   ];
+
+  host = {
+    isGuiHost = true;
+    gpu = "nvidia";
+    desktop = "gnome";
+  };
 
   networking = {
     hostName = lib.mkForce "zinogre";

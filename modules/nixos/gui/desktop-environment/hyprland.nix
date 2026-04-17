@@ -1,0 +1,44 @@
+{ config, lib, pkgs, username, ... }:
+
+{
+  config = lib.mkIf (config.host.isGuiHost && config.host.desktop == "hyprland") {
+    environment.systemPackages = with pkgs; [
+      bibata-cursors
+      brightnessctl
+      grim
+      hyprland
+      hyprlock
+      hyprpaper
+      playerctl
+      rofi
+      slurp
+      wl-clipboard
+    ];
+
+    environment.variables = { XDG_SESSION_TYPE = "wayland"; };
+    programs.hyprland.enable = true;
+
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+      wireplumber.enable = true;
+    };
+
+    programs.thunar.enable = true;
+    services = {
+      gvfs.enable = true;
+      tumbler.enable = true;
+    };
+
+    users.users.${username} = {
+      extraGroups = [ "audio" ];
+    };
+  };
+}

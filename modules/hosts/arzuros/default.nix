@@ -6,11 +6,13 @@
     ../../users/avien
     ../../services
     ../../nixos
-    ../../nixos/desktop-packages.nix
-    ../../nixos/fonts.nix
-    ../../nixos/hyprland.nix
-    ../../nixos/nvidia.nix
   ];
+
+  host = {
+    isGuiHost = true;
+    gpu = "nvidia";
+    desktop = "hyprland";
+  };
 
   networking = {
     hostName = lib.mkForce "arzuros";
