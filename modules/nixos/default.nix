@@ -5,5 +5,6 @@
     ./options.nix
     ./core
     ./gui
+    ./misc
   ];
 }

@@ -27,5 +27,25 @@
       default = "none";
       description = "Primary desktop environment";
     };
+
+    feature = {
+      bloat = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Open the Bloat Gates";
+      };
+
+      docker = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Enable docker virtualization";
+      };
+
+      steam = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Enable steam";
+      };
+    };
   };
 }

@@ -6,12 +6,12 @@
     ../../users/avien
     ../../services
     ../../nixos
-    ../../nixos/steam.nix
   ];
 
   host = {
     isGuiHost = true;
     desktop = "hyprland";
+    feature.steam = true;
   };
 
   networking = {
