@@ -3,8 +3,8 @@
 {
   imports = [
     ./configuration.nix
+    ../../users/avien
     ../../nixos/adb.nix
-    ../../nixos/avien.nix
     ../../nixos/bluetooth.nix
     ../../nixos/common-packages.nix
     ../../nixos/dev-packages.nix
