@@ -4,6 +4,7 @@
   imports = [
     ./configuration.nix
     ../../users/avien
+    ../../services
     ../../nixos/adb.nix
     ../../nixos/bluetooth.nix
     ../../nixos/common-packages.nix
@@ -13,9 +14,6 @@
     ../../nixos/locale.nix
     ../../nixos/maintenance.nix
     ../../nixos/nvim.nix
-    ../../nixos/ssh.nix
-    ../../nixos/syncthing.nix
-    ../../nixos/tailscale.nix
   ];
 
   networking.hostName = lib.mkForce "rathian";
