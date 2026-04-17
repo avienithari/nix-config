@@ -5,17 +5,11 @@
     ./configuration.nix
     ../../users/avien
     ../../services
-    ../../nixos/adb.nix
+    ../../nixos
     ../../nixos/bloat.nix
-    ../../nixos/bluetooth.nix
-    ../../nixos/common-packages.nix
     ../../nixos/desktop-packages.nix
-    ../../nixos/dev-packages.nix
     ../../nixos/fonts.nix
-    ../../nixos/gnupg.nix
     ../../nixos/hyprland.nix
-    ../../nixos/locale.nix
-    ../../nixos/maintenance.nix
     ../../nixos/mime.nix
     ../../nixos/radeon.nix
     ../../nixos/steam.nix
