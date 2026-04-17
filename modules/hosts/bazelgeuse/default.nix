@@ -4,6 +4,7 @@
   imports = [
     ./configuration.nix
     ../../users/avien
+    ../../services
     ../../nixos/adb.nix
     ../../nixos/bloat.nix
     ../../nixos/bluetooth.nix
@@ -13,16 +14,11 @@
     ../../nixos/fonts.nix
     ../../nixos/gnupg.nix
     ../../nixos/hyprland.nix
-    ../../nixos/keyd.nix
     ../../nixos/locale.nix
     ../../nixos/maintenance.nix
     ../../nixos/mime.nix
-    ../../nixos/mullvad.nix
     ../../nixos/radeon.nix
-    ../../nixos/ssh.nix
     ../../nixos/steam.nix
-    ../../nixos/syncthing.nix
-    ../../nixos/tailscale.nix
   ];
 
   networking = {
