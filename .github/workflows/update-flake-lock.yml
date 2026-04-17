@@ -19,7 +19,6 @@ jobs:
       - id: update
         uses: DeterminateSystems/update-flake-lock@main
         with:
-          path-to-flake-dir: nix
           commit-msg: "chore(nix): update flake.lock"
           pr-title: "chore(nix): update flake.lock"
           pr-labels: auto-merge
