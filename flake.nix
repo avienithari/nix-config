@@ -10,9 +10,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    secrets = {
+      url = "git+file:///home/avien/nix-secrets";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, nix-darwin, nix-homebrew, home-manager }:
+  outputs =
+    { self, nixpkgs, nix-darwin, nix-homebrew, home-manager, agenix, secrets }:
     let
       system = "x86_64-linux";
       username = "avien";
@@ -32,10 +41,14 @@
           specialArgs = {
             inherit system;
             inherit username;
+            inherit agenix;
+            inherit secrets;
           };
 
           modules = [
             ./modules/hosts/arzuros
+
+            agenix.nixosModules.default
 
             home-manager.nixosModules.home-manager
             {
@@ -60,19 +73,29 @@
           specialArgs = {
             inherit system;
             inherit username;
+            inherit agenix;
+            inherit secrets;
           };
 
-          modules = [ ./modules/hosts/barioth ];
+          modules = [
+            ./modules/hosts/barioth
+
+            agenix.nixosModules.default
+          ];
         };
 
         bazelgeuse = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit system;
             inherit username;
+            inherit agenix;
+            inherit secrets;
           };
 
           modules = [
             ./modules/hosts/bazelgeuse
+
+            agenix.nixosModules.default
 
             home-manager.nixosModules.home-manager
             {
@@ -97,10 +120,14 @@
           specialArgs = {
             inherit system;
             inherit username;
+            inherit agenix;
+            inherit secrets;
           };
 
           modules = [
             ./modules/hosts/magnamalo
+
+            agenix.nixosModules.default
 
             home-manager.nixosModules.home-manager
             {
@@ -125,10 +152,14 @@
           specialArgs = {
             inherit system;
             inherit username;
+            inherit agenix;
+            inherit secrets;
           };
 
           modules = [
             ./modules/hosts/rathian
+
+            agenix.nixosModules.default
 
             home-manager.nixosModules.home-manager
             {
@@ -153,9 +184,15 @@
           specialArgs = {
             inherit system;
             inherit username;
+            inherit agenix;
+            inherit secrets;
           };
 
-          modules = [ ./modules/hosts/zinogre ];
+          modules = [
+            ./modules/hosts/zinogre
+
+            agenix.nixosModules.default
+          ];
         };
       };
 

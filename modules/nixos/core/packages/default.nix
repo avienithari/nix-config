@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ agenix, pkgs, ... }:
 
 # TODOS: i hate this
 let
@@ -68,9 +68,11 @@ let
   ];
 in
 {
-  environment.systemPackages = [ ]
-    ++ oldCommonPkgs
-    ++ oldDevPkgs
-    ++ oldNvimPkgs
-    ++ oldNvimToolingPkgs;
+  environment.systemPackages = [
+    agenix.packages.${pkgs.system}.default
+  ]
+  ++ oldCommonPkgs
+  ++ oldDevPkgs
+  ++ oldNvimPkgs
+  ++ oldNvimToolingPkgs;
 }
