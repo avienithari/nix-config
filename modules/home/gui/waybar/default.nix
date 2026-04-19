@@ -90,9 +90,9 @@
           format-icons = [ "󰃞" "󰃝" "󰃟" "󰃠" ];
         };
         "network" = {
-          format-wifi = "󰖩";
-          format-ethernet = "󰈀 {ifname}";
-          format-disconnected = "";
+          format-wifi = "󰖩 ";
+          format-ethernet = "󰈀 {ifname} ";
+          format-disconnected = " ";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
         };
         "bluetooth" = {
