@@ -90,11 +90,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776454077,
-        "narHash": "sha256-7zSUFWsU0+jlD7WB3YAxQ84Z/iJurA5hKPm8EfEyGJk=",
+        "lastModified": 1776701552,
+        "narHash": "sha256-CCRzOEFg6JwCdZIR5dLD0ypah5/e2JQVuWQ/l3rYrPY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "565e5349208fe7d0831ef959103c9bafbeac0681",
+        "rev": "c81775b640d4507339d127f5adb4105f6015edf2",
         "type": "github"
       },
       "original": {
@@ -164,7 +164,24 @@
         "home-manager": "home-manager_2",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "secrets": "secrets"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1776677960,
+        "narHash": "sha256-PNF8Qta3RitYL8a50sCFdxqsZmlT5ABChUunAZKBGxk=",
+        "ref": "refs/heads/master",
+        "rev": "d1cca28fc640ee0e3805783a10ba1c88848deed6",
+        "revCount": 2,
+        "type": "git",
+        "url": "file:///home/avien/nix-secrets"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/avien/nix-secrets"
       }
     },
     "systems": {
