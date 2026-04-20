@@ -13,6 +13,7 @@
       ffmpeg-full
       ffmpeg-headless
       ffmpegthumbnailer
+      gajim
       google-chrome
       puddletag
       signal-desktop
