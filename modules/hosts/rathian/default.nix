@@ -6,6 +6,7 @@
     ../../users/avien
     ../../services
     ../../nixos
+    ../../homelab
   ];
 
   host.feature.docker = true;
