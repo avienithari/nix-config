@@ -90,11 +90,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776777932,
-        "narHash": "sha256-0R3Yow/NzSeVGUke5tL7CCkqmss4Vmi6BbV6idHzq/8=",
+        "lastModified": 1776891022,
+        "narHash": "sha256-vEe2f4NEhMvaNDpM1pla4hteaIIGQyAMKUfIBPLasr0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5d5640599a0050b994330328b9fd45709c909720",
+        "rev": "508daf831ab8d1b143d908239c39a7d8d39561b2",
         "type": "github"
       },
       "original": {
@@ -171,11 +171,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1776828600,
-        "narHash": "sha256-3xrw3IvgFL4qlfR2L7vPatbF4DKIJUPdfnNiEXpnTUM=",
+        "lastModified": 1776893476,
+        "narHash": "sha256-8kyN50IvTU7N+lCxOu4392l6HzM3fLLPWZj48IcNhMI=",
         "ref": "refs/heads/master",
-        "rev": "0039598d57ce3b6d5942506739ffd492b4237e87",
-        "revCount": 12,
+        "rev": "58e590b9dadcdbcb7520f135ce6fb33ac0efca44",
+        "revCount": 14,
         "type": "git",
         "url": "file:///home/avien/nix-secrets"
       },
