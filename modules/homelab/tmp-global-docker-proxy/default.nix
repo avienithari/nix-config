@@ -1,0 +1,64 @@
+{ config, secrets, ... }:
+
+let
+  private = import "${secrets}/private.nix";
+  domain = private.acme.domain;
+  nasAddress = private.services.nasAddress;
+in
+{
+  services.caddy = {
+    enable = true;
+
+    virtualHosts = {
+      "draw.${domain}" = {
+        useACMEHost = domain;
+        extraConfig = ''
+          reverse_proxy 127.0.0.1:8010
+        '';
+      };
+
+      "home.${domain}" = {
+        useACMEHost = domain;
+        extraConfig = ''
+          reverse_proxy 127.0.0.1:8123
+        '';
+      };
+
+      "nas.${domain}" = {
+        useACMEHost = domain;
+        extraConfig = ''
+          reverse_proxy ${nasAddress}:80
+        '';
+      };
+
+      "navidrome.${domain}" = {
+        useACMEHost = domain;
+        extraConfig = ''
+          reverse_proxy 127.0.0.1:4533
+        '';
+      };
+
+      "pihole.${domain}" = {
+        useACMEHost = domain;
+        extraConfig = ''
+          redir / /admin 302
+          reverse_proxy 127.0.0.1:8082
+        '';
+      };
+
+      "strings.${domain}" = {
+        useACMEHost = domain;
+        extraConfig = ''
+          reverse_proxy 127.0.0.1:4500
+        '';
+      };
+
+      "uptime.${domain}" = {
+        useACMEHost = domain;
+        extraConfig = ''
+          reverse_proxy 127.0.0.1:3001
+        '';
+      };
+    };
+  };
+}
