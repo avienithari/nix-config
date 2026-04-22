@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./matrix.nix
-    ./xmpp.nix
+    ./matrix
+    ./xmpp
   ];
 }
