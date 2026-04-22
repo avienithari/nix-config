@@ -16,6 +16,7 @@
       gajim
       google-chrome
       puddletag
+      qimgv
       signal-desktop
       slack
       spotify
