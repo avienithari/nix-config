@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./acme
     ./matrix
     ./xmpp
   ];
