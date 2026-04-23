@@ -10,13 +10,6 @@ in
     enable = true;
 
     virtualHosts = {
-      "draw.${domain}" = {
-        useACMEHost = domain;
-        extraConfig = ''
-          reverse_proxy 127.0.0.1:8010
-        '';
-      };
-
       "home.${domain}" = {
         useACMEHost = domain;
         extraConfig = ''
