@@ -63,6 +63,8 @@ keymap.set("n", "<leader>p", ":NoNeckPain<CR>", { silent = true })
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux display-popup -E sessionizer<CR>")
 
+vim.keymap.set("n", "<leader>R", "<cmd>restart<CR>")
+
 -- plugin dev keymaps
 -- keymap.set("n", ",r", ":lua R('scribe')<CR>", { silent = true }) -- reload scribe
 -- keymap.set("n", ",t", ":PlenaryBustedFile %<CR>") -- test single file with with plenary
