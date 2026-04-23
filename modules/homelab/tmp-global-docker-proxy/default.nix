@@ -1,4 +1,4 @@
-{ config, secrets, ... }:
+{ secrets, ... }:
 
 let
   private = import "${secrets}/private.nix";
@@ -43,13 +43,6 @@ in
         useACMEHost = domain;
         extraConfig = ''
           reverse_proxy 127.0.0.1:4500
-        '';
-      };
-
-      "uptime.${domain}" = {
-        useACMEHost = domain;
-        extraConfig = ''
-          reverse_proxy 127.0.0.1:3001
         '';
       };
     };
