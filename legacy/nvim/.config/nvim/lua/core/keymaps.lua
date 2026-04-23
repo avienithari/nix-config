@@ -61,6 +61,8 @@ keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { silent = true })
 keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", { silent = true })
 keymap.set("n", "<leader>p", ":NoNeckPain<CR>", { silent = true })
 
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux display-popup -E sessionizer<CR>")
+
 -- plugin dev keymaps
 -- keymap.set("n", ",r", ":lua R('scribe')<CR>", { silent = true }) -- reload scribe
 -- keymap.set("n", ",t", ":PlenaryBustedFile %<CR>") -- test single file with with plenary
