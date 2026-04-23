@@ -31,6 +31,7 @@ return {
         "rust",
         "typescript",
         "vim",
+        "yaml",
         "zig",
       }
 
