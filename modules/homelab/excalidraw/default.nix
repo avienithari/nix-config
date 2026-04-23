@@ -1,4 +1,4 @@
-{ config, pkgs, secrets, ... }:
+{ pkgs, secrets, ... }:
 
 let
   private = import "${secrets}/private.nix";
