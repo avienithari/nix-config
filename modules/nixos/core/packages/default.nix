@@ -8,7 +8,6 @@ let
     btop
     fastfetch
     fd
-    gh
     ghostty
     git
     ncdu
