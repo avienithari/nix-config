@@ -13,6 +13,7 @@ in
       port = 8082;
 
       settings = {
+        theme = "dark";
         dns = {
           bind_hosts = [ "0.0.0.0" ];
           port = 53;
