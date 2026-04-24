@@ -3,6 +3,7 @@
 {
   imports = [
     ./acme
+    ./adguard
     ./excalidraw
     ./matrix
     ./silver-bullet

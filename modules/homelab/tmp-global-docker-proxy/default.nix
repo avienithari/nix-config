@@ -31,14 +31,6 @@ in
         '';
       };
 
-      "pihole.${domain}" = {
-        useACMEHost = domain;
-        extraConfig = ''
-          redir / /admin 302
-          reverse_proxy 127.0.0.1:8082
-        '';
-      };
-
       "strings.${domain}" = {
         useACMEHost = domain;
         extraConfig = ''
