@@ -5,6 +5,14 @@ let
   domain = private.acme.domain;
 in
 {
+  networking = {
+    nameservers = [ "127.0.0.1" ];
+    firewall = {
+      allowedTCPPorts = [ 53 ];
+      allowedUDPPorts = [ 53 ];
+    };
+  };
+
   services = {
     adguardhome = {
       enable = true;
