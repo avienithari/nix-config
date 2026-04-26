@@ -24,6 +24,7 @@
       bindkey ' ' magic-space
 
       bindkey -s ^f "sessionizer''\n"
+      bindkey -s ^n "notes-picker''\n"
 
       local ssh_indicator=""
       if [[ -n "$SSH_CONNECTION" ]]; then

@@ -5,6 +5,7 @@ let
 in
 {
   home.packages = (map loadScript [
+    ./notes-picker.nix
     ./sessionizer.nix
     ./ytd.nix
   ])

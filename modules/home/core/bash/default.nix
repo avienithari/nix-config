@@ -14,6 +14,7 @@
     };
     bashrcExtra = ''
       bind -x '"\C-f": "sessionizer''\n"'
+      bind -x '"\C-n": "notes-picker''\n"'
 
       c_reset='\[\e[0m\]'
       c_love='\[\e[1;31m\]'
