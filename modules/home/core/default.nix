@@ -5,6 +5,7 @@
     ./bash
     ./fastfetch
     ./fzf
+    ./git
     ./scripts
     ./tmux
     ./user-services
