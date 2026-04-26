@@ -9,7 +9,7 @@ pkgs.writeShellScriptBin "sessionizer" ''
       selected=$(find -L ~/dotfiles ~/code/projects ~/code/c ~/code/zig \
           ~/code/rust ~/code/php ~/code/gopher ~/code/javascript ~/code/python \
           ~/code/shell ~/code/lua ~/code/ruby ~/code/work ~/code/nix ~/code \
-          ~/work -mindepth 0 -maxdepth 1 -type d 2>/dev/null | fzf)
+          ~/work ~/nix-config -mindepth 0 -maxdepth 1 -type d 2>/dev/null | fzf)
   fi
 
   if [[ -z $selected ]]; then
