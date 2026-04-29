@@ -191,6 +191,23 @@
           modules = [
             ./modules/hosts/zinogre
 
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                vars = {
+                  class = "desktop";
+                };
+              };
+
+              home-manager.users.${username} = {
+                imports = [
+                  ./modules/home
+                ];
+              };
+            }
+
             agenix.nixosModules.default
           ];
         };
