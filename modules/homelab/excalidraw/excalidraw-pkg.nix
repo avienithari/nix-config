@@ -17,7 +17,7 @@ pkgs.stdenv.mkDerivation {
   nativeBuildInputs = with pkgs; [
     nodejs_22
     (yarn.override { nodejs = nodejs_22; })
-    fixup_yarn_lock
+    fixup-yarn-lock
     sass
   ];
 
@@ -34,7 +34,7 @@ pkgs.stdenv.mkDerivation {
     export HOME=$(mktemp -d)
 
     yarn config --offline set yarn-offline-mirror $offlineCache
-    fixup_yarn_lock yarn.lock
+    fixup-yarn-lock yarn.lock
 
     yarn install --offline --frozen-lockfile --ignore-scripts --no-progress
 
