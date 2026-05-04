@@ -19,9 +19,5 @@
     };
   };
 
-  networking = {
-    hostName = lib.mkForce "zinogre";
-    nameservers = [ "192.168.0.252" ];
-    networkmanager.appendNameservers = [ "192.168.0.252" ];
-  };
+  networking.hostName = lib.mkForce "zinogre";
 }

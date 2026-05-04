@@ -14,7 +14,5 @@
     desktop = "hyprland";
   };
 
-  networking = {
-    hostName = lib.mkForce "arzuros";
-  };
+  networking.hostName = lib.mkForce "arzuros";
 }

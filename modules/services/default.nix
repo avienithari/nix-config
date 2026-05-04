@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./dns
     ./keyd
     ./mullvad
     ./ssh

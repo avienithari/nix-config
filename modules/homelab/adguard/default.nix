@@ -7,6 +7,7 @@ in
 {
   networking = {
     nameservers = [ "127.0.0.1" ];
+    networkmanager.insertNameservers = [ ];
     firewall = {
       allowedTCPPorts = [ 53 ];
       allowedUDPPorts = [ 53 ];
