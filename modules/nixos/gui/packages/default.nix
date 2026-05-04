@@ -10,7 +10,6 @@
       deluge
       discord
       element-desktop
-      feh
       ffmpeg-full
       ffmpeg-headless
       ffmpegthumbnailer
