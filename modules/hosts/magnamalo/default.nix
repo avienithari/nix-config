@@ -10,8 +10,14 @@
 
   host = {
     isGuiHost = true;
+    isWorkstation = true;
     desktop = "hyprland";
-    feature.steam = true;
+
+    feature = {
+      privateChats = true;
+      steam = true;
+      torrent = true;
+    };
   };
 
   networking.hostName = lib.mkForce "magnamalo";

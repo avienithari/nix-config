@@ -10,11 +10,14 @@
 
   host = {
     isGuiHost = true;
+    isWorkstation = true;
     gpu = "radeon";
     desktop = "hyprland";
 
     feature = {
+      privateChats = true;
       steam = true;
+      torrent = true;
     };
   };
 

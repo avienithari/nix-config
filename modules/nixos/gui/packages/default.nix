@@ -5,21 +5,15 @@
     environment.systemPackages = with pkgs; [
       _1password-gui
       acpi
-      brave
       brotli
-      deluge
       discord
-      element-desktop
       ffmpeg-full
       ffmpeg-headless
       ffmpegthumbnailer
-      gajim
       google-chrome
       libreoffice
       puddletag
       qimgv
-      signal-desktop
-      slack
       spotify
       tailscale-systray
       vlc

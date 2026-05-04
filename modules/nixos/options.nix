@@ -2,11 +2,8 @@
 
 {
   options.host = {
-    isGuiHost = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Enable host GUI configuration";
-    };
+    isGuiHost = lib.mkEnableOption "Enable host GUI configuration";
+    isWorkstation = lib.mkEnableOption "Enable work related packages";
 
     gpu = lib.mkOption {
       type = lib.types.enum [
@@ -29,17 +26,10 @@
     };
 
     feature = {
-      docker = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Enable docker virtualization";
-      };
-
-      steam = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Enable steam";
-      };
+      docker = lib.mkEnableOption "Enable docker virtualization";
+      privateChats = lib.mkEnableOption "Enable additional chat packages";
+      steam = lib.mkEnableOption "Enable steam";
+      torrent = lib.mkEnableOption "Enable torrent support";
     };
   };
 }
