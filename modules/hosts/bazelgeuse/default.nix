@@ -18,6 +18,7 @@
       privateChats = true;
       steam = true;
       torrent = true;
+      virtualisation = true;
     };
   };
 

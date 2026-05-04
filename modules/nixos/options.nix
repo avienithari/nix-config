@@ -26,10 +26,11 @@
     };
 
     feature = {
-      docker = lib.mkEnableOption "Enable docker virtualization";
+      docker = lib.mkEnableOption "Enable docker virtualisation";
       privateChats = lib.mkEnableOption "Enable additional chat packages";
       steam = lib.mkEnableOption "Enable steam";
       torrent = lib.mkEnableOption "Enable torrent support";
+      virtualisation = lib.mkEnableOption "Enable QEMU/KVM";
     };
   };
 }

@@ -7,6 +7,7 @@
     ./private-chats.nix
     ./steam.nix
     ./torrent.nix
+    ./virtualisation.nix
     ./work-packages.nix
   ];
 }
