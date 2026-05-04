@@ -13,10 +13,7 @@
     gpu = "nvidia";
     desktop = "gnome";
 
-    feature = {
-      bloat = true;
-      steam = true;
-    };
+    feature.steam = true;
   };
 
   networking.hostName = lib.mkForce "zinogre";

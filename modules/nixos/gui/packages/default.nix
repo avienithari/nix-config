@@ -15,6 +15,7 @@
       ffmpegthumbnailer
       gajim
       google-chrome
+      libreoffice
       puddletag
       qimgv
       signal-desktop

@@ -14,7 +14,6 @@
     desktop = "hyprland";
 
     feature = {
-      bloat = true;
       steam = true;
     };
   };

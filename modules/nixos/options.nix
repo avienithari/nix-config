@@ -29,12 +29,6 @@
     };
 
     feature = {
-      bloat = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Open the Bloat Gates";
-      };
-
       docker = lib.mkOption {
         type = lib.types.bool;
         default = false;
