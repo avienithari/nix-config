@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 
 {
   imports = [
@@ -15,6 +15,9 @@
 
     feature.steam = true;
   };
+
+  hardware.nvidia.package =
+    config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
   networking.hostName = lib.mkForce "zinogre";
 }
