@@ -8,8 +8,24 @@
     };
 
     environment.gnome.excludePackages = with pkgs; [
-      gnome-tour
+      decibels
       epiphany
+      evolution-data-server
+      gnome-characters
+      gnome-clocks
+      gnome-connections
+      gnome-contacts
+      gnome-font-viewer
+      gnome-maps
+      gnome-music
+      gnome-online-accounts
+      gnome-tour
+      gnome-weather
+      showtime
+      simple-scan
+      snapshot
+      totem
+      yelp
     ];
   };
 }
