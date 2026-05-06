@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 
 {
   imports = [
@@ -13,6 +13,9 @@
     gpu = "nvidia";
     desktop = "hyprland";
   };
+
+  hardware.nvidia.package =
+    config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
   networking.hostName = lib.mkForce "arzuros";
 }
