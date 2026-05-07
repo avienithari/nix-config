@@ -112,6 +112,8 @@ in
       enable = true;
       virtualHosts.":${port}" = {
         extraConfig = ''
+          import security_headers
+
           handle /.well-known/matrix/client {
             header Access-Control-Allow-Origin "*"
 
@@ -124,6 +126,14 @@ in
           }
 
           handle /_matrix/federation* {
+            abort
+          }
+
+          handle /_matrix/static* {
+            abort
+          }
+
+          handle / {
             abort
           }
 

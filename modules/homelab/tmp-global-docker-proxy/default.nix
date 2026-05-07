@@ -13,6 +13,8 @@ in
       "home.${domain}" = {
         useACMEHost = domain;
         extraConfig = ''
+          import security_headers
+          import lan_only
           reverse_proxy 127.0.0.1:8123
         '';
       };
@@ -20,6 +22,8 @@ in
       "nas.${domain}" = {
         useACMEHost = domain;
         extraConfig = ''
+          import security_headers
+          import lan_only
           reverse_proxy ${nasAddress}:80
         '';
       };
@@ -27,6 +31,8 @@ in
       "navidrome.${domain}" = {
         useACMEHost = domain;
         extraConfig = ''
+          import security_headers
+          import lan_only
           reverse_proxy 127.0.0.1:4533
         '';
       };
@@ -34,6 +40,8 @@ in
       "strings.${domain}" = {
         useACMEHost = domain;
         extraConfig = ''
+          import security_headers
+          import lan_only
           reverse_proxy 127.0.0.1:4500
         '';
       };

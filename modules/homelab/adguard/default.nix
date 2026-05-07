@@ -213,6 +213,8 @@ in
     caddy.virtualHosts."guard.${domain}" = {
       useACMEHost = domain;
       extraConfig = ''
+        import security_headers
+        import lan_only
         reverse_proxy 127.0.0.1:8082
       '';
     };

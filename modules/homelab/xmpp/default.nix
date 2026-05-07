@@ -91,9 +91,15 @@ in
       enable = true;
       virtualHosts.":${port}" = {
         extraConfig = ''
+          import security_headers
+
           handle /.well-known/* {
             root * ${hostMeta}
             file_server
+          }
+
+          handle / {
+            abort
           }
 
           handle {

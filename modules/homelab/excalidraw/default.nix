@@ -9,6 +9,8 @@ in
   services.caddy.virtualHosts."draw.${domain}" = {
     useACMEHost = domain;
     extraConfig = ''
+      import security_headers
+      import lan_only
       root * ${excalidraw}/share/excalidraw
       file_server
     '';

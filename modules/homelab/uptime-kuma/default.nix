@@ -17,6 +17,8 @@ in
     caddy.virtualHosts."uptime.${domain}" = {
       useACMEHost = domain;
       extraConfig = ''
+        import security_headers
+        import lan_only
         reverse_proxy 127.0.0.1:3001
       '';
     };

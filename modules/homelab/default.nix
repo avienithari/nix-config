@@ -4,6 +4,7 @@
   imports = [
     ./acme
     ./adguard
+    ./caddy
     ./excalidraw
     ./matrix
     ./silver-bullet
