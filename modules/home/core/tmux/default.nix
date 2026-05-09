@@ -29,8 +29,8 @@
       set -g status-left "#[fg=#{@rp_text},bg=#{@rp_base}]#S#[fg=#{@rp_muted}] "
 
       set -g window-status-separator "#[fg=#{@rp_subtle}] | "
-      set -g window-status-format "#[fg=#{@rp_subtle}]#I: #W"
-      set -g window-status-current-format "#[fg=#{@rp_gold}]#I: #W"
+      set -g window-status-format "#[fg=#{@rp_subtle}]#I: #W#{?window_zoomed_flag, #[fg=#{@rp_subtle}][Z],}"
+      set -g window-status-current-format "#[fg=#{@rp_gold}]#I: #W#{?window_zoomed_flag, #[fg=#{@rp_gold}][Z],}"
 
       set -g status-right-length 100
       ${if vars.class == "laptop" then ''
