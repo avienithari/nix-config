@@ -5,7 +5,7 @@ pkgs.buildNpmPackage {
   version = "1.0.0";
 
   src = fetchGit {
-    url = "git@dsite.github.com:avienithari/dsite.git";
+    url = "git@github.com:avienithari/dsite.git";
     ref = "main";
     rev = "22c3017c20a397416ab461c4627049fdf1a93eaa";
   };
