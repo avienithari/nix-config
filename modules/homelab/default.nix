@@ -5,6 +5,7 @@
     ./acme
     ./adguard
     ./caddy
+    ./dsite
     ./excalidraw
     ./matrix
     ./silver-bullet
