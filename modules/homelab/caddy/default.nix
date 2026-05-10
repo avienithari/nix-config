@@ -3,6 +3,12 @@
 {
   services.caddy = {
     enable = true;
+    globalConfig = ''
+      servers {
+        trusted_proxies static 127.0.0.1
+      }
+    '';
+
     extraConfig = ''
       (security_headers) {
         header {
