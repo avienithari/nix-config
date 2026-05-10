@@ -1,18 +1,16 @@
-{ ... }:
+{ pkgs, username, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  system.autoUpgrade = {
-    enable = true;
-    dates = "weekly";
-  };
-
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 10d";
-  };
-
   nix.settings.auto-optimise-store = true;
+
+  programs.nh = {
+    enable = true;
+    package = pkgs.nh;
+    flake = "/home/${username}/nix-config";
+    clean = {
+      enable = true;
+      extraArgs = "--keep-since 7d --keep 3";
+    };
+  };
 }
