@@ -6,9 +6,9 @@ let
   matrixRegistration = config.age.secrets.matrix-registration.path;
 
   private = import "${secrets}/private.nix";
-  port = private.matrix.hostPort;
+  port = toString private.services.matrix.port;
 
-  domain = private.matrix.domain;
+  domain = private.services.matrix.domain;
   matrixDomain = "matrix.${domain}";
 
   matrixClientWellKnown = pkgs.writeTextDir ".well-known/matrix/client" ''

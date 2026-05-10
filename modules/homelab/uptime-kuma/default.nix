@@ -2,14 +2,15 @@
 
 let
   private = import "${secrets}/private.nix";
-  domain = private.acme.domain;
+  domain = private.services.uptime-kuma.domain;
+  port = toString private.services.uptime-kuma.port;
 in
 {
   services = {
     uptime-kuma = {
       enable = true;
       settings = {
-        PORT = "3001";
+        PORT = port;
         HOST = "127.0.0.1";
       };
     };
@@ -19,7 +20,7 @@ in
       extraConfig = ''
         import security_headers
         import lan_only
-        reverse_proxy 127.0.0.1:3001
+        reverse_proxy 127.0.0.1:${port}
       '';
     };
   };

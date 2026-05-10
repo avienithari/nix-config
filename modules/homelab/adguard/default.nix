@@ -2,7 +2,8 @@
 
 let
   private = import "${secrets}/private.nix";
-  domain = private.acme.domain;
+  domain = private.services.adguard.domain;
+  port = private.services.adguard.port;
 in
 {
   networking = {
@@ -19,7 +20,7 @@ in
       enable = true;
       openFirewall = true;
       host = "127.0.0.1";
-      port = 8082;
+      port = port;
 
       settings = {
         theme = "dark";
@@ -215,7 +216,7 @@ in
       extraConfig = ''
         import security_headers
         import lan_only
-        reverse_proxy 127.0.0.1:8082
+        reverse_proxy 127.0.0.1:${toString port}
       '';
     };
   };

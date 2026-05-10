@@ -2,8 +2,12 @@
 
 let
   private = import "${secrets}/private.nix";
-  domain = private.acme.domain;
-  nasAddress = private.services.nasAddress;
+  domain = private.domains.lan;
+  homeAssistantPort = toString private.services.home-assistant.port;
+  nasAddress = private.services.nas.ip;
+  nasPort = toString private.services.nas.port;
+  navidromePort = toString private.services.navidrome.port;
+  stringsPort = toString private.services.strings.port;
 in
 {
   services.caddy = {
@@ -15,7 +19,7 @@ in
         extraConfig = ''
           import security_headers
           import lan_only
-          reverse_proxy 127.0.0.1:8123
+          reverse_proxy 127.0.0.1:${homeAssistantPort}
         '';
       };
 
@@ -24,7 +28,7 @@ in
         extraConfig = ''
           import security_headers
           import lan_only
-          reverse_proxy ${nasAddress}:80
+          reverse_proxy ${nasAddress}:${nasPort}
         '';
       };
 
@@ -33,7 +37,7 @@ in
         extraConfig = ''
           import security_headers
           import lan_only
-          reverse_proxy 127.0.0.1:4533
+          reverse_proxy 127.0.0.1:${navidromePort}
         '';
       };
 
@@ -42,7 +46,7 @@ in
         extraConfig = ''
           import security_headers
           import lan_only
-          reverse_proxy 127.0.0.1:4500
+          reverse_proxy 127.0.0.1:${stringsPort}
         '';
       };
     };

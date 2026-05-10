@@ -4,7 +4,8 @@ let
   lanDomainTokenPath = config.age.secrets.cloudflare-lan-domain-token.path;
 
   private = import "${secrets}/private.nix";
-  domain = private.acme.domain;
+  domain = private.services.acme.domain;
+  email = private.services.acme.email;
 in
 {
   age.secrets."cloudflare-lan-domain-token" = {
@@ -15,7 +16,7 @@ in
 
   security.acme = {
     acceptTerms = true;
-    defaults.email = private.acme.email;
+    defaults.email = email;
 
     certs."${domain}" = {
       domain = "*.${domain}";

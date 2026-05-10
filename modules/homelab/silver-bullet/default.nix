@@ -4,7 +4,8 @@ let
   silverbulletPath = config.age.secrets.silverbullet.path;
 
   private = import "${secrets}/private.nix";
-  domain = private.acme.domain;
+  domain = private.services.silverbullet.domain;
+  port = private.services.silverbullet.port;
 in
 {
   age.secrets."silverbullet" = {
@@ -16,7 +17,7 @@ in
   services = {
     silverbullet = {
       enable = true;
-      listenPort = 8083;
+      listenPort = port;
       envFile = silverbulletPath;
     };
 
@@ -25,7 +26,7 @@ in
       extraConfig = ''
         import security_headers
         import lan_only
-        reverse_proxy 127.0.0.1:8083
+        reverse_proxy 127.0.0.1:${toString port}
       '';
     };
   };

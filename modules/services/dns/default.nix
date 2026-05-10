@@ -2,11 +2,11 @@
 
 let
   private = import "${secrets}/private.nix";
-  dnsAddress = private.services.dnsAddress;
+  dns = private.services.dns.ip;
 in
 {
   networking = {
-    nameservers = lib.mkDefault [ dnsAddress ];
-    networkmanager.insertNameservers = lib.mkDefault [ dnsAddress ];
+    nameservers = lib.mkDefault [ dns ];
+    networkmanager.insertNameservers = lib.mkDefault [ dns ];
   };
 }

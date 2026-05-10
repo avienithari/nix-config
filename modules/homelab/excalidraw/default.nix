@@ -2,7 +2,7 @@
 
 let
   private = import "${secrets}/private.nix";
-  domain = private.acme.domain;
+  domain = private.services.excalidraw.domain;
   excalidraw = pkgs.callPackage ./excalidraw-pkg.nix { };
 in
 {

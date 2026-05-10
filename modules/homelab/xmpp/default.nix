@@ -4,12 +4,13 @@ let
   cfTunnelPath = config.age.secrets.xmpp-tunnel.path;
 
   private = import "${secrets}/private.nix";
-  port = private.xmpp.hostPort;
-
-  domain = private.xmpp.domain;
+  port = toString private.services.xmpp.port;
+  domain = private.services.xmpp.domain;
   xmppDomain = "xmpp.${domain}";
   mucDomain = "muc.${xmppDomain}";
   uploadDomain = "upload.${domain}";
+
+  admin = private.services.xmpp.adminPrefix;
 
   hostMeta = pkgs.writeTextDir ".well-known/host-meta" ''
     <?xml version="1.0" encoding="UTF-8"?>
@@ -25,7 +26,7 @@ in
   services = {
     prosody = {
       enable = true;
-      admins = [ "${private.xmpp.adminPrefix}@${xmppDomain}" ];
+      admins = [ "${admin}@${xmppDomain}" ];
 
       virtualHosts.${xmppDomain} = {
         enabled = true;
