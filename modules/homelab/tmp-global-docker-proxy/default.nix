@@ -7,7 +7,6 @@ let
   nasAddress = private.services.nas.ip;
   nasPort = toString private.services.nas.port;
   navidromePort = toString private.services.navidrome.port;
-  stringsPort = toString private.services.strings.port;
 in
 {
   services.caddy = {
@@ -38,15 +37,6 @@ in
           import security_headers
           import lan_only
           reverse_proxy 127.0.0.1:${navidromePort}
-        '';
-      };
-
-      "strings.${domain}" = {
-        useACMEHost = domain;
-        extraConfig = ''
-          import security_headers
-          import lan_only
-          reverse_proxy 127.0.0.1:${stringsPort}
         '';
       };
     };
