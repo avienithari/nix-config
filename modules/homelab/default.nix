@@ -5,6 +5,7 @@
     ./acme
     ./adguard
     ./caddy
+    ./calendar-poc
     ./dsite
     ./excalidraw
     ./matrix
