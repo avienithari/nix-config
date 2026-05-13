@@ -1,63 +1,37 @@
 { agenix, pkgs, ... }:
 
-# TODOS: i hate this
-let
-  oldCommonPkgs = with pkgs; [
+{
+  environment.systemPackages = with pkgs; [
+    agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
+    bash-language-server
     bat
     bc
     btop
     fastfetch
     fd
+    fzf
     ghostty
     git
+    lua-language-server
+    lua5_1
+    luajitPackages.jsregexp
+    luarocks
     ncdu
+    neovim
+    nixd
     nixpkgs-fmt
+    nodejs_24
+    pylint
+    pyright
+    python314
+    ripgrep
     stow
+    stylua
     tldr
     tmux
     tree
-    wget
-  ];
-  oldDevPkgs = with pkgs; [
-    luajitPackages.jsregexp
-    luarocks
-  ];
-  oldNvimPkgs = with pkgs; [
-    fzf
-    lua5_1
-    neovim
-    nixd
-    nodejs_24
-    python314
-    ripgrep
     tree-sitter
     unzip
+    wget
   ];
-  oldNvimToolingPkgs = with pkgs; [
-    bash-language-server
-    clang-analyzer
-    docker-language-server
-    gofumpt
-    goimports-reviser
-    golangci-lint-langserver
-    gopls
-    htmlhint
-    htmx-lsp2
-    lua-language-server
-    pylint
-    pyright
-    rust-analyzer
-    stylua
-    vim-language-server
-    zls
-  ];
-in
-{
-  environment.systemPackages = [
-    agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ]
-  ++ oldCommonPkgs
-  ++ oldDevPkgs
-  ++ oldNvimPkgs
-  ++ oldNvimToolingPkgs;
 }
