@@ -3,6 +3,7 @@
 {
   imports = [
     ./bash
+    ./direnv
     ./fastfetch
     ./fzf
     ./git

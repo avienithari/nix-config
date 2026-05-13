@@ -55,6 +55,7 @@
       "npm-debug.log"
       "portkey.json"
       "secrets"
+      ".direnv"
     ];
   };
 }
