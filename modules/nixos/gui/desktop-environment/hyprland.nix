@@ -1,7 +1,7 @@
 { config, lib, pkgs, username, ... }:
 
 {
-  config = lib.mkIf (config.host.isGuiHost && config.host.desktop == "hyprland") {
+  config = lib.mkIf (config.host.isGuiHost && config.host.session == "hyprland") {
     environment.systemPackages = with pkgs; [
       bibata-cursors
       brightnessctl

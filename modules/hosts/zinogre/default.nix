@@ -10,9 +10,8 @@
 
   host = {
     class = "desktop";
-    isGuiHost = true;
     gpu = "nvidia";
-    desktop = "gnome";
+    session = "gnome";
 
     feature = {
       steam = true;

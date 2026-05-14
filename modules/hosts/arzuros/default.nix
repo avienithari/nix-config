@@ -10,9 +10,8 @@
 
   host = {
     class = "laptop";
-    isGuiHost = true;
     gpu = "nvidia";
-    desktop = "hyprland";
+    session = "hyprland";
     feature.useHome = true;
   };
 

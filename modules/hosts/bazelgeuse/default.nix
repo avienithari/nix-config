@@ -10,10 +10,9 @@
 
   host = {
     class = "desktop";
-    isGuiHost = true;
     isWorkstation = true;
     gpu = "radeon";
-    desktop = "hyprland";
+    session = "hyprland";
 
     feature = {
       privateChats = true;

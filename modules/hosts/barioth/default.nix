@@ -10,8 +10,7 @@
 
   host = {
     class = "desktop";
-    isGuiHost = true;
-    desktop = "hyprland";
+    session = "hyprland";
     feature = {
       steam = true;
       useHome = true;

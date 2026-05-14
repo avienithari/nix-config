@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 
 {
   options.host = {
@@ -8,29 +8,30 @@
         "laptop"
         "server"
       ];
+      description = "Define host class";
     };
 
-    isGuiHost = lib.mkEnableOption "Enable host GUI configuration";
+    isGuiHost = lib.mkOption {
+      type = lib.types.bool;
+      description = "Enable host GUI configuration";
+    };
+
     isWorkstation = lib.mkEnableOption "Enable work related packages";
 
     gpu = lib.mkOption {
-      type = lib.types.enum [
-        "none"
+      type = lib.types.nullOr (lib.types.enum [
         "nvidia"
         "radeon"
-      ];
-      default = "none";
+      ]);
       description = "Dedicated GPU driver";
     };
 
-    desktop = lib.mkOption {
-      type = lib.types.enum [
-        "none"
+    session = lib.mkOption {
+      type = lib.types.nullOr (lib.types.enum [
         "hyprland"
         "gnome"
-      ];
-      default = "none";
-      description = "Primary desktop environment";
+      ]);
+      description = "Graphical session";
     };
 
     feature = {
@@ -42,4 +43,7 @@
       virtualisation = lib.mkEnableOption "Enable QEMU/KVM";
     };
   };
+
+  config.host.isGuiHost = lib.mkDefault
+    (config.host.class == "desktop" || config.host.class == "laptop");
 }

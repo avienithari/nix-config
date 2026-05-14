@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  config = lib.mkIf (config.host.isGuiHost && config.host.desktop == "gnome") {
+  config = lib.mkIf (config.host.isGuiHost && config.host.session == "gnome") {
     services = {
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
