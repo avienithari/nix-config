@@ -1,8 +1,8 @@
-{ lib, vars, ... }:
+{ lib, osConfig, ... }:
 
 {
   imports = [ ]
-    ++ lib.optionals (vars.class != "server") [
+    ++ lib.optionals (osConfig.host.class != "server") [
     ./clear-spotify-cache.nix
   ];
 }

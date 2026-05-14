@@ -9,6 +9,7 @@
   ];
 
   host = {
+    class = "desktop";
     isGuiHost = true;
     isWorkstation = true;
     gpu = "radeon";
@@ -18,6 +19,7 @@
       privateChats = true;
       steam = true;
       torrent = true;
+      useHome = true;
       virtualisation = true;
     };
   };

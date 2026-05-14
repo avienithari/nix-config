@@ -9,9 +9,11 @@
   ];
 
   host = {
+    class = "laptop";
     isGuiHost = true;
     gpu = "nvidia";
     desktop = "hyprland";
+    feature.useHome = true;
   };
 
   hardware.nvidia.package =

@@ -1,4 +1,4 @@
-{ pkgs, lib, vars, ... }:
+{ pkgs, lib, osConfig, ... }:
 
 {
   programs.waybar = {
@@ -25,7 +25,7 @@
           "wireplumber"
           "custom/separator"
         ]
-        ++ lib.optionals (vars.class == "laptop") [
+        ++ lib.optionals (osConfig.host.class == "laptop") [
           "battery"
           "custom/separator"
           "backlight"

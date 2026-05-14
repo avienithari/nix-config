@@ -1,4 +1,4 @@
-{ lib, pkgs, vars, ... }:
+{ lib, pkgs, osConfig, ... }:
 
 let
   loadScript = path: import path { inherit pkgs; };
@@ -9,10 +9,10 @@ in
     ./sessionizer.nix
     ./ytd.nix
   ])
-  ++ lib.optionals (vars.class != "server") (map loadScript [
+  ++ lib.optionals (osConfig.host.class != "server") (map loadScript [
     ./clear-spotify-cache.nix
   ])
-  ++ lib.optionals (vars.class == "laptop") (map loadScript [
+  ++ lib.optionals (osConfig.host.class == "laptop") (map loadScript [
     ./acpi-loop.nix
     ./battery-status.nix
   ]);

@@ -1,4 +1,4 @@
-{ pkgs, vars, ... }:
+{ pkgs, osConfig, ... }:
 
 {
   programs.tmux = {
@@ -33,7 +33,7 @@
       set -g window-status-current-format "#[fg=#{@rp_gold}]#I: #W#{?window_zoomed_flag, #[fg=#{@rp_gold}][Z],}"
 
       set -g status-right-length 100
-      ${if vars.class == "laptop" then ''
+      ${if osConfig.host.class == "laptop" then ''
         set -g status-right "#[fg=#{@rp_subtle}]#(battery-status) #[fg=#{@rp_subtle}]%I:%M %p"
       '' else ''
         set -g status-right "#[fg=#{@rp_subtle}]%I:%M %p"

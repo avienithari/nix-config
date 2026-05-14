@@ -9,7 +9,14 @@
     ../../homelab
   ];
 
-  host.feature.docker = true;
+  host = {
+    class = "server";
+
+    feature = {
+      docker = true;
+      useHome = true;
+    };
+  };
 
   networking.hostName = lib.mkForce "rathian";
   networking.firewall = {

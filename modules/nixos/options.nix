@@ -2,6 +2,14 @@
 
 {
   options.host = {
+    class = lib.mkOption {
+      type = lib.types.enum [
+        "desktop"
+        "laptop"
+        "server"
+      ];
+    };
+
     isGuiHost = lib.mkEnableOption "Enable host GUI configuration";
     isWorkstation = lib.mkEnableOption "Enable work related packages";
 
@@ -30,6 +38,7 @@
       privateChats = lib.mkEnableOption "Enable additional chat packages";
       steam = lib.mkEnableOption "Enable steam";
       torrent = lib.mkEnableOption "Enable torrent support";
+      useHome = lib.mkEnableOption "Enable home-manager configuration";
       virtualisation = lib.mkEnableOption "Enable QEMU/KVM";
     };
   };

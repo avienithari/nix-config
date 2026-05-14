@@ -9,11 +9,15 @@
   ];
 
   host = {
+    class = "desktop";
     isGuiHost = true;
     gpu = "nvidia";
     desktop = "gnome";
 
-    feature.steam = true;
+    feature = {
+      steam = true;
+      useHome = true;
+    };
   };
 
   hardware.nvidia.package =

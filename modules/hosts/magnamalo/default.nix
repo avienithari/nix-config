@@ -9,6 +9,7 @@
   ];
 
   host = {
+    class = "laptop";
     isGuiHost = true;
     isWorkstation = true;
     desktop = "hyprland";
@@ -17,6 +18,7 @@
       privateChats = true;
       steam = true;
       torrent = true;
+      useHome = true;
     };
   };
 

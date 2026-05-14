@@ -20,238 +20,55 @@
     };
   };
 
-  outputs =
-    { self, nixpkgs, nix-darwin, nix-homebrew, home-manager, agenix, secrets }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, ... }:
     let
-      system = "x86_64-linux";
       username = "avien";
+      system = "x86_64-linux";
 
-      pkgs = import nixpkgs {
-        inherit system;
+      nixosHosts = [
+        "arzuros"
+        "barioth"
+        "bazelgeuse"
+        "magnamalo"
+        "rathian"
+        "zinogre"
+      ];
 
-        config = {
-          allowUnfree = true;
-        };
-      };
-
+      darwinHosts = [
+        "magala"
+        "rathalos"
+      ];
     in
     {
-      nixosConfigurations = {
-        arzuros = nixpkgs.lib.nixosSystem {
+      nixosConfigurations = nixpkgs.lib.genAttrs nixosHosts (host:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
           specialArgs = {
-            inherit system;
-            inherit username;
-            inherit agenix;
-            inherit secrets;
+            inherit
+              inputs
+              username
+              system;
           };
-
           modules = [
-            ./modules/hosts/arzuros
-
-            agenix.nixosModules.default
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                vars = {
-                  class = "laptop";
-                };
-              };
-
-              home-manager.users.${username} = {
-                imports = [
-                  ./modules/home
-                ];
-              };
-            }
+            ./modules/nixos
+            ./modules/hosts/${host}
           ];
-        };
+        }
+      );
 
-        barioth = nixpkgs.lib.nixosSystem {
+      darwinConfigurations = nixpkgs.lib.genAttrs darwinHosts (host:
+        nix-darwin.lib.darwinSystem {
           specialArgs = {
-            inherit system;
-            inherit username;
-            inherit agenix;
-            inherit secrets;
+            inherit
+              inputs
+              username
+              self;
           };
-
           modules = [
-            ./modules/hosts/barioth
-
-            agenix.nixosModules.default
+            ./modules/darwin
+            ./modules/hosts/${host}
           ];
-        };
-
-        bazelgeuse = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit system;
-            inherit username;
-            inherit agenix;
-            inherit secrets;
-          };
-
-          modules = [
-            ./modules/hosts/bazelgeuse
-
-            agenix.nixosModules.default
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                vars = {
-                  class = "desktop";
-                };
-              };
-
-              home-manager.users.${username} = {
-                imports = [
-                  ./modules/home
-                ];
-              };
-            }
-          ];
-        };
-
-        magnamalo = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit system;
-            inherit username;
-            inherit agenix;
-            inherit secrets;
-          };
-
-          modules = [
-            ./modules/hosts/magnamalo
-
-            agenix.nixosModules.default
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                vars = {
-                  class = "laptop";
-                };
-              };
-
-              home-manager.users.${username} = {
-                imports = [
-                  ./modules/home
-                ];
-              };
-            }
-          ];
-        };
-
-        rathian = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit system;
-            inherit username;
-            inherit agenix;
-            inherit secrets;
-          };
-
-          modules = [
-            ./modules/hosts/rathian
-
-            agenix.nixosModules.default
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                vars = {
-                  class = "server";
-                };
-              };
-
-              home-manager.users.${username} = {
-                imports = [
-                  ./modules/home
-                ];
-              };
-            }
-          ];
-        };
-
-        zinogre = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit system;
-            inherit username;
-            inherit agenix;
-            inherit secrets;
-          };
-
-          modules = [
-            ./modules/hosts/zinogre
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                vars = {
-                  class = "desktop";
-                };
-              };
-
-              home-manager.users.${username} = {
-                imports = [
-                  ./modules/home
-                ];
-              };
-            }
-
-            agenix.nixosModules.default
-          ];
-        };
-      };
-
-      darwinConfigurations = {
-        rathalos = nix-darwin.lib.darwinSystem {
-          specialArgs = {
-            inherit username self;
-          };
-
-          modules = [
-            ./modules/hosts/rathalos
-
-            nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                enable = true;
-                enableRosetta = true;
-                user = username;
-                autoMigrate = true;
-              };
-            }
-          ];
-        };
-
-        magala = nix-darwin.lib.darwinSystem {
-          specialArgs = {
-            inherit username self;
-          };
-
-          modules = [
-            ./modules/hosts/magala
-
-            nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                enable = true;
-                user = username;
-                autoMigrate = true;
-              };
-            }
-          ];
-        };
-      };
+        }
+      );
     };
 }

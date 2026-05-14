@@ -1,4 +1,4 @@
-{ lib, vars, ... }:
+{ lib, osConfig, ... }:
 
 {
   home.username = "avien";
@@ -7,7 +7,7 @@
 
   imports = [
     ./core
-  ] ++ lib.optionals (vars.class != "server") [
+  ] ++ lib.optionals (osConfig.host.class != "server") [
     ./gui
   ];
 }
