@@ -1,27 +1,14 @@
-{ config, lib, ... }:
+{ lib, username, ... }:
 
-with lib;
-
-let
-  cfg = config.avien.ssh;
-in
 {
-  options.avien.ssh = {
-    passwordAuthentication = mkOption {
-      type = types.bool;
-      default = false;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = lib.mkDefault false;
+      PermitRootLogin = "no";
+      AllowUsers = [ "${username}" ];
     };
   };
 
-  config = {
-    services.openssh = {
-      enable = true;
-      settings = {
-        PasswordAuthentication = cfg.passwordAuthentication;
-        PermitRootLogin = "no";
-      };
-    };
-
-    networking.firewall.allowedTCPPorts = [ 22 ];
-  };
+  networking.firewall.allowedTCPPorts = [ 22 ];
 }

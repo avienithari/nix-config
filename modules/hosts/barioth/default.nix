@@ -18,5 +18,5 @@
 
   networking.hostName = lib.mkForce "barioth";
 
-  avien.ssh.passwordAuthentication = true;
+  services.openssh.settings.PasswordAuthentication = true;
 }
