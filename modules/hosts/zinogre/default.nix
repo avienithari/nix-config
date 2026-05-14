@@ -5,7 +5,6 @@
     ./configuration.nix
     ../../users/avien
     ../../services
-    ../../nixos
   ];
 
   host = {
