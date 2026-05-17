@@ -4,7 +4,6 @@
   imports = [
     ./configuration.nix
     ../../users/avien
-    ../../services
     ../../homelab
   ];
 

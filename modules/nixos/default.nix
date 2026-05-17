@@ -6,6 +6,7 @@
     ./core
     ./gui
     ./misc
+    ../services
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
