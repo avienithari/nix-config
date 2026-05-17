@@ -171,11 +171,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1778775137,
-        "narHash": "sha256-AzMQyesXW0azuOA0nDM3Rt1wu5u4cEQWEU+ZyntPn8Q=",
+        "lastModified": 1779058789,
+        "narHash": "sha256-LW2UnEpSZ38hSKB3cqQiwxZzd0BRXW3/MeNzgtCRMkE=",
         "ref": "refs/heads/master",
-        "rev": "5b8a0466ee0843c92ac65c823625fa91a86f60ce",
-        "revCount": 33,
+        "rev": "82db32e89b4579010a58dd28f74c70c535f64751",
+        "revCount": 34,
         "type": "git",
         "url": "file:///home/avien/nix-secrets"
       },
