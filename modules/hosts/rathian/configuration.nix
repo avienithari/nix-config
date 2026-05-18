@@ -8,13 +8,6 @@
 
   networking.networkmanager.enable = true;
 
-  time.timeZone = "Europe/Warsaw";
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   users.users.avien = {
     isNormalUser = true;
     description = "avien";

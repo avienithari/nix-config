@@ -10,13 +10,6 @@
 
   networking.networkmanager.enable = true;
 
-  time.timeZone = "Europe/Warsaw";
-
-  services.xserver.xkb = {
-    layout = "us,pl";
-    variant = "";
-  };
-
   services.printing.enable = true;
 
   services.pulseaudio.enable = false;

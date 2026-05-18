@@ -10,13 +10,6 @@
 
   networking.networkmanager.enable = true;
 
-  time.timeZone = "Europe/Warsaw";
-
-  services.xserver.xkb = {
-    layout = "pl";
-    variant = "";
-  };
-
   console.keyMap = "pl2";
 
   users.users.avien = {
