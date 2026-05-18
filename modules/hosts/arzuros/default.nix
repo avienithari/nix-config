@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 {
   imports = [
@@ -16,7 +16,7 @@
   hardware.nvidia.package =
     config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
-  networking.hostName = lib.mkForce "arzuros";
+  networking.hostName = "arzuros";
 
   system.stateVersion = "25.11";
 }

@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   imports = [
@@ -15,7 +15,7 @@
     };
   };
 
-  networking.hostName = lib.mkForce "barioth";
+  networking.hostName = "barioth";
 
   services.openssh.settings.PasswordAuthentication = true;
 

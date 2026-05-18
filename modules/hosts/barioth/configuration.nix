@@ -6,8 +6,6 @@
       ./hardware-configuration.nix
     ];
 
-  networking.hostName = "nixos";
-
   networking.networkmanager.enable = true;
 
   console.keyMap = "pl2";

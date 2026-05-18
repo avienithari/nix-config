@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   imports = [
@@ -17,7 +17,7 @@
   };
 
   networking = {
-    hostName = lib.mkForce "rathian";
+    hostName = "rathian";
     firewall = {
       allowedTCPPorts = [
         80

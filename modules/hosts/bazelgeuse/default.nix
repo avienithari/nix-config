@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   imports = [
@@ -21,7 +21,7 @@
     };
   };
 
-  networking.hostName = lib.mkForce "bazelgeuse";
+  networking.hostName = "bazelgeuse";
 
   system.stateVersion = "25.11";
 }

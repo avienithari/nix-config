@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 {
   imports = [
@@ -20,7 +20,7 @@
   hardware.nvidia.package =
     config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
-  networking.hostName = lib.mkForce "zinogre";
+  networking.hostName = "zinogre";
 
   system.stateVersion = "25.05";
 }
