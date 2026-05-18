@@ -70,5 +70,9 @@
           ];
         }
       );
+
+      devShells.${system}.default = import ./modules/shell.nix {
+        inherit inputs system;
+      };
     };
 }
