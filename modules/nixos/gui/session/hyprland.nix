@@ -1,4 +1,4 @@
-{ config, lib, pkgs, username, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   config = lib.mkIf (config.host.isGuiHost && config.host.session == "hyprland") {
@@ -21,24 +21,10 @@
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-      wireplumber.enable = true;
-    };
-
     programs.thunar.enable = true;
     services = {
       gvfs.enable = true;
       tumbler.enable = true;
-    };
-
-    users.users.${username} = {
-      extraGroups = [ "audio" ];
     };
   };
 }

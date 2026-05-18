@@ -6,5 +6,6 @@
     ./gpu
     ./packages
     ./session
+    ./sound
   ];
 }
