@@ -7,6 +7,9 @@ in
 {
   networking = {
     nameservers = lib.mkDefault [ dns ];
-    networkmanager.insertNameservers = lib.mkDefault [ dns ];
+    networkmanager = {
+      enable = true;
+      insertNameservers = lib.mkDefault [ dns ];
+    };
   };
 }

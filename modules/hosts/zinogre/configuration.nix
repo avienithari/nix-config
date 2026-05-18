@@ -6,8 +6,6 @@
       ./hardware-configuration.nix
     ];
 
-  networking.networkmanager.enable = true;
-
   services.printing.enable = true;
 
   services.pulseaudio.enable = false;

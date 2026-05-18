@@ -8,6 +8,7 @@
     ./gnupg
     ./locale
     ./maintenance
+    ./network
     ./packages
   ];
 }
