@@ -21,8 +21,10 @@
     masApps = {
       "Elmedia Video Player" = 1044549675;
     };
-    onActivation.cleanup = "zap";
-    onActivation.autoUpdate = true;
-    onActivation.upgrade = true;
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+      upgrade = true;
+    };
   };
 }

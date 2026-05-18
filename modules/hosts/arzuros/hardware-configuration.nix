@@ -1,28 +1,32 @@
 { config, lib, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    initrd = {
+      availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
+      kernelModules = [ ];
+    };
 
-  fileSystems."/" =
-    {
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
+  };
+
+  fileSystems = {
+    "/" = {
       device = "/dev/disk/by-uuid/d2749735-9d1d-4572-b5bd-efdcbbf7d07f";
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
-    {
+    "/boot" = {
       device = "/dev/disk/by-uuid/533A-4C41";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
+  };
 
   swapDevices =
     [{ device = "/dev/disk/by-uuid/0d4abc3b-4f09-4213-a6fd-286a2ba3635a"; }];

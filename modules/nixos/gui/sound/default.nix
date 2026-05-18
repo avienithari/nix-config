@@ -1,7 +1,7 @@
 { config, lib, username, ... }:
 
 {
-  config = lib.mkIf (config.host.isGuiHost) {
+  config = lib.mkIf config.host.isGuiHost {
     security.rtkit.enable = true;
 
     services = {

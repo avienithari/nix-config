@@ -20,7 +20,7 @@ in
       enable = true;
       openFirewall = true;
       host = "127.0.0.1";
-      port = port;
+      inherit port;
 
       settings = {
         theme = "dark";

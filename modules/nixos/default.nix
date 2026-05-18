@@ -14,8 +14,7 @@
   config = lib.mkMerge [
     {
       _module.args = {
-        agenix = inputs.agenix;
-        secrets = inputs.secrets;
+        inherit (inputs) agenix secrets;
       };
     }
 
