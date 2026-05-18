@@ -18,4 +18,6 @@
   networking.hostName = lib.mkForce "barioth";
 
   services.openssh.settings.PasswordAuthentication = true;
+
+  system.stateVersion = "25.05";
 }

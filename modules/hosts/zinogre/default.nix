@@ -21,4 +21,6 @@
     config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
   networking.hostName = lib.mkForce "zinogre";
+
+  system.stateVersion = "25.05";
 }

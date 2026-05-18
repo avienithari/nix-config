@@ -17,4 +17,6 @@
     config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
   networking.hostName = lib.mkForce "arzuros";
+
+  system.stateVersion = "25.11";
 }

@@ -22,4 +22,6 @@
   };
 
   networking.hostName = lib.mkForce "bazelgeuse";
+
+  system.stateVersion = "25.11";
 }

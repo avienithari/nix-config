@@ -30,4 +30,6 @@
   };
 
   services.tailscale.useRoutingFeatures = "both";
+
+  system.stateVersion = "24.11";
 }

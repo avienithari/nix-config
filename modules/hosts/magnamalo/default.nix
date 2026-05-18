@@ -20,4 +20,6 @@
   };
 
   networking.hostName = lib.mkForce "magnamalo";
+
+  system.stateVersion = "24.11";
 }
