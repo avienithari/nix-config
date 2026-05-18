@@ -1,6 +1,8 @@
 { agenix, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
     bash-language-server
