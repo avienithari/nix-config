@@ -16,18 +16,7 @@
     };
   };
 
-  networking = {
-    hostName = "rathian";
-    firewall = {
-      allowedTCPPorts = [
-        80
-        443
-        4500
-        4533
-        8123
-      ];
-    };
-  };
+  networking.hostName = "rathian";
 
   services.tailscale.useRoutingFeatures = "both";
 

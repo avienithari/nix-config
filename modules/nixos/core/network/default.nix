@@ -1,4 +1,4 @@
-{ lib, secrets, ... }:
+{ config, lib, secrets, ... }:
 
 let
   private = import "${secrets}/private.nix";
@@ -10,6 +10,13 @@ in
     networkmanager = {
       enable = true;
       insertNameservers = lib.mkDefault [ dns ];
+    };
+
+    firewall = lib.mkIf (config.host.class == "server") {
+      allowedTCPPorts = [
+        80
+        443
+      ];
     };
   };
 }
