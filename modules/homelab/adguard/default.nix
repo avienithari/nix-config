@@ -4,6 +4,7 @@ let
   private = import "${secrets}/private.nix";
   domain = private.services.adguard.domain;
   port = private.services.adguard.port;
+  dns = toString private.services.dns.ip;
 in
 {
   networking = {
@@ -25,7 +26,10 @@ in
       settings = {
         theme = "dark";
         dns = {
-          bind_hosts = [ "0.0.0.0" ];
+          bind_hosts = [
+            "127.0.0.1"
+            "${dns}"
+          ];
           port = 53;
           upstream_dns = [
             "https://dns.quad9.net/dns-query"
