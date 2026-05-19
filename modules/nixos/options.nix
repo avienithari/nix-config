@@ -41,6 +41,19 @@
       torrent = lib.mkEnableOption "Enable torrent support";
       useHome = lib.mkEnableOption "Enable home-manager configuration";
       virtualisation = lib.mkEnableOption "Enable QEMU/KVM";
+
+      nut = {
+        enable = lib.mkEnableOption "Enable NUT";
+
+        role = lib.mkOption {
+          type = lib.types.enum [
+            "master"
+            "slave"
+          ];
+
+          default = "slave";
+        };
+      };
     };
   };
 

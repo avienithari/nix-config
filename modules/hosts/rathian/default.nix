@@ -13,6 +13,10 @@
     feature = {
       docker = true;
       useHome = true;
+      nut = {
+        enable = true;
+        role = "master";
+      };
     };
   };
 
