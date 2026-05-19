@@ -3,5 +3,6 @@ disabled = [
 ]
 
 ignore = [
-  ".direnv"
+  ".direnv",
+  ".stversions"
 ]
