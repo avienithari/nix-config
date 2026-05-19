@@ -1,5 +1,8 @@
-{ config, lib, modulesPath, ... }:
+{ config, lib, modulesPath, username, ... }:
 
+let
+  mediaPath = "/home/${username}/media";
+in
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -21,13 +24,13 @@
       fsType = "ext4";
     };
 
-    "/home/avien/media" = {
+    "${mediaPath}/spearhead" = {
       device = "/dev/disk/by-uuid/791f1e91-2a7a-4b2c-97ae-127c7d164958";
       fsType = "ext4";
       options = [ "defaults" "noatime" "nofail" ];
     };
 
-    "/home/avien/data" = {
+    "${mediaPath}/data" = {
       device = "/dev/disk/by-uuid/5d2bdf16-d8b2-4a4c-9123-0c85a440d346";
       fsType = "ext4";
       options = [ "defaults" "noatime" "nofail" ];
