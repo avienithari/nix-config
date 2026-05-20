@@ -54,6 +54,15 @@
           default = "slave";
         };
       };
+
+      mountSmb = {
+        enable = lib.mkEnableOption "Enable smb shares";
+
+        shares = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          description = "List of share names to mount";
+        };
+      };
     };
   };
 
