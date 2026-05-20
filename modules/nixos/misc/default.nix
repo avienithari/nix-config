@@ -3,8 +3,8 @@
 {
   imports = [
     ./docker.nix
-    ./mount-smb-share.nix
     ./private-chats.nix
+    ./smb.nix
     ./steam.nix
     ./torrent.nix
     ./virtualisation.nix
