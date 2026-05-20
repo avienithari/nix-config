@@ -18,6 +18,15 @@
       torrent = true;
       useHome = true;
       virtualisation = true;
+
+      mountSmb = {
+        enable = true;
+        shares = [
+          "dragon"
+          "magic"
+          "velvet"
+        ];
+      };
     };
   };
 

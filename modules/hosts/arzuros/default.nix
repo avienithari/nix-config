@@ -10,7 +10,14 @@
     class = "laptop";
     gpu = "nvidia";
     session = "hyprland";
-    feature.useHome = true;
+    feature = {
+      useHome = true;
+
+      mountSmb = {
+        enable = true;
+        shares = [ "velvet" ];
+      };
+    };
   };
 
   hardware.nvidia.package =

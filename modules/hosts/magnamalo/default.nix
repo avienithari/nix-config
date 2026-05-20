@@ -16,6 +16,11 @@
       steam = true;
       torrent = true;
       useHome = true;
+
+      mountSmb = {
+        enable = true;
+        shares = [ "velvet" ];
+      };
     };
   };
 
