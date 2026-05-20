@@ -26,18 +26,21 @@
       set -g status-style "bg=#{@rp_base}, fg=#{@rp_text}"
       set -g status-left-length 100
 
-      set -g status-left "#[fg=#{@rp_text},bg=#{@rp_base}]#S#[fg=#{@rp_muted}] "
+      set -g status-left \
+        "#[fg=#{@rp_text},bg=#{@rp_base}]#S#[fg=#{@rp_muted}] "
 
       set -g window-status-separator "#[fg=#{@rp_subtle}] | "
-      set -g window-status-format "#[fg=#{@rp_subtle}]#I: #W#{?window_zoomed_flag, #[fg=#{@rp_subtle}][Z],}"
-      set -g window-status-current-format "#[fg=#{@rp_gold}]#I: #W#{?window_zoomed_flag, #[fg=#{@rp_gold}][Z],}"
+      set -g window-status-format \
+        "#[fg=#{@rp_subtle}]#I: #W#{?window_zoomed_flag, #[fg=#{@rp_subtle}][Z],}"
+      set -g window-status-current-format \
+        "#[fg=#{@rp_gold}]#I: #W#{?window_zoomed_flag, #[fg=#{@rp_gold}][Z],}"
 
       set -g status-right-length 100
+      set -g status-right "#[fg=#{@rp_subtle}]#H "
       ${if osConfig.host.class == "laptop" then ''
-        set -g status-right "#[fg=#{@rp_subtle}]#(battery-status) #[fg=#{@rp_subtle}]%I:%M %p"
-      '' else ''
-        set -g status-right "#[fg=#{@rp_subtle}]%I:%M %p"
-      ''}
+        set -ag status-right "#[fg=#{@rp_subtle}]#(battery-status) "
+      '' else ""}
+      set -ag status-right "#[fg=#{@rp_subtle}]%I:%M %p"
 
       set-option -g default-shell ${pkgs.zsh}/bin/zsh
 
