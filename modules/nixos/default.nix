@@ -22,6 +22,11 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
+        extraSpecialArgs = {
+          inherit (inputs) secrets;
+          inherit username;
+        };
+
         users.${username}.imports = [ ../home ];
       };
     })

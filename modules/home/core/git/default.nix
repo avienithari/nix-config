@@ -1,5 +1,9 @@
-{ ... }:
+{ secrets, username, ... }:
 
+let
+  private = import "${secrets}/private.nix";
+  userKeys = private.users.${username};
+in
 {
   programs.git = {
     enable = true;
@@ -25,7 +29,7 @@
     signing = {
       signByDefault = true;
       format = "ssh";
-      key = "~/.ssh/id_avien_sign.pub";
+      key = userKeys.signingKeyPath;
     };
 
     ignores = [

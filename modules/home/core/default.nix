@@ -8,6 +8,7 @@
     ./fzf
     ./git
     ./scripts
+    ./ssh
     ./tmux
     ./user-services
     ./yazi
