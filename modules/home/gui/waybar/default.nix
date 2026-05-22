@@ -43,6 +43,7 @@
         "clock" = {
           timezone = "Europe/Warsaw";
           format = "{:%I:%M}";
+          format-alt = "{:%H:%M %d/%m/%Y}";
           interval = 1;
         };
         "tray" = {
@@ -52,10 +53,12 @@
         "cpu" = {
           interval = 5;
           format = "CPU: {usage}%";
+          format-alt = "CPU: {avg_frequency}GHz";
         };
         "memory" = {
           interval = 5;
           format = "Mem: {used}GiB";
+          format-alt = "Mem: {used}/{total}GiB";
         };
         "disk" = {
           interval = 600;
@@ -91,7 +94,7 @@
         };
         "network" = {
           format-wifi = "󰖩";
-          format-ethernet = "󰈀 {ifname}";
+          format-ethernet = "󰈀";
           format-disconnected = "";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
         };
