@@ -38,6 +38,7 @@
       docker = lib.mkEnableOption "Enable docker virtualisation";
       privateChats = lib.mkEnableOption "Enable additional chat packages";
       steam = lib.mkEnableOption "Enable steam";
+      syncthingWebUi = lib.mkEnableOption "Enable syncthing web ui";
       torrent = lib.mkEnableOption "Enable torrent support";
       useHome = lib.mkEnableOption "Enable home-manager configuration";
       virtualisation = lib.mkEnableOption "Enable QEMU/KVM";
