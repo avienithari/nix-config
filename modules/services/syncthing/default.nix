@@ -4,6 +4,12 @@ let
   cfg = config.host.feature.syncthingWebUi;
   private = import "${secrets}/private.nix";
   syncthingPasswordPath = config.age.secrets.syncthing-password.path;
+
+  folders = lib.filterAttrs
+    (
+      name: folder: builtins.elem config.networking.hostName folder.devices
+    )
+    private.services.syncthing.folders;
 in
 {
   age.secrets."syncthing-password" = {
@@ -26,13 +32,14 @@ in
     guiAddress = lib.mkIf cfg "0.0.0.0:8384";
     guiPasswordFile = lib.mkIf cfg syncthingPasswordPath;
 
-    overrideDevices = false;
-    overrideFolders = false;
+    overrideDevices = true;
+    overrideFolders = true;
 
     relay.enable = false;
 
     settings = {
-      inherit (private.services.syncthing) devices folders;
+      inherit (private.services.syncthing) devices;
+      inherit folders;
 
       gui = lib.mkIf cfg {
         user = "${username}";
