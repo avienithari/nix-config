@@ -40,7 +40,7 @@
       ];
     in
     {
-      nixosConfigurations = nixpkgs.lib.genAttrs nixosHosts (host:
+      nixosConfigurations = (nixpkgs.lib.genAttrs nixosHosts (host:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
@@ -54,7 +54,20 @@
             ./modules/hosts/${host}
           ];
         }
-      );
+      )) // {
+        iso = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit
+              inputs
+              username
+              system;
+          };
+          modules = [
+            ./modules/installer
+          ];
+        };
+      };
 
       darwinConfigurations = nixpkgs.lib.genAttrs darwinHosts (host:
         nix-darwin.lib.darwinSystem {
