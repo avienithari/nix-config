@@ -3,6 +3,7 @@
 {
   imports = [
     ./adb
+    ./age
     ./bluetooth
     ./boot
     ./gnupg
