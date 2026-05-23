@@ -60,6 +60,7 @@ in
       "portkey.json"
       "secrets"
       ".direnv"
+      "result"
     ];
   };
 }
