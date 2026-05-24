@@ -14,6 +14,11 @@
     feature = {
       steam = true;
       useHome = true;
+
+      mountSmb = {
+        enable = true;
+        shares = [ "magic" ];
+      };
     };
   };
 
