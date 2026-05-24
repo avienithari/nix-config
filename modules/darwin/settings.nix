@@ -1,10 +1,13 @@
 { self, ... }:
 
 {
-  system.defaults = {
-    NSGlobalDomain.KeyRepeat = 2;
-    configurationRevision = self.rev or self.dirtyRev or null;
+  system = {
     stateVersion = 6;
+    configurationRevision = self.rev or self.dirtyRev or null;
+
+    defaults = {
+      NSGlobalDomain.KeyRepeat = 2;
+    };
   };
 
   nix.settings.experimental-features = "nix-command flakes";
