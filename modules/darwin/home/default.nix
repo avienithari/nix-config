@@ -3,6 +3,7 @@
 {
   imports = [
     ../../home/core/zsh
+    ./ghostty
   ];
 
   home = {
