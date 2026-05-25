@@ -6,4 +6,6 @@
   nix-homebrew.enableRosetta = true;
 
   system.primaryUser = username;
+
+  system.stateVersion = 6;
 }
