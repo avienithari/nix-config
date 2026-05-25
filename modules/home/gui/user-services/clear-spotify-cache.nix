@@ -1,7 +1,8 @@
 { pkgs, lib, ... }:
 
 let
-  clearSpotifyCache = import ../scripts/clear-spotify-cache.nix { inherit pkgs; };
+  clearSpotifyCache =
+    import ../../core/scripts/clear-spotify-cache.nix { inherit pkgs; };
 in
 {
   systemd.user.services.clear-spotify-cache = {

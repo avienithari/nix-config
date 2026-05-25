@@ -10,7 +10,6 @@
     ./scripts
     ./ssh
     ./tmux
-    ./user-services
     ./yazi
     ./zsh
   ];
