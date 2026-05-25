@@ -2,13 +2,10 @@
 
 {
   imports = [
-    ./common-packages.nix
-    ./homebrew.nix
-    ./lld.nix
-    ./steam.nix
-
     ./options.nix
+    ./homebrew
     ./maintenance
+    ./packages
     inputs.nix-homebrew.darwinModules.nix-homebrew
   ];
 
