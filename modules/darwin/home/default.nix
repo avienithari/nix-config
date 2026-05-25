@@ -1,10 +1,16 @@
-{ username, ... }:
+{ lib, username, ... }:
 
 {
   imports = [
-    ../../home/core/zsh
     ./ghostty
+    ../../home/core
   ];
+
+  programs = {
+    direnv.enable = lib.mkForce false;
+    git.enable = lib.mkForce false;
+    ssh.enable = lib.mkForce false;
+  };
 
   home = {
     inherit username;
