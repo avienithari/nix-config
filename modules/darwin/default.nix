@@ -7,6 +7,8 @@
     ./lld.nix
     ./settings.nix
     ./steam.nix
+
+    ./maintenance
     inputs.nix-homebrew.darwinModules.nix-homebrew
   ];
 
