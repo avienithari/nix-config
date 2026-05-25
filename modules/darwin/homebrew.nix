@@ -18,9 +18,6 @@
       "monitorcontrol"
       "vlc"
     ];
-    masApps = {
-      "Elmedia Video Player" = 1044549675;
-    };
     onActivation = {
       autoUpdate = true;
       cleanup = "zap";
