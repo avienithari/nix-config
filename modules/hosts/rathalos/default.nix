@@ -4,6 +4,7 @@
   host.feature = {
     lld = true;
     steam = true;
+    useHome = true;
   };
 
   nixpkgs.hostPlatform = "aarch64-darwin";

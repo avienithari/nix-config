@@ -1,5 +1,8 @@
-{ self, lib, inputs, username, ... }:
+{ config, self, lib, inputs, username, ... }:
 
+let
+  cfg = config.host.feature.useHome;
+in
 {
   imports = [
     ./options.nix
@@ -7,24 +10,39 @@
     ./maintenance
     ./packages
     inputs.nix-homebrew.darwinModules.nix-homebrew
+    inputs.home-manager.darwinModules.home-manager
   ];
 
-  config = {
-    nix-homebrew = {
-      enable = true;
-      enableRosetta = lib.mkDefault false;
-      user = username;
-      autoMigrate = true;
-    };
-
-    system = {
-      configurationRevision = self.rev or self.dirtyRev or null;
-
-      defaults = {
-        NSGlobalDomain.KeyRepeat = 2;
+  config = lib.mkMerge [
+    {
+      nix-homebrew = {
+        enable = true;
+        user = username;
+        autoMigrate = true;
+        enableRosetta = lib.mkDefault false;
       };
-    };
 
-    programs.zsh.enable = true;
-  };
+      system = {
+        configurationRevision = self.rev or self.dirtyRev or null;
+
+        defaults = {
+          NSGlobalDomain.KeyRepeat = 2;
+        };
+      };
+
+      users.users.${username}.home = "/Users/${username}";
+    }
+
+    (lib.mkIf cfg {
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = {
+          inherit username;
+        };
+
+        users.${username}.imports = [ ./home ];
+      };
+    })
+  ];
 }
