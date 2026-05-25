@@ -5,14 +5,10 @@
 
   environment.systemPackages = with pkgs; [
     android-tools
-    argparse
-    bash
     bat
     brave
     brotli
     btop
-    clisp
-    cmake
     fastfetch
     fd
     ffmpeg-full
@@ -20,34 +16,22 @@
     ffmpegthumbnailer
     fzf
     gd
-    gh
     gnupg
-    gnutls
-    go
-    httrack
-    inkscape
-    jq
-    keycastr
     luajit
     luajitPackages.jsregexp
     neovim
-    ninja
     nixpkgs-fmt
     nodejs_24
-    php
     ripgrep
     slack
-    speedtest-cli
     spotify
     stow
     tldr
     tmux
-    tokei
     tree
-    virtualenv
+    tree-sitter
     wget
     yazi
     yt-dlp
-    zig
   ];
 }
