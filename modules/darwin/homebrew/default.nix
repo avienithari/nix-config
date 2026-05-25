@@ -7,7 +7,6 @@
       "llvm"
       "lua"
       "luarocks"
-      "mas"
       "pyvim"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
