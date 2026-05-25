@@ -1,7 +1,12 @@
-{ ... }:
+{ config, lib, ... }:
 
+let
+  cfg = config.host.feature.lld;
+in
 {
-  homebrew.brews = [
-    "lld"
-  ];
+  config = lib.mkIf cfg {
+    homebrew.brews = [
+      "lld"
+    ];
+  };
 }

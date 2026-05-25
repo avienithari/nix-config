@@ -1,7 +1,12 @@
-{ ... }:
+{ config, lib, ... }:
 
+let
+  cfg = config.host.feature.steam;
+in
 {
-  homebrew.casks = [
-    "steam"
-  ];
+  config = lib.mkIf cfg {
+    homebrew.casks = [
+      "steam"
+    ];
+  };
 }

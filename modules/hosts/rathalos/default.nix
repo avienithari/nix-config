@@ -1,6 +1,11 @@
 { username, ... }:
 
 {
+  host.feature = {
+    lld = true;
+    steam = true;
+  };
+
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   nix-homebrew.enableRosetta = true;
