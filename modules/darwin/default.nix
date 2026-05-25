@@ -9,6 +9,7 @@ in
     ./homebrew
     ./maintenance
     ./packages
+    ./settings
     inputs.nix-homebrew.darwinModules.nix-homebrew
     inputs.home-manager.darwinModules.home-manager
   ];
@@ -25,10 +26,6 @@ in
       system = {
         primaryUser = username;
         configurationRevision = self.rev or self.dirtyRev or null;
-
-        defaults = {
-          NSGlobalDomain.KeyRepeat = 2;
-        };
       };
 
       users.users.${username}.home = "/Users/${username}";
