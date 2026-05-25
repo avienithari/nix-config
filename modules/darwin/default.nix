@@ -23,6 +23,7 @@ in
       };
 
       system = {
+        primaryUser = username;
         configurationRevision = self.rev or self.dirtyRev or null;
 
         defaults = {
