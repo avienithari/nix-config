@@ -37,7 +37,6 @@
       ];
 
       darwinHosts = [
-        "magala"
         "rathalos"
       ];
     in
