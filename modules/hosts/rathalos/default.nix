@@ -1,14 +1,7 @@
 { ... }:
 
 {
-  host = {
-    class = "desktop";
-    feature = {
-      lld = true;
-      steam = true;
-      useHome = true;
-    };
-  };
+  host.class = "desktop";
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 

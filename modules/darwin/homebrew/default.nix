@@ -4,6 +4,7 @@
   homebrew = {
     enable = true;
     brews = [
+      "lld"
       "llvm"
       "lua"
       "luarocks"
