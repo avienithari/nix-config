@@ -41,6 +41,7 @@
       syncthingWebUi = lib.mkEnableOption "Enable syncthing web ui";
       torrent = lib.mkEnableOption "Enable torrent support";
       useHome = lib.mkEnableOption "Enable home-manager configuration";
+      useZsa = lib.mkEnableOption "Enable ZSA configuration";
       virtualisation = lib.mkEnableOption "Enable QEMU/KVM";
 
       nut = {

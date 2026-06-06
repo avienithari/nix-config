@@ -16,6 +16,7 @@
       steam = true;
       torrent = true;
       useHome = true;
+      useZsa = true;
 
       mountSmb = {
         enable = true;

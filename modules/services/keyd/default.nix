@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -13,7 +13,7 @@
         settings = {
           main = {
             capslock = "esc";
-            leftalt = "rightalt";
+            leftalt = lib.mkIf (!config.host.feature.useZsa) "rightalt";
           };
         };
       };

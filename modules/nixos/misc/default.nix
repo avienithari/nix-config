@@ -9,5 +9,6 @@
     ./torrent.nix
     ./virtualisation.nix
     ./work-packages.nix
+    ./zsa.nix
   ];
 }
