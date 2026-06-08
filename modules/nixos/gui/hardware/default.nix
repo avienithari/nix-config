@@ -1,5 +1,7 @@
 { ... }:
 
 {
-  services.printing.enable = true;
+  imports = [
+    ./printer
+  ];
 }
