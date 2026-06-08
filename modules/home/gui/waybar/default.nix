@@ -72,9 +72,12 @@
         "wireplumber" = {
           max-volume = 100;
           scroll-step = 5;
-          format = "{icon} {volume}%";
-          format-muted = " {volume}%";
+          format = "{format_source}{icon} {volume}%";
           format-icons = [ "" "" " " ];
+          format-muted =
+            "<span color='orange'>{format_source} {volume}%</span>";
+          format-source = "<span color='orange'> </span>";
+          format-source-muted = "";
         };
         "battery" = {
           interval = 1;
