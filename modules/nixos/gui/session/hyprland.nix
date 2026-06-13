@@ -9,6 +9,7 @@
       hyprland
       hyprlock
       hyprpaper
+      hyprsunset
       playerctl
       rofi
       slurp
