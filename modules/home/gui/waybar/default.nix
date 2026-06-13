@@ -1,5 +1,17 @@
 { pkgs, lib, osConfig, ... }:
 
+let
+  micStatus = pkgs.writeShellScript "mic-status" ''
+    mic=$(${pkgs.wireplumber}/bin/wpctl get-volume \
+    @DEFAULT_AUDIO_SOURCE@ 2>/dev/null)
+
+    if [ -z "$mic" ] || echo "$mic" | grep -q "MUTED"; then
+      echo ""
+    else
+      echo "<span color='orange'></span> |"
+    fi
+  '';
+in
 {
   programs.waybar = {
     enable = true;
@@ -14,6 +26,7 @@
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [
+          "custom/mic"
           "tray"
           "custom/separator"
           "cpu"
@@ -69,15 +82,18 @@
             critical = 90;
           };
         };
+        "custom/mic" = {
+          exec = "${micStatus}";
+          interval = 1;
+          format = "{}";
+          tooltip = false;
+        };
         "wireplumber" = {
           max-volume = 100;
           scroll-step = 5;
-          format = "{format_source}{icon} {volume}%";
+          format = "{icon} {volume}%";
           format-icons = [ "" "" " " ];
-          format-muted =
-            "<span color='orange'>{format_source} {volume}%</span>";
-          format-source = "<span color='orange'> </span>";
-          format-source-muted = "";
+          format-muted = "<span color='orange'> {volume}%</span>";
         };
         "battery" = {
           interval = 1;
@@ -166,6 +182,7 @@
           color: @green;
       }
 
+      #custom-mic,
       #tray,
       #cpu,
       #memory,
