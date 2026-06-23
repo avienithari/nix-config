@@ -12,7 +12,6 @@
       hyprsunset
       playerctl
       rofi
-      slurp
       wl-clipboard
     ];
 

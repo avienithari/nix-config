@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./flameshot
     ./ghostty
     ./gtk
     ./user-services
