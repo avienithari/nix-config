@@ -194,6 +194,10 @@ in
       #bluetooth {
           padding: 0 5px;
       }
+
+      .modules-right {
+        margin-right: 8px;
+      }
     '';
   };
 }
