@@ -27,6 +27,7 @@
       bindkey -s ^n "notes-picker''\n"
 
       setopt PROMPT_SUBST
+      setopt CORRECT
 
       __build_prompt() {
         local ssh_prompt=""
