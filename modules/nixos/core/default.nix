@@ -11,5 +11,6 @@
     ./maintenance
     ./network
     ./packages
+    ./suspend
   ];
 }
