@@ -3,7 +3,6 @@
 {
   config = lib.mkIf config.host.isGuiHost {
     environment.systemPackages = with pkgs; [
-      _1password-gui
       acpi
       brotli
       discord

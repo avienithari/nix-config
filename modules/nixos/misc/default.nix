@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./1password.nix
     ./docker.nix
     ./private-chats.nix
     ./smb.nix
