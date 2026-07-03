@@ -3,7 +3,6 @@
 {
   config = lib.mkIf config.host.isGuiHost {
     environment.systemPackages = with pkgs; [
-      acpi
       brotli
       discord
       ffmpeg-full

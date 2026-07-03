@@ -1,10 +1,8 @@
 { pkgs, ... }:
 
 pkgs.writeShellScriptBin "acpi-loop" ''
-  #! /usr/bin/env bash
-
   while true; do
-      acpi
-      sleep 60
+    ${pkgs.acpi}/bin/acpi
+    ${pkgs.coreutils}/bin/sleep 60
   done
 ''
