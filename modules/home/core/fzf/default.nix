@@ -5,7 +5,7 @@
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    historyWidgetOptions = [
+    historyWidget.options = [
       "--layout=reverse"
       "--height=11"
       "--info=inline"
