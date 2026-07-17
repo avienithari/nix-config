@@ -28,6 +28,11 @@
           "velvet"
         ];
       };
+
+      nut = {
+        enable = true;
+        role = "standalone";
+      };
     };
   };
 
