@@ -15,6 +15,18 @@
       playerctl
       rofi
       wl-clipboard
+
+      (makeDesktopItem {
+        name = "nvim-gui";
+        icon = "nvim";
+        desktopName = "Neovim GUI";
+        exec = "ghostty -e nvim %F";
+        terminal = false;
+        mimeTypes = [
+          "text/markdown"
+          "text/plain"
+        ];
+      })
     ];
 
     environment.variables = { XDG_SESSION_TYPE = "wayland"; };

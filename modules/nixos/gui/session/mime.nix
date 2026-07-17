@@ -12,6 +12,8 @@
       "image/svg+xml" = "org.gnome.Loupe.desktop";
       "image/tiff" = "org.gnome.Loupe.desktop";
       "image/webp" = "org.gnome.Loupe.desktop";
+      "text/markdown" = "nvim-gui.desktop";
+      "text/plain" = "nvim-gui.desktop";
       "video/mp4" = "vlc.desktop";
     };
   };
