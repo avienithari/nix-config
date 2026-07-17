@@ -51,6 +51,7 @@
           type = lib.types.enum [
             "master"
             "slave"
+            "standalone"
           ];
 
           default = "slave";
