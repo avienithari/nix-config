@@ -7,13 +7,15 @@
     escapeTime = 10;
     mouse = true;
     shortcut = "a";
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
       sensible
       yank
       vim-tmux-navigator
     ];
     extraConfig = ''
+      set -as terminal-overrides ',*:sitm=\E[3m'
+
       set -g @rp_base "#191724"
       set -g @rp_muted "#6e6a86"
       set -g @rp_subtle "#908caa"
