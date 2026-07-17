@@ -3,7 +3,7 @@
 {
   config = lib.mkIf (config.host.isGuiHost && config.host.session == "hyprland") {
     xdg.mime.defaultApplications = {
-      "application/pdf" = "google-chrome.desktop";
+      "application/pdf" = "org.gnome.Papers.desktop";
       "image/bmp" = "org.gnome.Loupe.desktop";
       "image/gif" = "org.gnome.Loupe.desktop";
       "image/jpeg" = "org.gnome.Loupe.desktop";

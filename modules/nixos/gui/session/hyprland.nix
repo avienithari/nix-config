@@ -11,6 +11,7 @@
       hyprpaper
       hyprsunset
       loupe
+      papers
       playerctl
       rofi
       wl-clipboard
