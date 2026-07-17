@@ -10,6 +10,7 @@
       hyprlock
       hyprpaper
       hyprsunset
+      loupe
       playerctl
       rofi
       wl-clipboard

@@ -11,7 +11,6 @@
       google-chrome
       libreoffice
       puddletag
-      qimgv
       spotify
       tailscale-systray
       vlc
