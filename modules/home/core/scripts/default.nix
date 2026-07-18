@@ -15,5 +15,8 @@ in
   ++ lib.optionals (osConfig.host.class == "laptop") (map loadScript [
     ./acpi-loop.nix
     ./battery-status.nix
+  ])
+  ++ lib.optionals osConfig.host.feature.nut.enable (map loadScript [
+    ./ups-status.nix
   ]);
 }
