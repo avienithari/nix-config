@@ -15,7 +15,6 @@
     };
     shellAliases = {
       ff = "fastfetch";
-      termdown = "termdown --no-art";
       vim = "nvim";
     };
     initContent = ''
