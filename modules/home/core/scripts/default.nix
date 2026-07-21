@@ -10,6 +10,7 @@ in
     ./ytd.nix
   ])
   ++ lib.optionals (osConfig.host.class != "server") (map loadScript [
+    ./chrono.nix
     ./clear-spotify-cache.nix
   ])
   ++ lib.optionals (osConfig.host.class == "laptop") (map loadScript [
