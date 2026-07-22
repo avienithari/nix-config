@@ -19,5 +19,8 @@ in
   ])
   ++ lib.optionals osConfig.host.feature.nut.enable (map loadScript [
     ./ups-status.nix
+  ])
+  ++ lib.optionals (osConfig.host.isWorkstation && osConfig.host.class == "desktop") (map loadScript [
+    ./remote.nix
   ]);
 }
