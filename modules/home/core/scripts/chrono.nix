@@ -16,7 +16,7 @@ pkgs.writeShellScriptBin "chrono" ''
         ${pkgs.sox}/bin/play -q ${bell} > /dev/null 2>&1
       ;;
     *)
-      echo "Usage: watch [stopwatch | timer <time>]"
+      echo "Usage: chrono [stopwatch | timer <time>]"
       exit 1
       ;;
   esac
