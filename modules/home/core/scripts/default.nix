@@ -1,6 +1,7 @@
 { lib, pkgs, osConfig, ... }:
 
 let
+  cfg = osConfig.host;
   loadScript = path: import path { inherit pkgs; };
 in
 {
@@ -9,18 +10,19 @@ in
     ./sessionizer.nix
     ./ytd.nix
   ])
-  ++ lib.optionals (osConfig.host.class != "server") (map loadScript [
+  ++ lib.optionals (cfg.class != "server") (map loadScript [
     ./chrono.nix
     ./clear-spotify-cache.nix
   ])
-  ++ lib.optionals (osConfig.host.class == "laptop") (map loadScript [
+  ++ lib.optionals (cfg.class == "laptop") (map loadScript [
     ./acpi-loop.nix
     ./battery-status.nix
   ])
-  ++ lib.optionals osConfig.host.feature.nut.enable (map loadScript [
+  ++ lib.optionals cfg.feature.nut.enable (map loadScript [
     ./ups-status.nix
   ])
-  ++ lib.optionals (osConfig.host.isWorkstation && osConfig.host.class == "desktop") (map loadScript [
-    ./remote.nix
-  ]);
+  ++ lib.optionals (cfg.isWorkstation && cfg.class == "desktop")
+    (map loadScript [
+      ./remote.nix
+    ]);
 }
