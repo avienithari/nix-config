@@ -26,6 +26,12 @@ in
         autoStart = false;
         capSysAdmin = true;
         openFirewall = false;
+
+        applications.apps = [
+          {
+            name = "Desktop";
+          }
+        ];
       };
 
       boot = {
