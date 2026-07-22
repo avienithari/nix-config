@@ -9,7 +9,7 @@
     ./steam.nix
     ./torrent.nix
     ./virtualisation.nix
-    ./work-packages.nix
+    ./work.nix
     ./zsa.nix
   ];
 }
