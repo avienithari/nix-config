@@ -8,6 +8,7 @@
 
   host = {
     class = "laptop";
+    isWorkstation = true;
     gpu = "nvidia";
     session = "hyprland";
     feature = {
