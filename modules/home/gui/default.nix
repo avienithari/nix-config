@@ -8,5 +8,6 @@
     ./user-services
     ./waybar
     ./wofi
+    ./zathura
   ];
 }
