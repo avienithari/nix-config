@@ -1,7 +1,11 @@
 { config, lib, pkgs, ... }:
 
+let
+  cfg = config.host;
+  isHyprlandSession = cfg.isGuiHost && cfg.session == "hyprland";
+in
 {
-  config = lib.mkIf (config.host.isGuiHost && config.host.session == "hyprland") {
+  config = lib.mkIf isHyprlandSession {
     environment.systemPackages = with pkgs; [
       bibata-cursors
       brightnessctl
@@ -11,10 +15,10 @@
       hyprpaper
       hyprsunset
       loupe
-      papers
       playerctl
       rofi
       wl-clipboard
+      zathura
 
       (makeDesktopItem {
         name = "nvim-gui";

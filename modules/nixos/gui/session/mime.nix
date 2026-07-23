@@ -1,9 +1,13 @@
 { config, lib, ... }:
 
+let
+  cfg = config.host;
+  isHyprlandSession = cfg.isGuiHost && cfg.session == "hyprland";
+in
 {
-  config = lib.mkIf (config.host.isGuiHost && config.host.session == "hyprland") {
+  config = lib.mkIf isHyprlandSession {
     xdg.mime.defaultApplications = {
-      "application/pdf" = "org.gnome.Papers.desktop";
+      "application/pdf" = "org.pwmt.zathura.desktop";
       "image/bmp" = "org.gnome.Loupe.desktop";
       "image/gif" = "org.gnome.Loupe.desktop";
       "image/jpeg" = "org.gnome.Loupe.desktop";
