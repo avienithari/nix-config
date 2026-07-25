@@ -2,29 +2,32 @@
 
 let
   cfg = config.host.feature.mountSmb;
-  smbCredsPath = config.age.secrets.smb.path;
   private = import "${secrets}/private.nix";
   nasAddress = private.services.nas.ip;
   shares = private.services.nas.shares;
 in
 {
   config = lib.mkIf cfg.enable {
-    age.secrets."smb".file = "${secrets}/smb.age";
-
     environment.systemPackages = with pkgs; [ cifs-utils ];
+
+    age.secrets = builtins.listToAttrs (map
+      (shareKey: {
+        name = "${shareKey}";
+        value.file = "${secrets}/${shares.${shareKey}.secretsFile}";
+      })
+      cfg.shares);
 
     fileSystems = builtins.listToAttrs (map
       (shareKey: {
         name = "/home/${username}/media/${shareKey}";
-
         value = {
-          device = "//${nasAddress}/${shares.${shareKey}}";
+          device = "//${nasAddress}/${shares.${shareKey}.share}";
           fsType = "cifs";
           options = [
             "x-systemd.automount"
             "noauto"
             "x-systemd.idle-timeout=60"
-            "credentials=${smbCredsPath}"
+            "credentials=${config.age.secrets."${shareKey}".path}"
             "uid=1000"
             "gid=100"
             "_netdev"
