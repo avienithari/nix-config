@@ -11,6 +11,14 @@ let
       echo "<span color='orange'></span> |"
     fi
   '';
+
+  sunshineWofi = pkgs.writeShellScript "sunshine-wofi" ''
+    if ${pkgs.systemd}/bin/systemctl --user is-active --quiet sunshine; then
+      echo "<span color='orange'>󰍹</span> |"
+    else
+      echo ""
+    fi
+  '';
 in
 {
   programs.waybar = {
@@ -26,6 +34,7 @@ in
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [
+          "custom/wofi"
           "custom/mic"
           "tray"
           "custom/separator"
@@ -81,6 +90,14 @@ in
             warning = 80;
             critical = 90;
           };
+        };
+        "custom/wofi" = {
+          exec = "${sunshineWofi}";
+          on-click = "wofi --show drun";
+          interval = "once";
+          signal = 8;
+          format = "{}";
+          tooltip = false;
         };
         "custom/mic" = {
           exec = "${micStatus}";
@@ -182,6 +199,7 @@ in
           color: @green;
       }
 
+      #custom-wofi,
       #custom-mic,
       #tray,
       #cpu,
