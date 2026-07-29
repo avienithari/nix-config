@@ -14,7 +14,6 @@
     feature = {
       privateChats = true;
       steam = true;
-      torrent = true;
       useHome = true;
       useZsa = true;
 
