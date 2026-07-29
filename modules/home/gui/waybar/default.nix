@@ -1,11 +1,14 @@
 { pkgs, lib, osConfig, ... }:
 
 let
+  cfg = osConfig.host;
+  isWorkDesktop = cfg.isWorkstation && cfg.class == "desktop";
+
   micStatus = pkgs.writeShellScript "mic-status" ''
     mic=$(${pkgs.wireplumber}/bin/wpctl get-volume \
     @DEFAULT_AUDIO_SOURCE@ 2>/dev/null)
 
-    if [ -z "$mic" ] || echo "$mic" | grep -q "MUTED"; then
+    if [[ -z "$mic" || "$mic" == *MUTED* ]]; then
       echo ""
     else
       echo "<span color='orange'></span> |"
@@ -33,8 +36,10 @@ in
         spacing = 4;
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [
+        modules-right = lib.optionals isWorkDesktop [
           "custom/wofi"
+        ]
+        ++ [
           "custom/mic"
           "tray"
           "custom/separator"
@@ -47,7 +52,7 @@ in
           "wireplumber"
           "custom/separator"
         ]
-        ++ lib.optionals (osConfig.host.class == "laptop") [
+        ++ lib.optionals (cfg.class == "laptop") [
           "battery"
           "custom/separator"
           "backlight"
@@ -91,7 +96,7 @@ in
             critical = 90;
           };
         };
-        "custom/wofi" = {
+        "custom/wofi" = lib.mkIf isWorkDesktop {
           exec = "${sunshineWofi}";
           on-click = "wofi --show drun";
           interval = "once";
@@ -112,7 +117,7 @@ in
           format-icons = [ "" "" " " ];
           format-muted = "<span color='orange'> {volume}%</span>";
         };
-        "battery" = {
+        "battery" = lib.mkIf (cfg.class == "laptop") {
           interval = 1;
           format = "{icon} {capacity}%";
           format-charging = "󰂄 {capacity}%";
@@ -124,7 +129,7 @@ in
             critical = 10;
           };
         };
-        "backlight" = {
+        "backlight" = lib.mkIf (cfg.class == "laptop") {
           format = "{icon} {percent}%";
           format-icons = [ "󰃞" "󰃝" "󰃟" "󰃠" ];
         };
