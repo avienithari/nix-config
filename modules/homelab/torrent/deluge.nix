@@ -20,6 +20,7 @@ in
           BindReadOnlyPaths = [
             "/etc/netns/mullvad/resolv.conf:/etc/resolv.conf"
           ];
+          ReadWritePaths = [ "/mnt/downloads" ];
         };
       };
 
