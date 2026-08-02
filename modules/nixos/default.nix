@@ -1,5 +1,10 @@
-{ config, lib, inputs, username, ... }:
+{ config, pkgs, lib, inputs, username, ... }:
 
+let
+  pkgs-stable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+  };
+in
 {
   imports = [
     ./options.nix
@@ -15,6 +20,7 @@
     {
       _module.args = {
         inherit (inputs) agenix secrets;
+        inherit pkgs-stable;
       };
     }
 
@@ -24,7 +30,7 @@
         useUserPackages = true;
         extraSpecialArgs = {
           inherit (inputs) secrets;
-          inherit username;
+          inherit pkgs-stable username;
         };
 
         users.${username}.imports = [ ../home ];
