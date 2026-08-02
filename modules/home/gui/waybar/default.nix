@@ -22,6 +22,16 @@ let
       echo ""
     fi
   '';
+
+  vpnStatus = pkgs.writeShellScript "vpn-status" ''
+    status=$(${pkgs.mullvad}/bin/mullvad status 2>/dev/null)
+
+    if [[ "$status" == *"Connected"* ]]; then
+      echo "| <span color='green'>󰦝</span>"
+    else
+      echo ""
+    fi
+  '';
 in
 {
   programs.waybar = {
@@ -34,7 +44,10 @@ in
         height = 36;
         mode = "dock";
         spacing = 4;
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [
+          "hyprland/workspaces"
+          "custom/vpn"
+        ];
         modules-center = [ "clock" ];
         modules-right = lib.optionals isWorkDesktop [
           "custom/wofi"
@@ -66,6 +79,13 @@ in
           on-click = "activate";
           sort-by-number = true;
           persistent-workspaces = { "*" = 10; };
+        };
+        "custom/vpn" = {
+          exec = "${vpnStatus}";
+          signal = 9;
+          interval = "once";
+          format = "{}";
+          tooltip = false;
         };
         "clock" = {
           timezone = "Europe/Warsaw";
@@ -204,6 +224,7 @@ in
           color: @green;
       }
 
+      #custom-vpn,
       #custom-wofi,
       #custom-mic,
       #tray,

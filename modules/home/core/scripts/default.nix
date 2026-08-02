@@ -13,6 +13,7 @@ in
   ++ lib.optionals (cfg.class != "server") (map loadScript [
     ./chrono.nix
     ./clear-spotify-cache.nix
+    ./vpn.nix
   ])
   ++ lib.optionals (cfg.class == "laptop") (map loadScript [
     ./acpi-loop.nix
