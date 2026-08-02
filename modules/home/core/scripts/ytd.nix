@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 pkgs.writeShellScriptBin "ytd" ''
-  #!/usr/bin/env bash
-
   mode="$1"
   shift
 
