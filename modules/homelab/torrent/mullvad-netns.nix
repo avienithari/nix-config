@@ -2,7 +2,6 @@
 
 let
   private = import "${secrets}/private.nix";
-  vpn = private.vpn;
   ip = "${pkgs.iproute2}/bin/ip";
   wg = "${pkgs.wireguard-tools}/bin/wg";
   wgPrivateKeyPath = config.age.secrets.wg-private-key.path;
@@ -41,14 +40,14 @@ in
           ${ip} link set wg-mullvad netns mullvad
           ${ip} -n mullvad link set lo up
           ${ip} -n mullvad address add \
-            ${vpn.ip}/32 dev wg-mullvad
+            ${private.vpn.ip}/32 dev wg-mullvad
 
           ${ip} netns exec mullvad \
             ${wg} set wg-mullvad \
             private-key ${wgPrivateKeyPath} \
-            peer ${vpn.publicKey} \
+            peer ${private.vpn.publicKey} \
             allowed-ips 0.0.0.0/0 \
-            endpoint ${vpn.endpoint} \
+            endpoint ${private.vpn.endpoint} \
             persistent-keepalive 25
 
           ${ip} -n mullvad link set wg-mullvad up
@@ -63,6 +62,6 @@ in
   };
 
   environment.etc."netns/mullvad/resolv.conf".text = ''
-    nameserver ${vpn.dns}
+    nameserver ${private.vpn.dns}
   '';
 }
