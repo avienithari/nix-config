@@ -1,10 +1,6 @@
-{ pkgs, inputs, secrets, ... }:
+{ pkgs, pkgs-stable, secrets, ... }:
 
 let
-  pkgs-stable = import inputs.nixpkgs-stable {
-    system = pkgs.stdenv.hostPlatform.system;
-  };
-
   private = import "${secrets}/private.nix";
   domain = private.services.deluge.domain;
   port = private.services.deluge.port;
