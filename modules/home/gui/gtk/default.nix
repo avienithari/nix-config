@@ -1,10 +1,5 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, pkgs-stable, lib, ... }:
 
-let
-  pkgs-stable = import inputs.nixpkgs-stable {
-    system = pkgs.stdenv.hostPlatform.system;
-  };
-in
 {
   gtk = {
     enable = true;
