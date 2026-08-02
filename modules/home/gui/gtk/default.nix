@@ -1,5 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 
+let
+  pkgs-stable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+  };
+in
 {
   gtk = {
     enable = true;
@@ -9,7 +14,7 @@
     };
     theme = lib.mkForce {
       name = "rose-pine";
-      package = pkgs.rose-pine-gtk-theme;
+      package = pkgs-stable.rose-pine-gtk-theme;
     };
   };
 }
