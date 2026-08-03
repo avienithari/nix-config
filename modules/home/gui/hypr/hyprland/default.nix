@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./animations.nix
     ./bindings.nix
     ./env.nix
     ./execute.nix
