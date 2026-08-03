@@ -6,6 +6,7 @@
     ./bindings.nix
     ./env.nix
     ./execute.nix
+    ./extra.nix
     ./general.nix
     ./input.nix
     ./layout.nix
