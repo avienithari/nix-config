@@ -3,6 +3,7 @@
 let
   cfg = osConfig.host;
   isHyprlandSession = cfg.isGuiHost && cfg.session == "hyprland";
+  isLaptop = cfg.class == "laptop";
 in
 lib.mkIf isHyprlandSession {
   wayland.windowManager.hyprland.settings = {
@@ -30,14 +31,14 @@ lib.mkIf isHyprlandSession {
         active_opacity = 1.0;
         inactive_opacity = 1.0;
         blur = {
-          enabled = true;
+          enabled = !isLaptop;
           size = 3;
           passes = 1;
           vibrancy = 0.1696;
           new_optimizations = true;
         };
         shadow = {
-          enabled = true;
+          enabled = !isLaptop;
           range = 4;
           render_power = 3;
           color = "rgba(1a1a1aee)";
