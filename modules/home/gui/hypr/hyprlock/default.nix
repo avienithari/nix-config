@@ -1,6 +1,8 @@
 { ... }:
 
 let
+  leavesWallpaper = ../assets/leaves.jpg;
+
   colors = {
     text = "rgba(242, 243, 244, 0.75)";
     input = {
@@ -31,7 +33,7 @@ in
       background = [
         {
           monitor = "";
-          path = "${./leaves.jpg}";
+          path = "${leavesWallpaper}";
           blur_passes = 2;
           contrast = 1;
           brightness = 0.5;
