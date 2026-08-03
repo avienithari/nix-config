@@ -7,6 +7,7 @@ in
 {
   imports = [
     ./hyprland
+    ./hyprlock
   ];
 
   config = lib.mkIf isHyprlandSession {
