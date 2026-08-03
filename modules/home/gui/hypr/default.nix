@@ -9,6 +9,7 @@ in
     ./hyprland
     ./hyprlock
     ./hyprpaper
+    ./hyprsunset
   ];
 
   config = lib.mkIf isHyprlandSession {
