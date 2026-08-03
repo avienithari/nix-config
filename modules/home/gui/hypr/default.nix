@@ -8,6 +8,7 @@ in
   imports = [
     ./hyprland
     ./hyprlock
+    ./hyprpaper
   ];
 
   config = lib.mkIf isHyprlandSession {
