@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 let
+  awk = "${pkgs.gawk}/bin/awk";
+  date = "${pkgs.coreutils}/bin/date";
   mullvad = "${pkgs.mullvad}/bin/mullvad";
   pkill = "${pkgs.procps}/bin/pkill";
   sleep = "${pkgs.coreutils}/bin/sleep";
@@ -11,9 +13,22 @@ pkgs.writeShellScriptBin "vpn" ''
     status=$(${mullvad} account get 2>&1)
 
     if [[ "$status" == *"Not logged in"* ]]; then
-      echo "Aborted: Not logged in"
-      exit 1
+      echo "Not logged in"
+      return 1
     fi
+
+    local expire_str expire_epoch current_epoch
+    expire_str=$(${awk} '/Expires at/ {print $3, $4, $5}' <<< "$status")
+    expire_epoch=$(${date} -d "$expire_str" +%s)
+    current_epoch=$(${date} +%s)
+
+    if [[ -n "$expire_epoch" ]] && \
+      [[ "$current_epoch" -ge "$expire_epoch" ]]; then
+      echo "No time left"
+      return 1
+    fi
+
+    return 0
   }
 
   set_vpn() {
@@ -22,7 +37,13 @@ pkgs.writeShellScriptBin "vpn" ''
 
     local wanted_state
     if [ "$cmd" = "connect" ]; then
+      if ! reason=$(check_account); then
+        echo "Aborted: $reason"
+        exit 1
+      fi
+
       wanted_state="Connected"
+
     elif [ "$cmd" = "disconnect" ]; then
       wanted_state="Disconnected"
     fi
@@ -42,8 +63,6 @@ pkgs.writeShellScriptBin "vpn" ''
       done
     ) &>/dev/null &
   }
-
-  check_account
 
   case "$1" in
     up)
