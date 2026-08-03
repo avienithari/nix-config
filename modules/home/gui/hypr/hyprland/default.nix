@@ -9,5 +9,6 @@
     ./input.nix
     ./layout.nix
     ./monitors.nix
+    ./window-rules.nix
   ];
 }
