@@ -1,12 +1,8 @@
-{ pkgs, username, ... }:
+{ username, ... }:
 
-let
-  flameshot = pkgs.callPackage ./flameshot-pkg.nix { };
-in
 {
   services.flameshot = {
     enable = true;
-    package = flameshot;
     settings.General = {
       savePath =
         "/home/${username}/Pictures/screenshots";
