@@ -5,6 +5,10 @@ let
   isWorkDesktop = cfg.isWorkstation && cfg.class == "desktop";
 
   mullvad = "${pkgs.mullvad}/bin/mullvad";
+  seq = "${pkgs.coreutils}/bin/seq";
+  wofi = "${pkgs.wofi}/bin/wofi";
+
+  hyprctl = "${pkgs.hyprland}/bin/hyprctl";
   systemctl = "${pkgs.systemd}/bin/systemctl";
   wpctl = "${pkgs.wireplumber}/bin/wpctl";
 
@@ -19,12 +23,37 @@ let
     fi
   '';
 
-  sunshineWofi = pkgs.writeShellScript "sunshine-wofi" ''
+  sunshineWofiRun = pkgs.writeShellScript "sunshine-wofi-run" ''
     if ${systemctl} --user is-active --quiet sunshine; then
       echo "<span color='orange'>󰍹</span> |"
     else
       echo ""
     fi
+  '';
+
+  /*
+    todos(reminder): remove when waybar officially supports
+    switching hyprland ws via new lua dispatcher
+  */
+  sunshineWofiWs = pkgs.writeShellScript "sunshine-wofi-ws" ''
+    case "$1" in
+      indicator)
+        if ${systemctl} --user is-active --quiet sunshine; then
+          echo "<span color='orange'></span> "
+        else
+          echo ""
+        fi
+        ;;
+      switch)
+        choice=$(${seq} 1 10 | \
+          ${wofi} --show dmenu --prompt "WS:" \
+          --cache-file=/dev/null)
+
+        if [ -n "$choice" ]; then
+          ${hyprctl} dispatch "hl.dsp.focus({ workspace = '$choice' })"
+        fi
+        ;;
+    esac
   '';
 
   vpnStatus = pkgs.writeShellScript "vpn-status" ''
@@ -54,7 +83,8 @@ in
         ];
         modules-center = [ "clock" ];
         modules-right = lib.optionals isWorkDesktop [
-          "custom/wofi"
+          "custom/wofi-ws"
+          "custom/wofi-run"
         ]
         ++ [
           "custom/mic"
@@ -120,8 +150,16 @@ in
             critical = 90;
           };
         };
-        "custom/wofi" = lib.mkIf isWorkDesktop {
-          exec = "${sunshineWofi}";
+        "custom/wofi-ws" = lib.mkIf isWorkDesktop {
+          exec = "${sunshineWofiWs} indicator";
+          on-click = "${sunshineWofiWs} switch";
+          interval = "once";
+          signal = 8;
+          format = "{}";
+          tooltip = false;
+        };
+        "custom/wofi-run" = lib.mkIf isWorkDesktop {
+          exec = "${sunshineWofiRun}";
           on-click = "wofi --show drun";
           interval = "once";
           signal = 8;
@@ -229,7 +267,6 @@ in
       }
 
       #custom-vpn,
-      #custom-wofi,
       #custom-mic,
       #tray,
       #cpu,
