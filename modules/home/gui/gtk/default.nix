@@ -1,5 +1,9 @@
-{ pkgs, pkgs-stable, lib, ... }:
+{ pkgs, lib, ... }:
 
+let
+  rose-pine-gtk-theme =
+    pkgs.callPackage ./rose-pine-gtk-theme-pkg.nix { };
+in
 {
   gtk = {
     enable = true;
@@ -7,10 +11,9 @@
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
-    # TODOS: fix me
     theme = lib.mkForce {
       name = "rose-pine";
-      package = pkgs-stable.rose-pine-gtk-theme;
+      package = rose-pine-gtk-theme;
     };
   };
 }
