@@ -4,8 +4,12 @@ let
   cfg = osConfig.host;
   isWorkDesktop = cfg.isWorkstation && cfg.class == "desktop";
 
+  mullvad = "${pkgs.mullvad}/bin/mullvad";
+  systemctl = "${pkgs.systemd}/bin/systemctl";
+  wpctl = "${pkgs.wireplumber}/bin/wpctl";
+
   micStatus = pkgs.writeShellScript "mic-status" ''
-    mic=$(${pkgs.wireplumber}/bin/wpctl get-volume \
+    mic=$(${wpctl} get-volume \
     @DEFAULT_AUDIO_SOURCE@ 2>/dev/null)
 
     if [[ -z "$mic" || "$mic" == *MUTED* ]]; then
@@ -16,7 +20,7 @@ let
   '';
 
   sunshineWofi = pkgs.writeShellScript "sunshine-wofi" ''
-    if ${pkgs.systemd}/bin/systemctl --user is-active --quiet sunshine; then
+    if ${systemctl} --user is-active --quiet sunshine; then
       echo "<span color='orange'>󰍹</span> |"
     else
       echo ""
@@ -24,7 +28,7 @@ let
   '';
 
   vpnStatus = pkgs.writeShellScript "vpn-status" ''
-    status=$(${pkgs.mullvad}/bin/mullvad status 2>/dev/null)
+    status=$(${mullvad} status 2>/dev/null)
 
     if [[ "$status" == *"Connected"* ]]; then
       echo "| <span color='green'>󰦝</span>"
