@@ -30,7 +30,7 @@ in
       options = [ "defaults" "noatime" "nofail" ];
     };
 
-    "${mediaPath}/data" = {
+    "/home/${username}/pictures" = {
       device = "/dev/disk/by-uuid/5d2bdf16-d8b2-4a4c-9123-0c85a440d346";
       fsType = "ext4";
       options = [ "defaults" "noatime" "nofail" ];
