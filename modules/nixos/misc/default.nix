@@ -7,6 +7,7 @@
     ./private-chats.nix
     ./smb.nix
     ./steam.nix
+    ./trackpoint.nix
     ./virtualisation.nix
     ./work.nix
     ./zsa.nix

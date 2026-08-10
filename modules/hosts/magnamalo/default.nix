@@ -12,6 +12,7 @@
     session = "hyprland";
 
     feature = {
+      disableTrackpointDot = true;
       privateChats = true;
       steam = true;
       useHome = true;

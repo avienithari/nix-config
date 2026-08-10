@@ -35,6 +35,7 @@
     };
 
     feature = {
+      disableTrackpointDot = lib.mkEnableOption "Disable trackpoint red dot";
       docker = lib.mkEnableOption "Enable docker virtualisation";
       privateChats = lib.mkEnableOption "Enable additional chat packages";
       steam = lib.mkEnableOption "Enable steam";
