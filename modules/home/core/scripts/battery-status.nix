@@ -1,12 +1,17 @@
 { pkgs, ... }:
 
+let
+  cat = "${pkgs.coreutils}/bin/cat";
+  find = "${pkgs.findutils}/bin/find";
+  wc = "${pkgs.coreutils}/bin/wc";
+in
 pkgs.writeShellScriptBin "battery-status" ''
   SYS_DIR="/sys/class/power_supply"
   CHARGING_ICON="⚡"
   BATTERY_ICON="󰁹"
 
   get_batteries() {
-    find "$SYS_DIR" -maxdepth 1 -name "BAT*" 2>/dev/null
+    ${find} "$SYS_DIR" -maxdepth 1 -name "BAT*" 2>/dev/null
   }
 
   has_battery() {
@@ -19,7 +24,7 @@ pkgs.writeShellScriptBin "battery-status" ''
   }
 
   get_battery_count() {
-    get_batteries | wc -l
+    get_batteries | ${wc} -l
   }
 
   is_charging() {
@@ -27,7 +32,7 @@ pkgs.writeShellScriptBin "battery-status" ''
 
     for bat in $batteries; do
       if [[ -f "$bat/status" ]]; then
-        status=$(cat "$bat/status")
+        status=$(${cat} "$bat/status")
         if [[ "$status" == "Charging" ]]; then
           return 0
         fi
@@ -44,7 +49,7 @@ pkgs.writeShellScriptBin "battery-status" ''
 
     for bat in $batteries; do
       if [[ -f "$bat/capacity" ]]; then
-        capacity=$(cat "$bat/capacity")
+        capacity=$(${cat} "$bat/capacity")
         total_level=$((total_level + capacity))
         count=$((count + 1))
       fi

@@ -1,31 +1,39 @@
 { pkgs, ... }:
 
+let
+  basename = "${pkgs.coreutils}/bin/basename";
+  find = "${pkgs.findutils}/bin/find";
+  fzf = "${pkgs.fzf}/bin/fzf";
+  pgrep = "${pkgs.procps}/bin/pgrep";
+  tmux = "${pkgs.tmux}/bin/tmux";
+  tr = "${pkgs.coreutils}/bin/tr";
+in
 pkgs.writeShellScriptBin "sessionizer" ''
   if [[ $# -eq 1 ]]; then
     selected=$1
   else
-    selected=$(find -L ~/dotfiles ~/code/projects ~/code/c ~/code/zig \
+    selected=$(${find} -L ~/dotfiles ~/code/projects ~/code/c ~/code/zig \
       ~/code/rust ~/code/php ~/code/gopher ~/code/javascript ~/code/python \
       ~/code/shell ~/code/lua ~/code/ruby ~/code/work ~/code/nix ~/code \
       ~/work ~/nix-config -mindepth 0 -maxdepth 1 -type d \
-      ! -name ".*" 2>/dev/null | fzf)
+      ! -name ".*" 2>/dev/null | ${fzf})
   fi
 
   if [[ -z $selected ]]; then
     exit 0
   fi
 
-  selected_name=$(basename "$selected" | tr . _)
-  tmux_running=$(pgrep tmux)
+  selected_name=$(${basename} "$selected" | ${tr} . _)
+  tmux_running=$(${pgrep} -f ${tmux})
 
   if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s "$selected_name" -c "$selected"
+    ${tmux} new-session -s "$selected_name" -c "$selected"
     exit 0
   fi
 
-  if ! tmux has-session -t="$selected_name" 2> /dev/null; then
-    tmux new-session -ds "$selected_name" -c "$selected"
+  if ! ${tmux} has-session -t="$selected_name" 2> /dev/null; then
+    ${tmux} new-session -ds "$selected_name" -c "$selected"
   fi
 
-  tmux switch-client -t "$selected_name" || tmux attach -d -t "$selected_name"
+  ${tmux} switch-client -t "$selected_name" || ${tmux} attach -d -t "$selected_name"
 ''

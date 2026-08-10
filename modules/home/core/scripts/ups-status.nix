@@ -1,7 +1,12 @@
 { pkgs, ... }:
 
+let
+  awk = "${pkgs.gawk}/bin/awk";
+  grep = "${pkgs.gnugrep}/bin/grep";
+  upsc = "${pkgs.nut}/bin/upsc";
+in
 pkgs.writeShellScriptBin "ups-status" ''
-  RAW=$(upsc main 2>/dev/null)
+  RAW=$(${upsc} main 2>/dev/null)
 
   if [ -z "$RAW" ]; then
     echo "UPS unreachable"
@@ -9,7 +14,7 @@ pkgs.writeShellScriptBin "ups-status" ''
   fi
 
   get_val() {
-    echo "$RAW" | grep "^$1:" | awk '{print $2}'
+    echo "$RAW" | ${grep} "^$1:" | ${awk} '{print $2}'
   }
 
   STATUS=$(get_val "ups.status")
