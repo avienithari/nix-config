@@ -6,6 +6,7 @@
     ./adguard
     ./caddy
     ./calendar-poc
+    ./copyparty
     ./discord
     ./dsite
     ./excalidraw
