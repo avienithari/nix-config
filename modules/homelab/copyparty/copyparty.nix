@@ -42,7 +42,7 @@ in
       settings = {
         i = "127.0.0.1";
         p = [ port ];
-        theme = 2;
+        theme = 0;
         e2d = true;
         e2ts = true;
         rproxy = 1;
