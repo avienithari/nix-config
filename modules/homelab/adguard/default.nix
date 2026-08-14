@@ -5,6 +5,8 @@ let
   domain = private.services.adguard.domain;
   port = private.services.adguard.port;
   dns = toString private.services.dns.ip;
+  user = private.services.adguard.user;
+  hash = private.services.adguard.hash;
 in
 {
   networking = {
@@ -24,6 +26,13 @@ in
       inherit port;
 
       settings = {
+        auth_attempts = 3;
+        block_auth_min = 60;
+        users = [{
+          name = user;
+          password = hash;
+        }];
+
         theme = "dark";
         dns = {
           bind_hosts = [
