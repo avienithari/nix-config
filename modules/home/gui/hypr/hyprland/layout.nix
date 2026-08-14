@@ -8,7 +8,7 @@ lib.mkIf isHyprlandSession {
   wayland.windowManager.hyprland.settings = {
     config = {
       general.layout = "dwindle";
-      dwindle.force_split = 1;
+      dwindle.force_split = 2;
     };
   };
 }
