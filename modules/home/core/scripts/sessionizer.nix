@@ -4,7 +4,6 @@ let
   basename = "${pkgs.coreutils}/bin/basename";
   find = "${pkgs.findutils}/bin/find";
   fzf = "${pkgs.fzf}/bin/fzf";
-  pgrep = "${pkgs.procps}/bin/pgrep";
   tmux = "${pkgs.tmux}/bin/tmux";
   tr = "${pkgs.coreutils}/bin/tr";
 in
@@ -24,9 +23,8 @@ pkgs.writeShellScriptBin "sessionizer" ''
   fi
 
   selected_name=$(${basename} "$selected" | ${tr} . _)
-  tmux_running=$(${pgrep} -f ${tmux})
 
-  if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+  if [[ -z $TMUX ]] && ! ${tmux} info >/dev/null 2>&1; then
     ${tmux} new-session -s "$selected_name" -c "$selected"
     exit 0
   fi
@@ -35,5 +33,6 @@ pkgs.writeShellScriptBin "sessionizer" ''
     ${tmux} new-session -ds "$selected_name" -c "$selected"
   fi
 
-  ${tmux} switch-client -t "$selected_name" || ${tmux} attach -d -t "$selected_name"
+  ${tmux} switch-client -t "$selected_name" || \
+    ${tmux} attach -d -t "$selected_name"
 ''
