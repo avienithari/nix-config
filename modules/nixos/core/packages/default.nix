@@ -33,6 +33,7 @@
     tmux
     tree
     tree-sitter
+    typos-lsp
     unzip
     wget
   ];
