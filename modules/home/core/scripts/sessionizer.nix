@@ -33,6 +33,6 @@ pkgs.writeShellScriptBin "sessionizer" ''
     ${tmux} new-session -ds "$selected_name" -c "$selected"
   fi
 
-  ${tmux} switch-client -t "$selected_name" || \
+  ${tmux} switch-client -t "$selected_name" 2>/dev/null || \
     ${tmux} attach -d -t "$selected_name"
 ''
