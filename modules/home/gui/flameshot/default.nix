@@ -5,7 +5,7 @@
     enable = true;
     settings.General = {
       savePath =
-        "/home/${username}/pictures/screenshots";
+        "/home/${username}/Pictures/screenshots";
       disabledTrayIcon = true;
       showStartupLaunchMessage = false;
       showDesktopNotification = false;
