@@ -10,6 +10,7 @@
     ./dsite
     ./excalidraw
     ./matrix
+    ./sftpgo
     ./silver-bullet
     ./strings
     ./tmp-global-docker-proxy
