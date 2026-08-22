@@ -2,13 +2,14 @@
 
 let
   private = import "${inputs.secrets}/private.nix";
-  userKeys = private.users.${username}.sshKeys;
 in
 {
   imports = [
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
-    inputs.agenix.nixosModules.default
+    ../users/avien
   ];
+
+  security.sudo.wheelNeedsPassword = false;
 
   boot.zfs.forceImportRoot = false;
 
@@ -16,7 +17,6 @@ in
 
   environment.systemPackages = with pkgs; [
     git
-    nh
     tmux
     vim
   ];
@@ -25,9 +25,17 @@ in
 
   services.openssh = {
     enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+      LoginGraceTime = 0;
+      AllowUsers = [ "${username}" ];
+      MaxAuthTries = 3;
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 22 ];
 
-  users.users.root.openssh.authorizedKeys.keys = userKeys;
+  users.users.${username}.openssh.authorizedKeys.keys =
+    private.users.${username}.sshKeys;
 }
