@@ -9,6 +9,7 @@ in
     settings = {
       PasswordAuthentication = lib.mkDefault false;
       PermitRootLogin = "no";
+      LoginGraceTime = 0;
       AllowUsers = [ "${username}" ];
       MaxAuthTries = 3;
     };
