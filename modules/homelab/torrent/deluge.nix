@@ -4,6 +4,8 @@ let
   private = import "${secrets}/private.nix";
   domain = private.services.deluge.domain;
   port = private.services.deluge.port;
+  share = private.services.nas.shares.download;
+  mountPoint = "/mnt/downloads";
 in
 {
   systemd = {
@@ -16,7 +18,7 @@ in
           BindReadOnlyPaths = [
             "/etc/netns/mullvad/resolv.conf:/etc/resolv.conf"
           ];
-          ReadWritePaths = [ "/mnt/downloads" ];
+          ReadWritePaths = [ mountPoint ];
         };
       };
 
@@ -68,5 +70,10 @@ in
         reverse_proxy 127.0.0.1:${toString port}
       '';
     };
+  };
+
+  homelab.per-service-smb."download" = {
+    inherit share mountPoint;
+    uid = "deluge";
   };
 }

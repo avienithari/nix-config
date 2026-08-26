@@ -10,6 +10,7 @@
     ./dsite
     ./excalidraw
     ./matrix
+    ./per-service-smb
     ./sftpgo
     ./silver-bullet
     ./strings

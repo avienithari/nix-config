@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./smb.nix
+    # ./smb.nix
     ./sftpgo.nix
   ];
 }

@@ -5,6 +5,7 @@ let
   domain = private.services.sftpgo.domain;
   sftpPort = private.services.sftpgo.sftpPort;
   webPort = private.services.sftpgo.webPort;
+  share = private.services.nas.shares.sftp;
 in
 {
   services = {
@@ -57,6 +58,11 @@ in
         reverse_proxy 127.0.0.1:${toString webPort}
       '';
     };
+  };
+
+  homelab.per-service-smb."sftp" = {
+    inherit share;
+    uid = "sftpgo";
   };
 
   systemd.services.sftpgo = {
