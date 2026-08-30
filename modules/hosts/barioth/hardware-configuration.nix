@@ -7,7 +7,7 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
+      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
       kernelModules = [ ];
     };
 
@@ -17,21 +17,19 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/a22ce3d4-46ba-4dc7-9894-4191bf85b96d";
+      device = "/dev/disk/by-uuid/43389b41-73cd-4f2f-ace9-99bc3f174a2b";
       fsType = "ext4";
     };
 
     "/boot" = {
-      device = "/dev/disk/by-uuid/9D27-7685";
+      device = "/dev/disk/by-uuid/8FE5-6D8D";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
   };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/dbcc00c3-fff1-44a5-a04d-46e68c652324"; }];
-
-  networking.useDHCP = lib.mkDefault true;
+    [{ device = "/dev/disk/by-uuid/998e0957-4121-4906-8f29-5d66c551094c"; }];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

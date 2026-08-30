@@ -7,17 +7,11 @@
   ];
 
   host = {
-    class = "desktop";
-    session = "hyprland";
-    feature = {
-      steam = true;
-      useHome = true;
-    };
+    class = "server";
+    feature.useHome = true;
   };
 
   networking.hostName = "barioth";
 
-  services.openssh.settings.PasswordAuthentication = true;
-
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }
