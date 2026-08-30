@@ -10,6 +10,7 @@
     ./dsite
     ./excalidraw
     ./matrix
+    ./navidrome
     ./per-service-smb
     ./sftpgo
     ./silver-bullet
