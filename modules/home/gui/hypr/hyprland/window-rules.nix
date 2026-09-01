@@ -39,6 +39,30 @@ lib.mkIf isHyprlandSession {
           no_anim = true;
         };
       })
+      (mkWindowRule {
+        prop = {
+          class = "^(?i)(slack)$";
+        };
+        effect = {
+          workspace = "5";
+        };
+      })
+      (mkWindowRule {
+        prop = {
+          class = "^(?i)(spotify)$";
+        };
+        effect = {
+          workspace = "special:magic";
+        };
+      })
+      (mkWindowRule {
+        prop = {
+          class = "^(?i)(discord|signal)$";
+        };
+        effect = {
+          workspace = "special:trash";
+        };
+      })
     ];
   };
 }
