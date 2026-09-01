@@ -143,6 +143,14 @@ lib.mkIf isHyprlandSession {
         cmd = "hl.dsp.window.move({ workspace = 'special:magic' })";
       })
       (mkBind {
+        key = "${mainMod} + d";
+        cmd = "hl.dsp.workspace.toggle_special('trash')";
+      })
+      (mkBind {
+        key = "${mainMod} + SHIFT + d";
+        cmd = "hl.dsp.window.move({ workspace = 'special:trash' })";
+      })
+      (mkBind {
         key = "${mainMod} + mouse_down";
         cmd = "hl.dsp.focus({ workspace = 'e+1' })";
       })
