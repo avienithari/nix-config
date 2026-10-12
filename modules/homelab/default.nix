@@ -3,6 +3,7 @@
 {
   imports = [
     ./acme
+    ./actual
     ./adguard
     ./caddy
     ./calendar-poc
