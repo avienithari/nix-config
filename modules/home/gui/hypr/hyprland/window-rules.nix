@@ -63,6 +63,15 @@ lib.mkIf isHyprlandSession {
           workspace = "special:trash";
         };
       })
+      (mkWindowRule {
+        prop = {
+          class = "^(?i)(qalculate-gtk)$";
+        };
+        effect = {
+          float = true;
+          size = "700 500";
+        };
+      })
     ];
   };
 }
