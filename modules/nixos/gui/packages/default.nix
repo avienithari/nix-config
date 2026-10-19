@@ -11,6 +11,7 @@
       google-chrome
       libreoffice
       puddletag
+      qalculate-gtk
       spotify
       tailscale-systray
       vlc
