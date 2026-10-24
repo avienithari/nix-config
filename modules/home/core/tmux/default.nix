@@ -32,6 +32,7 @@
         "#[fg=#{@rp_text},bg=#{@rp_base}]#S#[fg=#{@rp_muted}] "
 
       set -g window-status-separator "#[fg=#{@rp_subtle}] | "
+      set -g window-status-current-style "default"
       set -g window-status-format \
         "#[fg=#{@rp_subtle}]#I: #W#{?window_zoomed_flag, #[fg=#{@rp_subtle}][Z],}"
       set -g window-status-current-format \
@@ -48,6 +49,8 @@
 
       set-window-option -g pane-base-index 1
       set-option -g renumber-windows on
+
+      set -s theme terminal
 
       unbind %
       unbind '"'
