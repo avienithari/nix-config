@@ -22,10 +22,9 @@ in
     adguardhome = {
       enable = true;
       openFirewall = true;
-      host = "127.0.0.1";
-      inherit port;
 
       settings = {
+        http.address = "127.0.0.1:${toString port}";
         auth_attempts = 3;
         block_auth_min = 60;
         users = [{
