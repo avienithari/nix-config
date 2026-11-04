@@ -25,6 +25,11 @@ lib.mkIf isHyprlandSession {
         };
       };
 
+      render = {
+        cm_auto_hdr = 0;
+        direct_scanout = 2;
+      };
+
       decoration = {
         rounding = 0;
         rounding_power = 1.0;
