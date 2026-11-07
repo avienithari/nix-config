@@ -2,10 +2,8 @@
 
 let
   cfg = osConfig.host;
-  isWorkDesktop = cfg.isWorkstation && cfg.class == "desktop";
 
   mullvad = "${pkgs.mullvad}/bin/mullvad";
-  systemctl = "${pkgs.systemd}/bin/systemctl";
   wpctl = "${pkgs.wireplumber}/bin/wpctl";
 
   micStatus = pkgs.writeShellScript "mic-status" ''
@@ -16,14 +14,6 @@ let
       echo ""
     else
       echo "<span color='orange'></span> |"
-    fi
-  '';
-
-  sunshineWofiRun = pkgs.writeShellScript "sunshine-wofi-run" ''
-    if ${systemctl} --user is-active --quiet sunshine; then
-      echo "<span color='orange'>󰍹</span> |"
-    else
-      echo ""
     fi
   '';
 
@@ -53,10 +43,7 @@ in
           "custom/vpn"
         ];
         modules-center = [ "clock" ];
-        modules-right = lib.optionals isWorkDesktop [
-          "custom/wofi-run"
-        ]
-        ++ [
+        modules-right = [
           "custom/mic"
           "tray"
           "custom/separator"
@@ -119,14 +106,6 @@ in
             warning = 80;
             critical = 90;
           };
-        };
-        "custom/wofi-run" = lib.mkIf isWorkDesktop {
-          exec = "${sunshineWofiRun}";
-          on-click = "wofi --show drun";
-          interval = "once";
-          signal = 8;
-          format = "{}";
-          tooltip = false;
         };
         "custom/mic" = {
           exec = "${micStatus}";

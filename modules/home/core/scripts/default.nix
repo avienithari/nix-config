@@ -21,9 +21,5 @@ in
   ])
   ++ lib.optionals cfg.feature.nut.enable (map loadScript [
     ./ups-status.nix
-  ])
-  ++ lib.optionals (cfg.isWorkstation && cfg.class == "desktop")
-    (map loadScript [
-      ./remote.nix
-    ]);
+  ]);
 }
