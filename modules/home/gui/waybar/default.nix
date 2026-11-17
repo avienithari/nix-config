@@ -95,8 +95,8 @@ in
         };
         "memory" = {
           interval = 5;
-          format = "Mem: {used}GiB";
-          format-alt = "Mem: {used}/{total}GiB";
+          format = "Mem: {used:0.2f}GiB";
+          format-alt = "Mem: {used:0.2f}/{total:0.2f}GiB";
         };
         "disk" = {
           interval = 600;
